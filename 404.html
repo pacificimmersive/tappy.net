@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Tappy</title>
+    <link rel="icon" type="image/png" href="/assets/images/tappy-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Nunito', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, #E8F6FC 0%, #ffffff 100%);
+            text-align: center;
+            padding: 32px;
+        }
+        .container { max-width: 400px; }
+        img { width: 180px; margin-bottom: 24px; animation: float 3s ease-in-out infinite; }
+        h1 { font-size: 2rem; font-weight: 900; color: #1a1a2e; margin-bottom: 12px; }
+        p { color: #666; font-size: 1.1rem; margin-bottom: 28px; line-height: 1.5; }
+        a {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #1a1a2e;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: transform 0.2s;
+        }
+        a:hover { transform: translateY(-2px); }
+        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/assets/images/tappy-wave.png" alt="Tappy looking confused">
+        <h1>Oops! Page not found.</h1>
+        <p>Tappy looked everywhere but couldn't find this page. Let's get you back home!</p>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

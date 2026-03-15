@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tappy App - Sensory Fidget &amp; Focus | Tappy Fidget</title>
+    <meta name="description" content="Tappy app is an all-in-one sensory fidget and focus app with satisfying haptic tools, guided meditations, grounding exercises, Audio-Haptic Feelscapes, mood tracking, to-do and habit tools, and fun arcade games. Free on the App Store. 4.8 stars, 18K+ ratings.">
+    <meta name="keywords" content="Tappy, Tappy fidget, Tappy app, Tappy game, Tappy sensory, fidget app, sensory fidget, calming app, focus app, fidget spinner, haptic fidget, breathing app, grounding exercises, arcade games, pop it, fidget toys, self care app, ADHD fidget, sensory app, meditation app, mood tracker, to-do list app, habit tracker, feelscapes">
+    <meta name="author" content="Cameron Nazemi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tappy.net/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tappy App - Sensory Fidget &amp; Focus">
+    <meta property="og:description" content="An all-in-one sensory fidget and focus app with haptic tools, meditations, grounding exercises, mood tracking, to-do tools, and arcade games. Free on the App Store.">
+    <meta property="og:image" content="https://tappy.net/assets/images/tappy-banner.png">
+    <meta property="og:url" content="https://tappy.net/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tappy">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tappy App - Sensory Fidget &amp; Focus">
+    <meta name="twitter:description" content="All-in-one sensory fidget and focus app with haptic tools, meditations, grounding exercises, mood tracking, to-do tools, and arcade games.">
+    <meta name="twitter:image" content="https://tappy.net/assets/images/tappy-banner.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+
+    <!-- Smart App Banner -->
+    <meta name="apple-itunes-app" content="app-id=1492017640">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Tappy: Sensory Fidget & Focus",
+        "operatingSystem": "iOS",
+        "applicationCategory": "LifestyleApplication",
+        "description": "An all-in-one sensory fidget and focus app with satisfying haptic tools, guided meditations, grounding exercises, Audio-Haptic Feelscapes, breathing sessions, mood tracking, journaling, to-do lists, habit tracking, and fun arcade games.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "url": "https://tappy.net",
+        "image": "https://tappy.net/assets/images/tappy-icon.png",
+        "installUrl": "https://apps.apple.com/us/app/tappy-sensory-fidget-focus/id1492017640",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "18000"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Pacific Interactive LLC"
+        }
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+
+
+    <style>
+        :root {
+            --tappy-blue: #3AADE0;
+            --tappy-light-blue: #87CEEB;
+            --tappy-dark-blue: #1B6B93;
+            --tappy-sky: #E8F6FC;
+            --tappy-orange: #FF8C42;
+            --tappy-pink: #FF6B8A;
+            --tappy-purple: #A66CFF;
+            --tappy-green: #4CD964;
+            --bg-dark: #0f1923;
+            --text-dark: #1a1a2e;
+            --text-light: #ffffff;
+            --radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-logo {
+            height: 64px;
+        }
+
+        .nav-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 20px;
+            background: linear-gradient(180deg, #1e2540 0%, #131a30 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: 0.2px;
+            box-shadow: 0 8px 20px rgba(6, 11, 25, 0.28);
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+        }
+
+        .nav-download:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(180deg, #273054 0%, #171f38 100%);
+            box-shadow: 0 10px 24px rgba(6, 11, 25, 0.34);
+        }
+
+        .nav-download:focus-visible {
+            outline: 2px solid rgba(130, 196, 255, 0.95);
+            outline-offset: 2px;
+        }
+
+        nav.scrolled .nav-download {
+            border-color: rgba(18, 26, 48, 0.16);
+            box-shadow: 0 6px 16px rgba(15, 23, 40, 0.16);
+        }
+
+        .nav-download svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            --cloud-nav-offset: 96px;
+            background:
+                radial-gradient(ellipse 120% 55% at 50% 84%, rgba(255, 205, 135, 0.55) 0%, rgba(255, 205, 135, 0.18) 42%, transparent 70%),
+                radial-gradient(ellipse 90% 45% at 78% 62%, rgba(255, 128, 108, 0.34) 0%, transparent 62%),
+                linear-gradient(180deg,
+                    #243063 0%,
+                    #33457f 10%,
+                    #5a5892 21%,
+                    #886295 31%,
+                    #bf6a82 42%,
+                    #e67d73 52%,
+                    #ff9a78 62%,
+                    #ffb885 72%,
+                    #ffd29b 82%,
+                    #ffe6bb 92%,
+                    #fff3d6 100%
+                );
+            padding: 120px 32px 160px;
+            overflow: hidden;
+        }
+
+        .hero-text h1 { color: #fff; }
+        .hero-text p { color: rgba(255, 255, 255, 0.9); }
+        .hero-rating .rating-text { color: rgba(255, 255, 255, 0.75); }
+
+        .hero-cloud {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            fill: #ffffff;
+            animation: cloud-drift 60s linear infinite;
+        }
+
+        .cloud-front {
+            opacity: 0.96;
+            filter: drop-shadow(0 10px 20px rgba(18, 26, 58, 0.08));
+        }
+
+        .cloud-back {
+            opacity: 0.38;
+        }
+
+        .hc1 { width: 255px; top: calc(2% + var(--cloud-nav-offset)); left: 3%; animation-duration: 82s; }
+        .hc2 { width: 215px; top: calc(1% + var(--cloud-nav-offset)); right: 7%; animation-duration: 95s; animation-delay: -30s; }
+        .hc3 { width: 155px; top: calc(10% + var(--cloud-nav-offset)); left: 32%; animation-duration: 72s; animation-delay: -15s; }
+        .hc4 { width: 240px; top: calc(7% + var(--cloud-nav-offset)); right: 25%; animation-duration: 98s; animation-delay: -50s; }
+        .hc5 { width: 145px; top: calc(12% + var(--cloud-nav-offset)); left: 63%; animation-duration: 78s; animation-delay: -40s; }
+        .hc6 { width: 175px; top: calc(4% + var(--cloud-nav-offset)); left: 46%; animation-duration: 86s; animation-delay: -20s; }
+
+        @keyframes cloud-drift {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(40px); }
+            100% { transform: translateX(0); }
+        }
+
+        .hero-atmosphere {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(ellipse 100% 35% at 50% 80%, rgba(255, 200, 140, 0.3) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .hero-stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-stars circle {
+            fill: #ffe8a3;
+            opacity: 0.55;
+            animation: star-twinkle 4.6s ease-in-out infinite;
+        }
+
+        .hero-stars circle:nth-child(3n) {
+            animation-duration: 5.2s;
+            animation-delay: -1.3s;
+        }
+
+        .hero-stars circle:nth-child(4n) {
+            animation-duration: 3.9s;
+            animation-delay: -2.1s;
+        }
+
+        .hero-stars circle:nth-child(5n) {
+            animation-duration: 6.1s;
+            animation-delay: -0.8s;
+        }
+
+        @keyframes star-twinkle {
+            0%, 100% {
+                opacity: 0.3;
+                filter: drop-shadow(0 0 0 rgba(255, 232, 163, 0));
+            }
+            45% {
+                opacity: 0.85;
+                filter: drop-shadow(0 0 6px rgba(255, 223, 140, 0.55));
+            }
+            70% {
+                opacity: 0.65;
+                filter: drop-shadow(0 0 3px rgba(255, 223, 140, 0.35));
+            }
+        }
+
+        /* Rolling hills at hero bottom */
+        .hero-hills {
+            position: absolute;
+            bottom: 0;
+            left: -1px;
+            right: 0;
+            width: calc(100% + 2px);
+            height: 140px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 92px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #f3f7ff;
+            text-shadow: 0 5px 18px rgba(18, 26, 58, 0.45);
+        }
+
+        .hero-text h1 span {
+            color: #f3f7ff;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: rgba(243, 247, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 32px;
+            max-width: 480px;
+            text-shadow: 0 2px 10px rgba(18, 26, 58, 0.3);
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-downloads {
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+            color: rgba(243, 247, 255, 0.9);
+            text-shadow: 0 2px 10px rgba(18, 26, 58, 0.25);
+        }
+
+        .app-store-badge {
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .app-store-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .app-store-badge img {
+            height: 54px;
+        }
+
+        .hero-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(32, 44, 84, 0.26);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        .hero-rating .stars {
+            color: #FFB800;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-rating .rating-text {
+            font-size: 0.9rem;
+            color: rgba(243, 247, 255, 0.82);
+            font-weight: 700;
+        }
+
+        .hero-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-character {
+            width: 380px;
+            max-width: 100%;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--tappy-light-blue) 0%, transparent 70%);
+            opacity: 0;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+
+        /* Section wave dividers */
+        .wave-divider {
+            display: block;
+            width: calc(100% + 2px);
+            margin-left: -1px;
+            height: auto;
+            margin-bottom: -2px;
+        }
+
+        .hero-hills path,
+        .wave-divider path,
+        .footer-wave path {
+            shape-rendering: geometricPrecision;
+        }
+
+        /* Features */
+        .features {
+            padding: 100px 32px;
+            background: linear-gradient(180deg, #fef5ec 0%, #fff9f3 30%, #fff5f5 60%, #fdf0f8 100%);
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .feature-card:nth-child(1)::before { background: var(--tappy-blue); }
+        .feature-card:nth-child(2)::before { background: var(--tappy-orange); }
+        .feature-card:nth-child(3)::before { background: var(--tappy-pink); }
+        .feature-card:nth-child(4)::before { background: var(--tappy-purple); }
+        .feature-card:nth-child(5)::before { background: var(--tappy-green); }
+        .feature-card:nth-child(6)::before { background: var(--tappy-dark-blue); }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+
+        .feature-card:nth-child(1) .feature-icon { background: rgba(58, 173, 224, 0.15); color: var(--tappy-blue); }
+        .feature-card:nth-child(2) .feature-icon { background: rgba(255, 140, 66, 0.15); color: var(--tappy-orange); }
+        .feature-card:nth-child(3) .feature-icon { background: rgba(255, 107, 138, 0.15); color: var(--tappy-pink); }
+        .feature-card:nth-child(4) .feature-icon { background: rgba(166, 108, 255, 0.15); color: var(--tappy-purple); }
+        .feature-card:nth-child(5) .feature-icon { background: rgba(76, 217, 100, 0.15); color: var(--tappy-green); }
+        .feature-card:nth-child(6) .feature-icon { background: rgba(27, 107, 147, 0.15); color: var(--tappy-dark-blue); }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Screenshots */
+        .screenshots {
+            padding: 100px 32px;
+            background: var(--bg-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .screenshots .section-header h2 {
+            color: white;
+        }
+
+        .screenshots .section-header p {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .screenshots-track {
+            display: flex;
+            gap: 24px;
+            animation: scroll-left 45s linear infinite;
+            width: max-content;
+        }
+
+        .screenshots-track:hover {
+            animation-play-state: paused;
+        }
+
+        .screenshot-item {
+            flex-shrink: 0;
+            width: 260px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .screenshot-item:hover {
+            transform: scale(1.05);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 32px;
+            background: linear-gradient(180deg, #fef0f0 0%, #fce8f0 50%, #f0eafc 100%);
+            position: relative;
+        }
+
+        .testimonials-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .testimonial-stars {
+            color: #FFB800;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-card h4 {
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .testimonial-card p {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .testimonial-author {
+            display: block;
+            margin-top: 16px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--tappy-blue);
+        }
+
+        /* CTA */
+        .cta {
+            padding: 120px 32px 140px;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(180deg, #ede8ff 0%, #f3e7ff 30%, #f8ecff 58%, #fef3ff 80%, #fff8fb 100%);
+            overflow: hidden;
+        }
+
+        .cta-hills {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            pointer-events: none;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-character {
+            width: 180px;
+            margin-bottom: 30px;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .cta h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .cta h2 span {
+            background: linear-gradient(135deg, var(--tappy-orange), var(--tappy-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        /* Wave: CTA to Footer */
+        .footer-wave {
+            display: block;
+            width: calc(100% + 2px);
+            margin-left: -1px;
+            background: var(--bg-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 40px 32px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            height: 32px;
+            margin-bottom: 16px;
+            opacity: 0.8;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--tappy-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero {
+                --cloud-nav-offset: 84px;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+                margin-top: 86px;
+            }
+
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-cta {
+                justify-content: center;
+                align-items: center;
+            }
+
+            .hero-character {
+                width: 280px;
+            }
+
+            /* Keep clouds decorative and out of copy area on tablet/mobile */
+            .hc1 { width: 185px; top: calc(2% + var(--cloud-nav-offset)); left: -6%; }
+            .hc2 { width: 165px; top: calc(1% + var(--cloud-nav-offset)); right: -4%; }
+            .hc3, .hc4, .hc5, .hc6 { display: none; }
+
+            .features-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            nav {
+                padding: 12px 20px;
+            }
+
+            .nav-logo {
+                height: 48px;
+            }
+
+            .nav-download span {
+                display: none;
+            }
+
+            .nav-download {
+                padding: 10px 14px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                --cloud-nav-offset: 76px;
+            }
+
+            .hero {
+                padding: 120px 20px 60px;
+            }
+
+            .hero-content {
+                margin-top: 96px;
+                gap: 28px;
+            }
+
+            .features, .screenshots, .cta, .testimonials {
+                padding: 60px 20px;
+            }
+
+            .screenshot-item {
+                width: 200px;
+            }
+        }
+
+        /* Animations on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav id="navbar">
+        <a href="/">
+            <img
+                src="assets/images/tappy-logo-light.png"
+                alt="Tappy"
+                class="nav-logo"
+                id="navLogo"
+                data-light-logo="assets/images/tappy-logo-light.png"
+                data-dark-logo="assets/images/tappy-logo-dark.png"
+            >
+        </a>
+        <a href="https://apps.apple.com/us/app/tappy-sensory-fidget-focus/id1492017640" class="nav-download" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <span>Download on App Store</span>
+        </a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-atmosphere"></div>
+        <svg class="hero-stars" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid slice">
+            <circle cx="80" cy="45" r="1.2" fill="white" opacity="0.6"/>
+            <circle cx="200" cy="80" r="0.8" fill="white" opacity="0.4"/>
+            <circle cx="340" cy="30" r="1.0" fill="white" opacity="0.5"/>
+            <circle cx="450" cy="95" r="0.7" fill="white" opacity="0.35"/>
+            <circle cx="520" cy="25" r="1.3" fill="white" opacity="0.55"/>
+            <circle cx="650" cy="60" r="0.9" fill="white" opacity="0.45"/>
+            <circle cx="720" cy="110" r="0.7" fill="white" opacity="0.3"/>
+            <circle cx="830" cy="40" r="1.1" fill="white" opacity="0.5"/>
+            <circle cx="910" cy="85" r="0.8" fill="white" opacity="0.4"/>
+            <circle cx="150" cy="140" r="0.7" fill="white" opacity="0.3"/>
+            <circle cx="300" cy="160" r="0.9" fill="white" opacity="0.25"/>
+            <circle cx="480" cy="150" r="0.6" fill="white" opacity="0.2"/>
+            <circle cx="600" cy="170" r="0.8" fill="white" opacity="0.2"/>
+            <circle cx="760" cy="155" r="0.7" fill="white" opacity="0.25"/>
+            <circle cx="880" cy="140" r="0.6" fill="white" opacity="0.2"/>
+            <circle cx="50" cy="100" r="0.6" fill="white" opacity="0.35"/>
+            <circle cx="420" cy="55" r="1.0" fill="white" opacity="0.45"/>
+            <circle cx="570" cy="120" r="0.5" fill="white" opacity="0.25"/>
+            <circle cx="950" cy="50" r="0.9" fill="white" opacity="0.4"/>
+            <circle cx="270" cy="70" r="0.7" fill="white" opacity="0.35"/>
+            <circle cx="680" cy="35" r="1.1" fill="white" opacity="0.5"/>
+            <circle cx="130" cy="20" r="0.8" fill="white" opacity="0.5"/>
+            <circle cx="380" cy="105" r="0.6" fill="white" opacity="0.3"/>
+            <circle cx="800" cy="80" r="0.9" fill="white" opacity="0.35"/>
+        </svg>
+        <svg class="hero-cloud cloud-front hc1" viewBox="0 0 280 140" aria-hidden="true">
+            <path d="M33 102c-17 0-31-12-31-28 0-13 9-24 22-27 2-22 22-39 47-39 12 0 23 4 31 11 8-11 22-18 38-18 24 0 44 16 49 37 3-1 6-1 9-1 19 0 34 14 34 31 0 19-17 34-38 34H33z"/>
+        </svg>
+        <svg class="hero-cloud cloud-front hc2" viewBox="0 0 260 130" aria-hidden="true">
+            <path d="M29 95c-15 0-27-11-27-25 0-11 8-21 18-24 2-20 20-35 42-35 10 0 20 4 27 10 7-10 20-16 35-16 22 0 40 14 45 34 3-1 5-1 8-1 17 0 31 12 31 28 0 16-14 29-32 29H29z"/>
+        </svg>
+        <svg class="hero-cloud cloud-back hc3" viewBox="0 0 210 110" aria-hidden="true">
+            <path d="M22 80c-12 0-22-9-22-20 0-9 6-17 15-19 2-16 16-28 33-28 8 0 15 3 21 8 6-8 16-13 27-13 17 0 31 11 35 26 2 0 4-1 6-1 13 0 24 10 24 22s-11 23-25 23H22z"/>
+        </svg>
+        <svg class="hero-cloud cloud-back hc4" viewBox="0 0 240 120" aria-hidden="true">
+            <path d="M28 87c-13 0-24-9-24-22 0-10 7-18 16-21 2-17 17-30 36-30 9 0 17 3 23 8 6-9 18-14 30-14 19 0 34 12 38 29 2 0 4-1 7-1 15 0 27 11 27 24 0 15-12 27-28 27H28z"/>
+        </svg>
+        <svg class="hero-cloud cloud-back hc5" viewBox="0 0 200 105" aria-hidden="true">
+            <path d="M20 75c-11 0-20-8-20-18 0-8 6-15 14-18 2-15 15-26 31-26 8 0 14 2 19 7 6-7 15-12 25-12 15 0 28 10 31 24 2 0 3-1 5-1 12 0 21 9 21 20 0 13-10 24-23 24H20z"/>
+        </svg>
+        <svg class="hero-cloud cloud-back hc6" viewBox="0 0 220 112" aria-hidden="true">
+            <path d="M24 82c-12 0-22-9-22-20 0-9 7-17 15-20 2-17 17-29 35-29 8 0 16 3 22 8 6-8 16-13 28-13 17 0 31 11 35 27 2 0 4-1 6-1 14 0 24 10 24 22 0 14-11 26-26 26H24z"/>
+        </svg>
+        <svg class="hero-hills" viewBox="0 0 1440 140" preserveAspectRatio="none">
+            <path d="M0,140 L0,100 Q180,40 360,75 Q540,110 720,60 Q900,10 1080,50 Q1260,90 1440,45 L1440,140 Z" fill="rgba(255,225,180,0.35)"/>
+            <path d="M0,140 L0,110 Q200,55 400,85 Q600,115 800,70 Q1000,30 1200,65 Q1350,95 1440,60 L1440,140 Z" fill="rgba(255,235,195,0.5)"/>
+            <path d="M0,140 L0,115 Q240,80 480,100 Q720,120 960,90 Q1200,60 1440,85 L1440,140 Z" fill="#fff0d0"/>
+        </svg>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>The Ultimate Sensory Fidget &amp; <span>Focus App.</span></h1>
+                <p>Tappy is your all-in-one sensory fidget app with satisfying haptic toys, guided meditations, grounding exercises, Audio-Haptic Feelscapes, mood tracking, to-do and habit tools, and quick arcade games. Personalized themes, sounds, and haptics make every tap feel fun, calming, and uniquely yours.</p>
+                <div class="hero-cta">
+                    <a href="https://apps.apple.com/us/app/tappy-sensory-fidget-focus/id1492017640" class="app-store-badge" target="_blank" rel="noopener" aria-label="Download Tappy on the App Store">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+                    </a>
+                    <div class="hero-rating">
+                        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <span class="rating-text">4.8 &middot; 18K+ Ratings</span>
+                    </div>
+                    <p class="hero-downloads">Over 1 million downloads worldwide.</p>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-blob"></div>
+                <img src="assets/images/tappy-character.png" alt="Tappy and friends characters" class="hero-character">
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave: Hero to Features -->
+    <svg class="wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" style="background: #fef5ec;">
+        <path d="M0,0 L1440,0 L1440,10 Q1080,55 720,25 Q360,0 0,40 Z" fill="#fff0d0"/>
+        <path d="M0,30 Q360,60 720,30 Q1080,0 1440,30 L1440,60 L0,60 Z" fill="#fef5ec"/>
+    </svg>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="section-header fade-in">
+            <h2>Your one-stop sensory <span style="color: var(--tappy-blue);">fidget app.</span></h2>
+            <p>Tappy is a feature-packed sensory fidget and focus app designed for daily grounding, routines, and fun.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                </div>
+                <h3>Sensory Fidget Tools</h3>
+                <p>Ultra-satisfying haptic fidget toys right on your phone. Buttons, toggles, spinners, dials, and more — all with incredible haptic feedback and sound effects.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                </div>
+                <h3>Meditations, Grounding &amp; Feelscapes</h3>
+                <p>Guided meditations, grounding exercises, Audio-Haptic Feelscapes&trade;, breathing sessions, and ambient soundscapes to help you unwind, focus, and reset.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M2 9h20"/><path d="M12 22V9"/></svg>
+                </div>
+                <h3>Arcade Games</h3>
+                <p>Quick, fun haptic mini-games like Zen Pond, Tap-Tris, Snake, and Bubble Popper. Play solo or challenge friends with multiplayer!</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                </div>
+                <h3>Mood &amp; Journal</h3>
+                <p>Track your mood, journal about your day, and view insights over time. Lock your entries with Face ID or Touch ID for complete privacy.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <h3>To-Do &amp; Habit Tracking</h3>
+                <p>Plan your day with a built-in to-do list, track daily goals like reading or movement, and stay consistent with simple progress insights.</p>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+                </div>
+                <h3>Customize Everything</h3>
+                <p>Name your Tappy, pick a theme color, choose your favorite face, and adjust haptic intensity. Make it truly yours.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave: Features to Screenshots -->
+    <svg class="wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" style="background: var(--bg-dark);">
+        <path d="M0,0 Q360,50 720,25 Q1080,0 1440,40 L1440,60 L0,60 Z" fill="var(--bg-dark)"/>
+        <path d="M0,0 L1440,0 L1440,5 Q1080,45 720,20 Q360,0 0,30 Z" fill="#fdf0f8"/>
+    </svg>
+
+    <!-- Screenshots -->
+    <section class="screenshots">
+        <div class="section-header fade-in">
+            <h2>See Tappy in action.</h2>
+            <p>A peek inside the app that makes sensory focus and daily routines actually fun.</p>
+        </div>
+        <div class="screenshots-track">
+            <div class="screenshot-item"><img src="assets/screenshots/00-main.png" alt="Tappy app with sensory fidget and focus tools" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/01-tap.png" alt="Tappy - tap your new favorite haptic digital pet" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/02-fidget.png" alt="Tappy fidget tools with ultra satisfying haptics" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/03-arcade.png" alt="Tappy arcade - fun quick haptic mini-games" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/04-relax.png" alt="Tappy relax with Audio-Haptic Feelscapes and meditations" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/05-customize.png" alt="Tappy customizer - haptics, moods, and more" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/06-pop.png" alt="Tappy Pop It - satisfying bubble popping" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/07-spin.png" alt="Tappy fidget spinner with haptic feedback" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/08-mood.png" alt="Tappy mood tracking, journaling, and habit tracker" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/09-soundscapes.png" alt="Tappy immersive soundscapes - vibrations, visuals, and sounds" loading="lazy"></div>
+            <!-- Duplicate for seamless loop -->
+            <div class="screenshot-item"><img src="assets/screenshots/00-main.png" alt="Tappy app" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/01-tap.png" alt="Tappy tap" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/02-fidget.png" alt="Tappy fidget" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/03-arcade.png" alt="Tappy arcade" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/04-relax.png" alt="Tappy relax" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/05-customize.png" alt="Tappy customize" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/06-pop.png" alt="Tappy pop" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/07-spin.png" alt="Tappy spin" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/08-mood.png" alt="Tappy mood" loading="lazy"></div>
+            <div class="screenshot-item"><img src="assets/screenshots/09-soundscapes.png" alt="Tappy soundscapes" loading="lazy"></div>
+        </div>
+    </section>
+
+    <!-- Wave: Screenshots to Testimonials -->
+    <svg class="wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" style="background: #fef0f0;">
+        <path d="M0,0 L1440,0 L1440,20 Q1080,55 720,30 Q360,5 0,40 Z" fill="var(--bg-dark)"/>
+    </svg>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header fade-in">
+            <h2>Loved by thousands.</h2>
+            <p>See what people are saying about Tappy on the App Store.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>There was a lot of thought put into this app. The visuals, sounds and haptics are all very good quality. The app is responsive and I've never experienced a bug. It is well worth it. Very soothing. I highly recommend.</p>
+                <span class="testimonial-author">&mdash; Tappy User</span>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>I absolutely love this thing. It is like the best ever I cannot stop. I just got it not that long ago and it is already one of my favorite apps ever. If I could, I would rate it 100 out of 100.</p>
+                <span class="testimonial-author">&mdash; Tappy User</span>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>Tappy is great. I love how it makes you relax. I really get to relax more and I get to meditate a lot and that just saved my day.</p>
+                <span class="testimonial-author">&mdash; Tappy User</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave: Testimonials to CTA -->
+    <svg class="wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" style="background: #f0eafc;">
+        <path d="M0,0 L1440,0 L1440,25 Q1080,55 720,30 Q360,5 0,45 Z" fill="#f0eafc"/>
+    </svg>
+
+    <!-- CTA -->
+    <section class="cta">
+        <svg class="cta-hills" viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,80 L0,50 Q240,10 480,35 Q720,60 960,25 Q1200,0 1440,30 L1440,80 Z" fill="rgba(214, 198, 255, 0.20)"/>
+            <path d="M0,80 L0,60 Q300,30 600,50 Q900,70 1200,40 L1440,55 L1440,80 Z" fill="rgba(236, 226, 255, 0.30)"/>
+        </svg>
+        <div class="cta-content fade-in">
+            <img src="assets/images/tappy-wave.png" alt="Tappy waving" class="cta-character">
+            <h2>Start <span>tapping!</span></h2>
+            <p>Join hundreds of thousands of users who love Tappy. Free to download on the App Store.</p>
+            <a href="https://apps.apple.com/us/app/tappy-sensory-fidget-focus/id1492017640" class="app-store-badge" target="_blank" rel="noopener" aria-label="Download Tappy on the App Store">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+            </a>
+        </div>
+    </section>
+
+    <!-- Wave: CTA to Footer -->
+    <svg class="footer-wave" viewBox="0 0 1440 50" preserveAspectRatio="none">
+        <path d="M0,0 Q360,45 720,20 Q1080,0 1440,30 L1440,50 L0,50 Z" fill="var(--bg-dark)"/>
+        <path d="M0,0 L1440,0 L1440,5 Q1080,40 720,15 Q360,0 0,25 Z" fill="#eab87a"/>
+    </svg>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <img src="assets/images/tappy-logo-light.png" alt="Tappy" class="footer-logo">
+            <p>&copy; 2019&ndash;2026 Pacific Interactive LLC. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="https://apps.apple.com/us/app/tappy-sensory-fidget-focus/id1492017640" target="_blank" rel="noopener">App Store</a>
+                &nbsp;&middot;&nbsp;
+                <a href="https://www.pacific.dev/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+                &nbsp;&middot;&nbsp;
+                <a href="https://www.pacific.dev/terms" target="_blank" rel="noopener">Terms</a>
+                &nbsp;&middot;&nbsp;
+                <a href="https://www.pacific.dev" target="_blank" rel="noopener">Pacific Interactive</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Nav scroll effect
+        const nav = document.getElementById('navbar');
+        const navLogo = document.getElementById('navLogo');
+
+        const updateNavState = () => {
+            const isScrolled = window.scrollY > 50;
+            nav.classList.toggle('scrolled', isScrolled);
+            navLogo.src = isScrolled ? navLogo.dataset.darkLogo : navLogo.dataset.lightLogo;
+        };
+
+        window.addEventListener('scroll', updateNavState);
+        updateNavState();
+
+        // Fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+
+</body>
+</html>
