@@ -906,6 +906,20 @@
             overflow: hidden;
         }
 
+        .cta-bg-shapes {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .cta-bg-shape {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            will-change: transform;
+        }
+
         .cta-hills {
             display: none;
         }
@@ -1372,6 +1386,7 @@
 
     <!-- CTA -->
     <section class="cta">
+        <div class="cta-bg-shapes" aria-hidden="true"></div>
         <svg class="cta-hills" viewBox="0 0 1440 80" preserveAspectRatio="none">
             <path d="M0,80 L0,50 Q240,10 480,35 Q720,60 960,25 Q1200,0 1440,30 L1440,80 Z" fill="rgba(214, 198, 255, 0.20)"/>
             <path d="M0,80 L0,60 Q300,30 600,50 Q900,70 1200,40 L1440,55 L1440,80 Z" fill="rgba(236, 226, 255, 0.30)"/>
@@ -1569,6 +1584,88 @@
         };
 
         generateScreenshotsShapes();
+
+        // Random floating color accents for CTA section
+        const generateCtaShapes = () => {
+            const section = document.querySelector('.cta');
+            const shapesLayer = section?.querySelector('.cta-bg-shapes');
+            if (!section || !shapesLayer) return;
+
+            const colors = [
+                'rgba(25, 168, 255, 0.26)',
+                'rgba(255, 162, 61, 0.28)',
+                'rgba(255, 122, 166, 0.24)',
+                'rgba(255, 203, 47, 0.26)',
+                'rgba(122, 99, 255, 0.2)',
+                'rgba(140, 232, 157, 0.22)'
+            ];
+            const shapeTypes = ['circle', 'square', 'pill', 'diamond'];
+            const isMobile = window.matchMedia('(max-width: 900px)').matches;
+            const shapeCount = isMobile ? 4 : 7;
+
+            const sectionRect = section.getBoundingClientRect();
+            const safeBounds = {
+                minX: 10,
+                maxX: 90,
+                minY: 14,
+                maxY: 86
+            };
+            const maxAttempts = 120;
+
+            shapesLayer.innerHTML = '';
+            const placed = [];
+
+            for (let i = 0, attempts = 0; placed.length < shapeCount && attempts < maxAttempts; attempts += 1) {
+                const shape = document.createElement('span');
+                shape.className = 'cta-bg-shape';
+                const type = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
+                const size = isMobile
+                    ? Math.floor(38 + Math.random() * 44)
+                    : Math.floor(52 + Math.random() * 68);
+                const x = safeBounds.minX + Math.random() * (safeBounds.maxX - safeBounds.minX);
+                const y = safeBounds.minY + Math.random() * (safeBounds.maxY - safeBounds.minY);
+                const rotation = Math.floor(Math.random() * 70) - 35;
+
+                let width = size;
+                let height = size;
+                let borderRadius = '50%';
+                let shapeRotation = rotation;
+
+                if (type === 'square') {
+                    borderRadius = `${Math.max(10, Math.floor(size * 0.2))}px`;
+                } else if (type === 'pill') {
+                    width = Math.floor(size * 1.55);
+                    height = Math.floor(size * 0.7);
+                    borderRadius = '999px';
+                } else if (type === 'diamond') {
+                    borderRadius = `${Math.max(8, Math.floor(size * 0.16))}px`;
+                    shapeRotation = rotation + 45;
+                }
+
+                const centerX = (x / 100) * sectionRect.width;
+                const centerY = (y / 100) * sectionRect.height;
+                const spacing = isMobile ? 10 : 14;
+                const overlapsExisting = placed.some((p) =>
+                    Math.abs(centerX - p.centerX) < (width + p.width) / 2 + spacing &&
+                    Math.abs(centerY - p.centerY) < (height + p.height) / 2 + spacing
+                );
+                if (overlapsExisting) continue;
+
+                shape.style.left = `${x}%`;
+                shape.style.top = `${y}%`;
+                shape.style.width = `${width}px`;
+                shape.style.height = `${height}px`;
+                shape.style.borderRadius = borderRadius;
+                shape.style.background = colors[Math.floor(Math.random() * colors.length)];
+                shape.style.transform = `translate(-50%, -50%) rotate(${shapeRotation}deg)`;
+
+                shapesLayer.appendChild(shape);
+                placed.push({ centerX, centerY, width, height });
+                i += 1;
+            }
+        };
+
+        generateCtaShapes();
 
         // Fade-in on scroll
         const observer = new IntersectionObserver((entries) => {
