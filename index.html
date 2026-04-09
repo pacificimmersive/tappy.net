@@ -412,6 +412,11 @@
             max-width: 100%;
         }
 
+        .hero-character-3d {
+            min-height: 380px;
+            position: relative;
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
@@ -1077,6 +1082,9 @@
             .hero-character {
                 width: 280px;
             }
+            .hero-character-3d {
+                min-height: 280px;
+            }
 
             /* Smaller clouds on mobile so hero text can sit higher */
             .hc1 { width: 118px; top: calc(2% + var(--cloud-nav-offset)); left: -4%; }
@@ -1258,7 +1266,7 @@
             </div>
             <div class="hero-visual">
                 <div class="hero-blob"></div>
-                <img src="assets/images/tappy-character.png" alt="Tappy and friends characters" class="hero-character">
+                <div id="tappy-3d-container" class="hero-character hero-character-3d" role="img" aria-label="Tappy and friends characters"></div>
             </div>
         </div>
     </section>
@@ -1690,6 +1698,7 @@
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 
-
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script src="assets/js/tappy-3d.js"></script>
 </body>
 </html>
