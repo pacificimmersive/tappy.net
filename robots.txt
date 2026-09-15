@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tappy.net/sitemap.xml
+Sitemap: https://www.tappy.net/sitemap.xml

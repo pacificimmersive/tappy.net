@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tappy Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for Tappy: Sensory Fidget &amp; Focus. Your mood, journal, and progress stay on your device and in your own iCloud. No accounts, no ads, no analytics, no tracking.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.tappy.net/privacy/">
+
+    <meta property="og:title" content="Tappy Privacy Policy">
+    <meta property="og:description" content="How Tappy handles your information: on your device and in your own iCloud, with no accounts, ads, analytics, or tracking.">
+    <meta property="og:url" content="https://www.tappy.net/privacy/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Tappy">
+    <meta property="og:image" content="https://www.tappy.net/assets/images/tappy-banner.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --ink: #111111;
+            --muted: #6b6b6b;
+            --link: #2563eb;
+            --line: #e6e6e6;
+            --paper: #ffffff;
+            --canvas: #f3f3f3;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--ink);
+            background: var(--canvas);
+            line-height: 1.65;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .site-header-inner {
+            position: relative;
+            max-width: 1180px;
+            margin: 0 auto;
+            min-height: 88px;
+            padding: 14px 28px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+        }
+
+        .site-header-inner a:first-child {
+            grid-column: 2;
+            justify-self: center;
+        }
+
+        .site-header img {
+            height: 64px;
+            display: block;
+        }
+
+        .header-link {
+            grid-column: 3;
+            justify-self: end;
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .header-link:hover { text-decoration: underline; }
+
+        .page {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 48px 28px 96px;
+            display: grid;
+            grid-template-columns: 220px minmax(0, 1fr);
+            gap: 56px;
+            align-items: start;
+        }
+
+        .toc {
+            position: sticky;
+            top: 104px;
+        }
+
+        .toc h2 {
+            color: #8a8a8a;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            margin-bottom: 16px;
+        }
+
+        .toc ol {
+            list-style: none;
+        }
+
+        .toc a {
+            display: block;
+            color: #8a8a8a;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            line-height: 1.35;
+            padding: 7px 0;
+            text-transform: uppercase;
+        }
+
+        .toc a:hover,
+        .toc a.active {
+            color: #111;
+        }
+
+        .doc {
+            background: var(--paper);
+            border: 1px solid #d9d9d9;
+            border-radius: 24px;
+            padding: 56px 64px 72px;
+        }
+
+        .doc > h1 {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 28px;
+        }
+
+        .effective {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+
+        .summary {
+            background: #f6f8fb;
+            border: 1px solid #dfe5ee;
+            border-radius: 16px;
+            padding: 22px 26px;
+            margin: 0 0 28px;
+        }
+
+        .summary h2 {
+            margin: 0 0 12px !important;
+            font-size: 18px !important;
+            text-transform: none !important;
+        }
+
+        .summary ul { margin-bottom: 0; }
+
+        .rule {
+            border: 0;
+            border-top: 1px solid var(--line);
+            margin: 28px 0;
+        }
+
+        .doc h2 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin: 48px 0 16px;
+            scroll-margin-top: 104px;
+            text-transform: uppercase;
+        }
+
+        .doc h2:first-of-type { margin-top: 8px; }
+
+        .doc h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 24px 0 8px;
+            scroll-margin-top: 104px;
+        }
+
+        .doc p,
+        .doc li {
+            font-size: 16px;
+            color: #222;
+        }
+
+        .doc p { margin-bottom: 16px; }
+
+        .doc ul,
+        .doc ol.content-list {
+            margin: 0 0 16px 22px;
+        }
+
+        .doc li { margin-bottom: 8px; }
+
+        .doc a {
+            color: var(--link);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .doc table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 0 20px;
+            font-size: 15px;
+        }
+
+        .doc th,
+        .doc td {
+            text-align: left;
+            vertical-align: top;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--line);
+            color: #222;
+        }
+
+        .doc th {
+            font-weight: 700;
+            background: #fafafa;
+        }
+
+        .doc td:first-child { font-weight: 600; width: 28%; }
+
+        .site-footer {
+            background: var(--canvas);
+            color: #6b6b6b;
+            text-align: center;
+            padding: 0 28px 48px;
+            font-size: 13px;
+        }
+
+        .site-footer a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .site-footer a:hover { text-decoration: underline; }
+
+        .site-footer p + p { margin-top: 8px; }
+
+        @media (max-width: 900px) {
+            .page {
+                grid-template-columns: 1fr;
+                gap: 28px;
+                padding: 24px 16px 64px;
+            }
+
+            .toc {
+                position: static;
+            }
+
+            .toc a {
+                display: inline;
+                text-transform: none;
+                font-size: 13px;
+                letter-spacing: 0;
+                padding: 0;
+            }
+
+            .toc ol {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .doc {
+                padding: 32px 20px 48px;
+            }
+
+            .doc > h1 {
+                font-size: 32px;
+            }
+
+            .site-header-inner {
+                padding: 10px 16px;
+            }
+
+            .doc table,
+            .doc thead,
+            .doc tbody,
+            .doc tr,
+            .doc th,
+            .doc td {
+                display: block;
+                width: 100%;
+            }
+
+            .doc thead { display: none; }
+
+            .doc td { border-bottom: 0; padding: 6px 0; }
+
+            .doc td:first-child { padding-top: 14px; }
+
+            .doc tr { border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a href="/"><img src="../assets/images/tappy-logo-dark.png" alt="Tappy"></a>
+            <a class="header-link" href="/">Home</a>
+        </div>
+    </header>
+
+    <div class="page">
+        <nav class="toc" aria-label="Table of contents">
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#short-version">The short version</a></li>
+                <li><a href="#scope">1. Who we are and what this covers</a></li>
+                <li><a href="#principles">2. Our principles</a></li>
+                <li><a href="#information">3. Information Tappy handles</a></li>
+                <li><a href="#not-collected">4. What Tappy does not do</a></li>
+                <li><a href="#use">5. How information is used</a></li>
+                <li><a href="#storage">6. Where your data lives</a></li>
+                <li><a href="#health">7. Apple Health</a></li>
+                <li><a href="#sharing">8. When information is shared</a></li>
+                <li><a href="#consumer-health-data">9. Consumer health data notice</a></li>
+                <li><a href="#children">10. Children</a></li>
+                <li><a href="#choices">11. Your choices and controls</a></li>
+                <li><a href="#deletion">12. Deleting your data</a></li>
+                <li><a href="#retention">13. How long information is kept</a></li>
+                <li><a href="#security">14. Security</a></li>
+                <li><a href="#rights">15. Your privacy rights</a></li>
+                <li><a href="#international">16. International users</a></li>
+                <li><a href="#website">17. The tappy.net website</a></li>
+                <li><a href="#app-store-label">18. App Store privacy label</a></li>
+                <li><a href="#changes">19. Changes to this policy</a></li>
+                <li><a href="#contact">20. Contact</a></li>
+            </ol>
+        </nav>
+
+        <article class="doc">
+            <h1>Tappy Privacy Policy</h1>
+            <p class="effective">Effective: September 8, 2026.</p>
+
+            <p>If you are visually impaired, have another disability, or need help accessing this Privacy Policy, email us at <a href="mailto:cameron@pacific.dev">cameron@pacific.dev</a>.</p>
+
+            <section class="summary" id="short-version">
+                <h2>The short version</h2>
+                <ul>
+                    <li><strong>Your mood entries, journal, habits, to-dos, drawings, and progress stay on your device</strong> and, if you turn on iCloud, in your own iCloud account. Pacific Interactive LLC cannot see them and never receives a copy.</li>
+                    <li><strong>Tappy has no accounts, no login, no advertising, no analytics SDKs, and no tracking.</strong> We do not use the advertising identifier, we do not fingerprint your device, and we never sell information about you.</li>
+                    <li><strong>The only information about you that leaves your device for our benefit is an anonymous purchase record</strong> held by our subscription-management provider (currently RevenueCat) so that Tappy Plus and other purchases keep working across your devices.</li>
+                    <li><strong>Apple Health integration is off by default.</strong> When you turn it on, Tappy writes Mindful Minutes and (with Tappy Plus) State of Mind entries to the Health app on your device. That data never goes to us and is never used for marketing.</li>
+                    <li><strong>You are in control.</strong> You can export your mood journal as a CSV, lock it with Face ID, revoke any permission, and delete everything by deleting the app and its iCloud data. Section 12 walks you through it.</li>
+                </ul>
+            </section>
+
+            <hr class="rule">
+
+            <h2 id="scope">1. Who we are and what this covers</h2>
+            <p>Pacific Interactive LLC (“<strong>Pacific</strong>,” “<strong>we</strong>,” “<strong>us</strong>,” or “<strong>our</strong>”), a California limited liability company, publishes <em>Tappy: Sensory Fidget &amp; Focus</em>. This Privacy Policy explains what information the Tappy iPhone and iPad app, the Tappy Apple Watch app, Tappy’s widgets, and the website at tappy.net (together, the “<strong>Service</strong>”) handle, where that information lives, who can see it, and the choices you have.</p>
+            <p>This policy applies only to Tappy and tappy.net. Pacific’s other applications have their own privacy policies. If a link inside the App or on a Pacific website points to Pacific’s general privacy policy, this Tappy Privacy Policy controls for Tappy to the extent of any conflict.</p>
+            <p>For purposes of data-protection laws such as the GDPR, Pacific Interactive LLC is the “controller” of the limited information described in this policy that we actually receive. Information that stays on your device or in your personal iCloud account is under your control and Apple’s, under your agreements with Apple; we do not have access to it.</p>
+            <p>Tappy is a casual sensory fidget, entertainment, and general wellness companion. It is not a medical service and does not collect information for medical purposes. Our <a href="/terms/">Terms &amp; Conditions</a> describe the Service’s wellness disclaimers and govern your use of it.</p>
+
+            <h2 id="principles">2. Our principles</h2>
+            <ul>
+                <li><strong>Keep it on your device.</strong> The best way to protect your information is not to collect it. Tappy is built so that the personal things you record never need to reach a server we run. We do not run a server that stores your content.</li>
+                <li><strong>No accounts, no ads, no tracking.</strong> Tappy is funded by optional purchases, not by data. There is nothing in Tappy that profiles you, follows you across apps or websites, or shows you advertising.</li>
+                <li><strong>Only what a feature needs, only while you use it.</strong> Every device permission Tappy asks for powers a specific feature you tapped on, is used on your device, and can be turned off in iOS Settings without breaking the rest of the app.</li>
+                <li><strong>Plain language.</strong> We have tried to write this policy so a normal person can read it. If anything is unclear, email us and we will explain, and we may improve the wording.</li>
+                <li><strong>If we change something, we will tell you.</strong> Tappy will not start collecting new categories of information without updating this policy first and, where the law requires it, asking for your consent.</li>
+            </ul>
+
+            <h2 id="information">3. Information Tappy handles, and where it lives</h2>
+            <p>This section lists every category of information Tappy works with. For each one we say where the data is stored and whether Pacific can see it. “On your device” means stored inside Tappy’s private storage on your iPhone, iPad, or Apple Watch. “Your iCloud” means the private iCloud database associated with your Apple Account, which only you (and Apple, under Apple’s iCloud terms) can access.</p>
+
+            <h3 id="content">3.1 Content you create</h3>
+            <p>When you use Tappy’s wellness and planning features, you may enter: mood or emotion selections; feelings, activities, and reasons you tag; journal text and the prompt you responded to; habit names, mottos, notes, and reminder times; to-do titles, notes, and subtasks; goals and goal updates; drawings; the name you give your Tappy character; and your customization preferences (theme colors, faces, sounds, haptic intensity, and similar settings).</p>
+            <p><strong>Where it lives:</strong> on your device, and in your iCloud if you have iCloud enabled for Tappy. <strong>Can Pacific see it?</strong> No. Tappy does not upload this content to Pacific servers, and Pacific has no ability to read your private iCloud database. We do not use it to train models, build profiles, or for advertising.</p>
+
+            <h3 id="progress">3.2 Game and progress data</h3>
+            <p>Tappy keeps track of gameplay and care mechanics: tap counts, Sparks, Self-Care Streaks and Streak Freezes, energy and hunger, wardrobe and equipped items, badges, Daily Adventure quests and chest history, timers, and arcade scores.</p>
+            <p><strong>Where it lives:</strong> on your device and, for most of it, in your iCloud so that it syncs between your devices. The Apple Watch app keeps its own settings and tap counts on the watch. <strong>Can Pacific see it?</strong> No, except for aggregate Game Center scores and achievements you choose to submit (see Section 3.6).</p>
+
+            <h3 id="health-data">3.3 Apple Health data</h3>
+            <p>If you turn on Apple Health integration, Tappy writes Mindful Minutes from breathing and meditation sessions and, with Tappy Plus, State of Mind entries derived from your mood entries into the Health app. Section 7 describes this in detail. <strong>Can Pacific see it?</strong> No. Health data stays in Apple Health on your device and is never transmitted to us.</p>
+
+            <h3 id="purchases">3.4 Purchase information</h3>
+            <p>Tappy Plus (monthly, annual, or lifetime), the optional “Buy Me Coffee” tip, and any legacy one-time packs are sold through Apple’s App Store. Apple processes the payment and holds your payment details and Apple Account information under Apple’s privacy policy. We never receive your name, email address, or payment card details from a purchase.</p>
+            <p>To confirm which purchases are active and to restore them on a new device, Tappy uses a subscription-management provider, currently <strong>RevenueCat, Inc.</strong> RevenueCat receives and stores, on our behalf:</p>
+            <ul>
+                <li>a randomly generated anonymous identifier created by the RevenueCat software on your device (it is not your Apple ID, name, email, or advertising identifier, and Tappy does not link it to anything that identifies you);</li>
+                <li>your App Store receipt and the transaction details derived from it (product identifiers, purchase and renewal dates, prices, refund or cancellation status);</li>
+                <li>basic technical context: platform, iOS version, Tappy version, country, and locale, plus first-seen and last-seen timestamps.</li>
+            </ul>
+            <p>Tappy does not send RevenueCat your name, email, phone number, IP address as a stored attribute, advertising identifier, or any content from the app. Like any internet service, RevenueCat’s servers necessarily see your device’s IP address while the app is communicating with them. RevenueCat acts as our service provider (a “processor”), may use the data only to provide its service to us, and describes its practices in its <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">privacy policy</a>. We can see this anonymous purchase record in RevenueCat’s dashboard; it does not tell us who you are.</p>
+
+            <h3 id="permissions">3.5 Device features and permissions</h3>
+            <p>Tappy asks for the following iOS permissions only when you open the feature that needs them. Each is used on your device only and can be revoked at any time in iOS Settings; the related feature then becomes unavailable while the rest of Tappy keeps working.</p>
+            <table>
+                <thead>
+                    <tr><th>Permission</th><th>What it powers</th><th>What happens to the data</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Camera</td>
+                        <td>An optional live camera backdrop behind the fidget spinner.</td>
+                        <td>The live preview is shown on screen only. No photo or video is captured, saved, analyzed, or uploaded.</td>
+                    </tr>
+                    <tr>
+                        <td>Location (While Using)</td>
+                        <td>The compass fidget, which needs your device’s heading to point north.</td>
+                        <td>Tappy uses the heading and reads location only as required by iOS to provide heading. Location is not stored, not shared, and not used for anything else. Tappy estimates where the sun and moon are for the character’s backdrop from your device’s time zone, not from your location.</td>
+                    </tr>
+                    <tr>
+                        <td>Motion sensors</td>
+                        <td>Tilt-based physics fidgets (for example the ball pit, slinky, and bouncy ball).</td>
+                        <td>Accelerometer and gyroscope readings drive on-screen physics in real time and are not stored.</td>
+                    </tr>
+                    <tr>
+                        <td>Local Network</td>
+                        <td>Nearby multiplayer (for example Connect Four over your local Wi‑Fi).</td>
+                        <td>Your device’s name (as set in iOS Settings, for example “Sam’s iPhone”) is shown to the nearby player you connect with, and game moves are exchanged directly between the two devices. Nothing goes through Pacific servers. Same-device games share nothing.</td>
+                    </tr>
+                    <tr>
+                        <td>Face ID / Touch ID</td>
+                        <td>The optional journal lock, which asks you to authenticate before opening the Mood Journal or exporting it.</td>
+                        <td>Authentication is handled entirely by iOS. Tappy never sees your biometric data; it only receives a yes-or-no result.</td>
+                    </tr>
+                    <tr>
+                        <td>Notifications</td>
+                        <td>Reminders you set (mood check-ins, habits, to-dos, Daily Adventure, timers), plus silent iCloud sync notifications.</td>
+                        <td>Reminders are scheduled locally on your device. They may include your Tappy character’s name and the names of habits or to-dos you created, so they can be visible on your lock screen. They never include journal text. Silent sync notifications come from Apple’s iCloud service and contain no content.</td>
+                    </tr>
+                    <tr>
+                        <td>Apple Health</td>
+                        <td>Optional Mindful Minutes and State of Mind sync.</td>
+                        <td>See Section 7.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Tappy does not request access to your microphone, photo library, contacts, calendar, Bluetooth, or precise background location.</p>
+
+            <h3 id="game-center">3.6 Game Center and nearby multiplayer</h3>
+            <p>If you are signed in to Game Center, Tappy can submit arcade scores (for example tap counts, Snake, Tap-Tris, Bubble Pop times, and Mini Golf stars) to leaderboards and report tap-milestone achievements. Game Center is operated by Apple. Your Game Center nickname, avatar, scores, and achievements are handled under <a href="https://www.apple.com/legal/privacy/data/en/game-center/" target="_blank" rel="noopener">Apple’s Game Center privacy terms</a> and your Game Center settings, which you control in iOS Settings. Tappy never submits mood, journal, or health information to Game Center. Nearby multiplayer is described in Section 3.5.</p>
+
+            <h3 id="remote-config">3.7 Remote configuration and shop catalog</h3>
+            <p>Tappy reads a small amount of information from a public, read-only Apple iCloud (CloudKit) database that Pacific maintains: announcements, sale banners, the minimum supported app version, the current legal-notice version, and the wardrobe and shop catalog. This lets us update content without shipping a new app version. The App only reads from this database; it never writes anything about you to it. The request goes to Apple’s CloudKit service, which handles it under Apple’s privacy policy. Pacific receives no per-user information from these reads.</p>
+            <p>When you accept our Terms and this Privacy Policy in the App, Tappy records the version you accepted and the date on your device only. That record is not sent to us.</p>
+
+            <h3 id="communications">3.8 Communications with us</h3>
+            <p>If you email us (for support, feedback, a privacy request, or anything else), we receive your email address, whatever you write, and any attachments you include. We use that information only to respond to you, to fix problems, and to keep a record of the request where the law requires it. Please do not send us journal entries or health details unless you want us to have them; we do not need them to help you.</p>
+            <p>If you have chosen in iOS Settings to share analytics with app developers, Apple may provide us with aggregated, de-identified crash reports and usage statistics through App Store Connect. These do not identify you, and we cannot link them to you.</p>
+
+            <h3 id="site-visitors">3.9 Website visitors</h3>
+            <p>Visiting tappy.net (including when the App opens one of our web pages, such as this one, inside the App) is described in Section 17.</p>
+
+            <h2 id="not-collected">4. What Tappy does not do</h2>
+            <p>Because privacy policies usually describe what a company collects, it is worth stating clearly what Tappy does not do:</p>
+            <ul>
+                <li>No user accounts, passwords, or login. There is no Pacific account to create, and we hold no profile of you.</li>
+                <li>No third-party advertising, ad networks, or advertising SDKs. Tappy has never shown third-party ads and does not use the Apple advertising identifier (IDFA) or App Tracking Transparency, because there is nothing to track.</li>
+                <li>No third-party analytics, crash-reporting, or attribution SDKs (no Firebase, Google Analytics, Mixpanel, Amplitude, Meta, AppsFlyer, Adjust, Branch, Sentry, or similar).</li>
+                <li>No “tracking” as defined by Apple or by the CCPA: we do not link data about you across apps or websites, and we do not share personal information for cross-context behavioral advertising.</li>
+                <li>No selling, renting, or licensing of personal information, and no sharing of health-related information for any purpose other than the ones you turn on yourself.</li>
+                <li>No collection of your name, birthday, gender, age, precise location history, contacts, photos, or microphone audio.</li>
+                <li>No Pacific server that stores your content. Your mood entries, journal, habits, to-dos, and drawings never leave your device and your own iCloud account.</li>
+                <li>No reading of your other Apple Health data. Tappy asks for read access to the two Health types it writes only so it can find and delete its own entries when you delete them in Tappy.</li>
+                <li>No monitoring. Nobody at Pacific reviews, screens, or has access to what you write.</li>
+            </ul>
+
+            <h2 id="use">5. How information is used</h2>
+            <p>Tappy uses the information described in Section 3 for the following purposes, and no others:</p>
+            <ul>
+                <li><strong>To provide the features you use.</strong> Your content and progress are processed on your device to show your mood charts and insights, run habits and to-dos, animate your character, play games, and sync between your devices through your iCloud.</li>
+                <li><strong>To keep your purchases working.</strong> The anonymous purchase record lets Tappy unlock Tappy Plus, restore purchases on a new device, handle renewals and refunds, and prevent fraud.</li>
+                <li><strong>To deliver remote content and notices.</strong> Reads from the public configuration database let us show announcements, update the shop catalog, and tell you when our legal documents change.</li>
+                <li><strong>To respond to you.</strong> If you contact us, we use what you send to answer, troubleshoot, and improve Tappy.</li>
+                <li><strong>To understand how Tappy performs in aggregate.</strong> Aggregated purchase statistics from RevenueCat and, if you opted in, de-identified crash and usage statistics from Apple help us decide what to fix and build. None of this identifies you.</li>
+                <li><strong>To comply with the law and protect the Service.</strong> We may use the limited information we hold to comply with legal obligations, enforce our Terms, and protect Tappy, our users, and others from fraud, abuse, or security threats.</li>
+            </ul>
+            <p>If you are in the EEA, the United Kingdom, or another jurisdiction that requires a legal basis for processing, our bases for the information we actually receive are: performance of our contract with you (purchase records, remote configuration, support), our legitimate interests in operating and securing the Service and understanding aggregate performance (which we have balanced against your rights), and compliance with legal obligations. Processing that happens only on your device or in your iCloud account is carried out by the software under your control, and Apple Health, camera, location, motion, local-network, and Face ID features run only after you grant the relevant iOS permission, which you can withdraw at any time.</p>
+
+            <h2 id="storage">6. Where your data lives, and who can see it</h2>
+            <h3>6.1 On your device</h3>
+            <p>Tappy stores your content in its private app container on your iPhone, iPad, and Apple Watch. iOS protects this storage with the device’s built-in encryption when your device is locked with a passcode. Other apps cannot read it. Anyone who can unlock your device can open Tappy, so the optional journal lock (Section 11) is there for shared devices.</p>
+            <h3>6.2 In your iCloud</h3>
+            <p>If iCloud is enabled for Tappy (iOS Settings → your name → iCloud → Saved to iCloud → Tappy), your content and progress are also stored in the private iCloud database tied to your Apple Account, which is how Tappy syncs between your iPhone and iPad. Apple encrypts this data in transit and at rest and, depending on your iCloud settings such as Advanced Data Protection, may also protect it end-to-end. This storage is part of your iCloud account and your iCloud storage quota; it is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple’s privacy policy</a> and the iCloud terms. Pacific cannot read, export, or delete your private iCloud data; only you can, using Apple’s settings.</p>
+            <h3>6.3 Widgets and the lock screen</h3>
+            <p>If you add Tappy widgets, a small snapshot (today’s mood selection, streaks, habit names and progress, to-do titles, Sparks, and adventure progress) is shared with the widget through a private shared container on your device so it can be displayed on your home or lock screen. Anyone who can see your screen can see the widget. Remove the widget if you do not want that information visible.</p>
+            <h3>6.4 Notifications</h3>
+            <p>Reminders can show your character’s name and habit or to-do names on your lock screen. You can control what appears in iOS Settings → Notifications → Tappy (for example by turning off lock-screen previews), or turn reminders off inside Tappy.</p>
+            <h3>6.5 Apple Watch</h3>
+            <p>The Tappy Apple Watch app runs independently. It stores its settings and tap counts on the watch and can submit scores to Game Center. It does not access your mood journal or Apple Health data.</p>
+            <h3>6.6 Shared devices and Family Sharing</h3>
+            <p>Tappy has no separate user profiles. If you share a device, everyone who uses it shares the same Tappy data. If you share an Apple Account, iCloud data is shared as well. Purchases made under Family Sharing are governed by Apple’s Family Sharing rules.</p>
+
+            <h2 id="health">7. Apple Health (HealthKit)</h2>
+            <p>Apple Health integration is <strong>off by default</strong>. You can turn it on in Tappy’s Settings or from the breathing screen, at which point iOS asks you to grant Tappy access to specific Health data types. You can change or revoke that access at any time in the Health app (Profile → Apps &amp; Services → Tappy, or Privacy → Apps → Tappy, depending on your iOS version).</p>
+            <h3>7.1 What Tappy writes</h3>
+            <ul>
+                <li><strong>Mindful Minutes</strong> (the Mindful Session type): the start and end time of breathing and meditation sessions you complete in Tappy.</li>
+                <li><strong>State of Mind</strong> (iOS 18 and later, with Tappy Plus and only if you turn this option on separately): a momentary-emotion entry created from each mood entry you log, containing the emotion’s pleasantness, associated labels, and time. Your journal text is <strong>not</strong> written to Health.</li>
+            </ul>
+            <h3>7.2 What Tappy reads</h3>
+            <p>Tappy requests read access only to the two data types above, and uses it for one purpose: when you delete a mood entry or session in Tappy, Tappy looks up the matching entry that Tappy itself created in Health so it can delete that entry too. Tappy does not read any other Health data, does not build insights from Health data, and does not import Health data written by other apps or devices.</p>
+            <h3>7.3 Our commitments</h3>
+            <ul>
+                <li>Health data stays in Apple Health on your device. Tappy never transmits it to Pacific, RevenueCat, iCloud (outside of Apple’s own Health sync, which you control), or anyone else.</li>
+                <li>We never use Health data for advertising, marketing, analytics, data mining, or any purpose other than the feature you turned on.</li>
+                <li>We never sell Health data or share it with data brokers, advertisers, information resellers, or any third party.</li>
+                <li>We comply with Apple’s HealthKit developer guidelines and App Store Review requirements for health data.</li>
+            </ul>
+            <p>To delete what Tappy wrote to Health, open the Health app, go to Tappy’s app page, and choose “Delete All Data from Tappy,” or delete individual samples in the relevant Health category.</p>
+
+            <h2 id="sharing">8. When information is shared</h2>
+            <p>We do not sell, rent, or trade personal information, and we do not share it for advertising. The limited sharing that does occur is listed below.</p>
+            <table>
+                <thead>
+                    <tr><th>Recipient</th><th>What they receive</th><th>Why</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Apple Inc.</td>
+                        <td>App Store purchase and Apple Account data (Apple’s own); your private iCloud data (stored for you, not shared with us); Health data (on your device); Game Center scores and achievements; push-notification routing; de-identified analytics if you opted in.</td>
+                        <td>Apple provides the platforms Tappy runs on. Each is governed by Apple’s privacy policy and your Apple settings.</td>
+                    </tr>
+                    <tr>
+                        <td>RevenueCat, Inc. (service provider)</td>
+                        <td>Anonymous purchase record described in Section 3.4.</td>
+                        <td>To validate, restore, and manage purchases on our behalf. Bound by contract to use the data only to provide its service to us.</td>
+                    </tr>
+                    <tr>
+                        <td>Nearby players</td>
+                        <td>Your device name and game moves, over your local network only.</td>
+                        <td>Only when you start a nearby multiplayer game.</td>
+                    </tr>
+                    <tr>
+                        <td>People you choose</td>
+                        <td>Whatever you export or share: a mood-journal CSV, a drawing image, a screenshot.</td>
+                        <td>Only when you use the share sheet or export. Once shared, we cannot control what the recipient does with it.</td>
+                    </tr>
+                    <tr>
+                        <td>Website hosting and font providers</td>
+                        <td>Standard web request data (IP address, browser type) when you visit tappy.net.</td>
+                        <td>See Section 17.</td>
+                    </tr>
+                    <tr>
+                        <td>Professional advisors</td>
+                        <td>Only the information relevant to their work (for example, support correspondence involved in a legal matter).</td>
+                        <td>Lawyers, accountants, and similar advisors, under confidentiality obligations.</td>
+                    </tr>
+                    <tr>
+                        <td>Authorities and others as required by law</td>
+                        <td>The limited information we actually hold, if legally compelled.</td>
+                        <td>To comply with law, a valid subpoena or court order, or to protect the rights, safety, or property of Pacific, our users, or others. Because we hold no content and no identity data, there is very little we could produce.</td>
+                    </tr>
+                    <tr>
+                        <td>A successor business</td>
+                        <td>Information we hold, transferred as part of the business.</td>
+                        <td>If Pacific or Tappy is involved in a merger, acquisition, financing, reorganization, or sale of assets. We will notify you (for example in the App or on tappy.net) before your information becomes subject to a different privacy policy.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>We have no “affiliates” with whom we share personal information, and we do not use third-party marketing or advertising service providers.</p>
+
+            <h2 id="consumer-health-data">9. Consumer health data notice</h2>
+            <p>Some laws, including Washington’s My Health My Data Act, Nevada’s consumer health data law, and Connecticut’s privacy law, give special protection to “consumer health data,” meaning information that could reveal your past, present, or future physical or mental health. Mood entries, journal text, mindfulness sessions, and State of Mind entries could be consumer health data. This section is our consumer health data privacy notice. It applies to everyone, wherever you live.</p>
+            <h3>9.1 Categories of consumer health data Tappy processes, and why</h3>
+            <ul>
+                <li><strong>Mood and emotion selections, feelings, activities, and reasons you tag</strong> — processed on your device to show your mood history, charts, and insights to you.</li>
+                <li><strong>Journal text and prompts</strong> — processed on your device so you can write, read, search, and export your own reflections.</li>
+                <li><strong>Habit, goal, and to-do entries</strong> (which may describe wellness routines) — processed on your device to track them for you.</li>
+                <li><strong>Breathing, meditation, grounding, and Feelscape session activity</strong> — processed on your device to run the session and, if you turn on Apple Health, to record Mindful Minutes in your Health app.</li>
+                <li><strong>State of Mind entries</strong> — created in your Health app from your mood entries only if you have Tappy Plus and turn that option on.</li>
+            </ul>
+            <p>All processing of consumer health data happens on your device and, if you enable iCloud, in your personal iCloud account. Pacific does not collect, receive, store, or infer consumer health data on its own systems.</p>
+            <h3>9.2 Sources</h3>
+            <p>The only source of consumer health data in Tappy is you: what you enter, select, or do in the App.</p>
+            <h3>9.3 Sharing and third parties</h3>
+            <p>Pacific does not share consumer health data with any third party, affiliate, or service provider, and does not sell it. Consumer health data leaves Tappy only when you direct it: to Apple Health on your device after you grant permission, to your own iCloud account if you enable iCloud, or to recipients you choose when you export or share. We do not process consumer health data for advertising, and we do not use geofencing of any kind.</p>
+            <h3>9.4 Your rights</h3>
+            <p>You have the right to know what consumer health data is processed, to access it, to withdraw consent, and to have it deleted. Because this data is on your device and in your iCloud, you exercise these rights directly: view it in Tappy, export it as a CSV, revoke Apple Health access in the Health app, and delete it using the steps in Section 12. If you believe Pacific holds any consumer health data about you, or you want to make a request or appeal a decision, email <a href="mailto:cameron@pacific.dev">cameron@pacific.dev</a> with the subject line “Consumer Health Data Request.” We will respond within the time the applicable law requires (45 days in most states, extendable once if permitted), and we will not discriminate against you for exercising your rights. If we deny a request, you may appeal by replying to our response; if your appeal is denied, you may contact your state attorney general.</p>
+
+            <h2 id="children">10. Children</h2>
+            <p>Tappy is a general-audience app that includes health and wellness topics; its age rating is shown on its App Store listing. Tappy is not directed to children under 13, and we do not knowingly collect personal information from children under 13 or from anyone else, because Tappy does not collect personal information beyond the anonymous purchase record described in Section 3.4.</p>
+            <p>If a child uses Tappy on a device a parent or guardian manages, the child’s content stays on that device and in the family’s iCloud account, subject to Apple’s Family Sharing, Screen Time, Ask to Buy, and Game Center parental controls. Parents and guardians are responsible for deciding whether Tappy’s wellness, journaling, Apple Health, and multiplayer features are appropriate for their child. If you believe we have received personal information from a child under 13 without verifiable parental consent as required by law (for example through a support email), contact us and we will delete it promptly.</p>
+            <p>Users in the European Union may be subject to a higher age of digital consent (up to 16) under national law; the same approach applies.</p>
+
+            <h2 id="choices">11. Your choices and controls</h2>
+            <ul>
+                <li><strong>Device permissions.</strong> Grant or revoke camera, location, motion, local network, Face ID, notifications, and Health access at any time in iOS Settings → Tappy, or in the Health app.</li>
+                <li><strong>iCloud sync.</strong> Turn iCloud on or off for Tappy in iOS Settings → your name → iCloud → Saved to iCloud → Tappy. Turning it off keeps your data on your device; deleting the iCloud copy is described in Section 12.</li>
+                <li><strong>Apple Health.</strong> Turn Mindful Minutes and State of Mind sync on or off inside Tappy, and manage or revoke permissions in the Health app.</li>
+                <li><strong>Journal lock.</strong> Turn on Face ID / Touch ID / passcode protection for the Mood Journal in Tappy’s mood-diary settings. It is off by default.</li>
+                <li><strong>Notifications.</strong> Manage reminders inside Tappy, and control lock-screen previews in iOS Settings → Notifications → Tappy.</li>
+                <li><strong>Widgets.</strong> Add or remove Tappy widgets from your home or lock screen to control what is visible there.</li>
+                <li><strong>Game Center.</strong> Sign out of Game Center or adjust its privacy settings in iOS Settings → Game Center to stop score submissions and control who sees your profile.</li>
+                <li><strong>Nearby multiplayer.</strong> Change your device name in iOS Settings → General → About → Name if you do not want it shown to nearby players, or deny the Local Network permission.</li>
+                <li><strong>Export.</strong> Export your mood journal as a CSV file (columns: date, mood, feelings, reasons, prompt, journal) from Tappy’s mood-diary settings at any time.</li>
+                <li><strong>Reduce Motion and haptics.</strong> Not privacy settings, but available in iOS Accessibility and Tappy’s settings if visual or haptic effects bother you.</li>
+            </ul>
+
+            <h2 id="deletion">12. Deleting your data</h2>
+            <p>Because your data is in your hands, you can delete it without asking us. Here is everything, step by step.</p>
+            <ol class="content-list">
+                <li><strong>Delete individual entries.</strong> Swipe or tap to delete mood entries, journal entries, habits, to-dos, goals, and drawings inside Tappy. Deleting a mood entry also removes the matching State of Mind entry Tappy wrote to Health, if that sync is on. The Habits screen offers “Delete All Habits.”</li>
+                <li><strong>Delete everything on your device.</strong> Delete the Tappy app (touch and hold the icon → Remove App → Delete App, or iOS Settings → General → iPhone Storage → Tappy → Delete App). “Offload App” does <em>not</em> delete your data. Delete the Watch app from your Apple Watch as well.</li>
+                <li><strong>Delete your iCloud copy.</strong> Deleting the app does not remove data already synced to iCloud. Go to iOS Settings → your name → iCloud → Manage Account Storage (or “Saved to iCloud” → Manage) → Tappy → Delete Data from iCloud. Labels vary slightly by iOS version. If you reinstall Tappy without doing this, your data will come back.</li>
+                <li><strong>Delete Health data Tappy wrote.</strong> Open the Health app → your profile → Apps &amp; Services (or Privacy → Apps) → Tappy → Delete All Data from Tappy. You can also turn off Tappy’s write permission there.</li>
+                <li><strong>Game Center.</strong> Scores and achievements are held by Apple as part of your Game Center profile and are managed through your Apple Account; Pacific cannot delete them.</li>
+                <li><strong>Cancel your subscription.</strong> Deleting the app does not cancel Tappy Plus. Cancel in iOS Settings → your name → Subscriptions → Tappy.</li>
+                <li><strong>Ask us to delete the anonymous purchase record.</strong> Email <a href="mailto:cameron@pacific.dev">cameron@pacific.dev</a>. Because the record is anonymous, we will need something that lets us find it, such as the order ID from your Apple purchase receipt; we may not be able to locate it otherwise. Deleting it does not affect your Apple purchase history, but it may make restoring Tappy Plus harder (you can still restore through Apple). Apple keeps its own transaction records under its policy.</li>
+                <li><strong>Ask us to delete support correspondence.</strong> Email us and we will delete or anonymize your messages, except where we must keep them for legal, security, or accounting reasons.</li>
+            </ol>
+
+            <h2 id="retention">13. How long information is kept</h2>
+            <table>
+                <thead>
+                    <tr><th>Information</th><th>Kept by</th><th>For how long</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Content and progress</td>
+                        <td>You (device and iCloud)</td>
+                        <td>Until you delete it, delete the app, or remove Tappy’s iCloud data. Pacific holds no copy.</td>
+                    </tr>
+                    <tr>
+                        <td>Apple Health entries</td>
+                        <td>You (Health app)</td>
+                        <td>Until you delete them in Health or in Tappy.</td>
+                    </tr>
+                    <tr>
+                        <td>Anonymous purchase record</td>
+                        <td>RevenueCat, on our behalf</td>
+                        <td>For as long as needed to keep your purchases working and to meet accounting and legal obligations; deleted or anonymized on request as described in Section 12.</td>
+                    </tr>
+                    <tr>
+                        <td>Support emails</td>
+                        <td>Pacific</td>
+                        <td>As long as needed to resolve your request and for a reasonable period afterward, generally no more than three years, unless a legal claim or obligation requires longer.</td>
+                    </tr>
+                    <tr>
+                        <td>Legal acceptance record</td>
+                        <td>You (device)</td>
+                        <td>Until you delete the app.</td>
+                    </tr>
+                    <tr>
+                        <td>Website server logs</td>
+                        <td>Our hosting provider</td>
+                        <td>Under the hosting provider’s retention policy (Section 17). Pacific does not receive them.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="security">14. Security</h2>
+            <p>The most effective security measure in Tappy is architectural: we do not hold your content, so it cannot be exposed by a breach of our systems. Beyond that:</p>
+            <ul>
+                <li>Data on your device is protected by iOS Data Protection and is encrypted when your device is locked with a passcode. Keep a passcode set and iOS up to date.</li>
+                <li>Data in your iCloud is encrypted by Apple in transit and at rest, with additional end-to-end protection available through Apple’s Advanced Data Protection.</li>
+                <li>All network communication from Tappy (to Apple and to RevenueCat) uses HTTPS/TLS.</li>
+                <li>The journal lock is an access control inside the App. It does not add a separate layer of encryption, and it can be satisfied by your device passcode. Pacific cannot bypass, reset, or recover it.</li>
+                <li>Access to the RevenueCat dashboard and to our support mailbox is limited to the people who need it to run Tappy and is protected by strong authentication.</li>
+            </ul>
+            <p>No system is perfectly secure. If we learn of a security incident affecting information we hold about you, we will notify you and the relevant authorities as required by law.</p>
+
+            <h2 id="rights">15. Your privacy rights</h2>
+            <p>Depending on where you live, you may have legal rights over your personal information. Because nearly all of your Tappy data is under your direct control, most rights can be exercised immediately using the controls in Sections 11 and 12. For anything we hold ourselves (support correspondence and the anonymous purchase record), email <a href="mailto:cameron@pacific.dev">cameron@pacific.dev</a>. We will respond within the time the applicable law requires, we may need to verify your request (for example by replying from the email address you used to contact us), and we will never discriminate against you for exercising your rights. You may use an authorized agent where the law allows; we may ask the agent for proof of authority.</p>
+            <h3>15.1 European Economic Area, United Kingdom, and Switzerland</h3>
+            <p>You have the right to access, rectify, erase, restrict, and port your personal data, to object to processing based on legitimate interests, to withdraw consent at any time (without affecting prior processing), and to lodge a complaint with your local data protection authority. Mood, journal, and health information is “special category” data under Article 9 GDPR; Tappy is designed so that this data is processed only on your device and in your iCloud and never reaches us, which is why we do not ask for your explicit consent to process it ourselves. Apple Health, camera, and other device features run only after you grant the relevant permission. We do not make automated decisions with legal or similarly significant effects.</p>
+            <h3>15.2 California</h3>
+            <p>This section supplements the rest of this policy for California residents and serves as our notice at collection. In the preceding 12 months, in connection with Tappy, we (through RevenueCat) collected the following categories of personal information as defined by the CCPA/CPRA: <em>identifiers</em> (an anonymous, randomly generated purchase identifier), and <em>commercial information</em> (App Store purchase and subscription history). If you emailed us, we also collected <em>identifiers</em> and any other information you chose to include. We collected this directly from your device or from you, for the business purposes described in Section 5, and disclosed it only to the service providers and recipients in Section 8. We do <strong>not</strong> collect <em>sensitive personal information</em> as defined by the CPRA, including health data, precise geolocation, biometric identifiers, or account credentials, and we do not use or disclose any personal information for purposes other than those permitted for service providers and business purposes.</p>
+            <p>You have the right to know and access the personal information we have collected about you, to delete it, to correct it, and to opt out of the “sale” or “sharing” of personal information and the use of sensitive personal information. <strong>We do not sell or share personal information, and we have not done so in the preceding 12 months</strong>, so there is nothing to opt out of; we also do not knowingly sell or share the personal information of consumers under 16. We do not offer financial incentives in exchange for personal information. Under California’s “Shine the Light” law (Civil Code §1798.83), you may request information about disclosures of personal information to third parties for their direct-marketing purposes; we make no such disclosures.</p>
+            <p><strong>Do Not Track and Global Privacy Control.</strong> Tappy and tappy.net do not track you across other sites or apps, and we do not use cookies or advertising technology, so there is nothing to disable. We therefore treat all visitors as if a “Do Not Track” or Global Privacy Control signal were on.</p>
+            <h3>15.3 Other U.S. states</h3>
+            <p>Residents of Colorado, Connecticut, Virginia, Utah, Texas, Oregon, Montana, Delaware, Iowa, Nebraska, New Hampshire, New Jersey, Tennessee, Minnesota, Maryland, and other states with comprehensive privacy laws may have similar rights to access, correct, delete, and port personal information, to opt out of targeted advertising, sales, and profiling, and to appeal a denied request. We do not engage in targeted advertising, sales, or profiling. To exercise a right or appeal, email us; if we deny your appeal, you may contact your state attorney general.</p>
+            <h3>15.4 Canada, Australia, Brazil, and elsewhere</h3>
+            <p>If your local law grants you rights to access, correct, or delete personal information, or to complain to a privacy regulator, we will honor those rights. Contact us and we will tell you what we hold (usually nothing beyond the anonymous purchase record) and how to proceed.</p>
+
+            <h2 id="international">16. International users and data transfers</h2>
+            <p>Pacific Interactive LLC is located in the United States, and RevenueCat operates from the United States. The anonymous purchase record and any support correspondence are therefore processed in the United States, whose laws may differ from those of your country. For users in the EEA, UK, and Switzerland, we rely on the European Commission’s Standard Contractual Clauses, which are incorporated into RevenueCat’s <a href="https://www.revenuecat.com/dpa" target="_blank" rel="noopener">Data Processing Addendum</a> with us (together with its UK and Swiss transfer terms), and on the limited and anonymous nature of the data, to protect these transfers. Your content and progress are stored by Apple in your iCloud account under Apple’s own arrangements, which you can review in Apple’s privacy policy.</p>
+
+            <h2 id="website">17. The tappy.net website</h2>
+            <p>tappy.net is a static informational site. It has no accounts, forms, comments, cookies set by us, analytics, or advertising. When you load a page (including when the App opens a tappy.net page such as this policy inside the App), the following happens:</p>
+            <ul>
+                <li><strong>Hosting.</strong> The site is served by GitHub Pages (GitHub, Inc.). Like any web host, GitHub receives your IP address, browser type, and the page requested in its server logs, under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub’s privacy statement</a>. Pacific does not receive these logs.</li>
+                <li><strong>Fonts.</strong> Pages load web fonts from Google Fonts (fonts.googleapis.com and fonts.gstatic.com), which means Google receives your IP address and browser information for that request, under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s privacy policy</a>. Google states that Google Fonts requests are not used for advertising or cross-site tracking.</li>
+                <li><strong>App Store badge and Smart App Banner.</strong> The “Download on the App Store” badge is loaded from Apple’s servers, and the site uses Apple’s Smart App Banner tag so Safari can offer the App; these requests go to Apple under Apple’s privacy policy.</li>
+                <li><strong>Outbound links.</strong> Links to the App Store, pacific.dev, and social-media pages take you to third-party sites with their own privacy policies.</li>
+            </ul>
+            <p>We do not respond differently to Do Not Track or Global Privacy Control signals because we do not track anyone in the first place (Section 15.2).</p>
+
+            <h2 id="app-store-label">18. How this maps to the App Store privacy label</h2>
+            <p>Apple asks developers to summarize their data practices in an “App Privacy” label on the App Store. Tappy’s label reflects this policy: <strong>Purchases → Purchase History</strong> is collected (through RevenueCat) for app functionality and is <strong>not linked to your identity</strong> and <strong>not used for tracking</strong>. No other category is collected by Pacific. Health data written to Apple Health, content stored on your device and in your iCloud, and Game Center data handled by Apple are not collected by us and therefore do not appear as data we collect. If the label and this policy ever differ, this policy is the more detailed statement and we will correct the label.</p>
+
+            <h2 id="changes">19. Changes to this policy</h2>
+            <p>We may update this Privacy Policy as Tappy evolves or as laws change. When we do, we will revise the “Effective” date at the top and post the new version at <a href="https://www.tappy.net/privacy/">www.tappy.net/privacy</a>. For material changes, especially any change that would have Tappy collect a new category of information or share information in a new way, we will provide prominent notice in the App and, where the law requires, ask for your consent before the change applies to you. We will not use previously collected information in materially new ways without telling you first. We encourage you to review this page periodically.</p>
+
+            <h2 id="contact">20. Contact</h2>
+            <p>Pacific Interactive LLC<br>
+            548 Market St, PMB 797753<br>
+            San Francisco, CA 94104 USA</p>
+            <p>Email: <a href="mailto:cameron@pacific.dev">cameron@pacific.dev</a><br>
+            Website: <a href="https://www.pacific.dev">www.pacific.dev</a> · <a href="https://www.tappy.net/">www.tappy.net</a></p>
+            <p>Please put “Privacy Request” in the subject line for requests about your rights so we can route them quickly. We aim to acknowledge every request within 10 business days and to resolve it within the time the applicable law requires.</p>
+        </article>
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2019&ndash;2026 Pacific Interactive LLC. All rights reserved.</p>
+        <p>
+            <a href="/">Home</a>
+            &nbsp;&middot;&nbsp;
+            <a href="/privacy/">Privacy Policy</a>
+            &nbsp;&middot;&nbsp;
+            <a href="/privacy/#consumer-health-data">Consumer Health Data</a>
+            &nbsp;&middot;&nbsp;
+            <a href="/terms/">Terms</a>
+            &nbsp;&middot;&nbsp;
+            <a href="https://apps.apple.com/us/app/tappy-sensory-fidget-focus/id1492017640" target="_blank" rel="noopener">App Store</a>
+        </p>
+    </footer>
+
+    <script>
+        const tocLinks = [...document.querySelectorAll('.toc a')];
+        const sections = tocLinks
+            .map((link) => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+
+        const setActive = () => {
+            let current = sections[0];
+            for (const section of sections) {
+                if (section.getBoundingClientRect().top <= 136) current = section;
+            }
+            tocLinks.forEach((link) => {
+                link.classList.toggle('active', current && link.getAttribute('href') === '#' + current.id);
+            });
+        };
+
+        window.addEventListener('scroll', setActive, { passive: true });
+        setActive();
+    </script>
+</body>
+</html>
