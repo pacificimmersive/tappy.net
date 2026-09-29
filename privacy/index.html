@@ -19,9 +19,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/assets/fonts/inter.css" rel="stylesheet">
 
     <style>
         :root {
@@ -380,12 +378,12 @@
             <p>This section lists every category of information Tappy works with. For each one we say where the data is stored and whether Pacific can see it. “On your device” means stored inside Tappy’s private storage on your iPhone, iPad, or Apple Watch. “Your iCloud” means the private iCloud database associated with your Apple Account, which only you (and Apple, under Apple’s iCloud terms) can access.</p>
 
             <h3 id="content">3.1 Content you create</h3>
-            <p>When you use Tappy’s wellness and planning features, you may enter: mood or emotion selections; feelings, activities, and reasons you tag; journal text and the prompt you responded to; habit names, mottos, notes, and reminder times; to-do titles, notes, and subtasks; goals and goal updates; drawings; the name you give your Tappy character; and your customization preferences (theme colors, faces, sounds, haptic intensity, and similar settings).</p>
+            <p>When you use Tappy’s wellness and planning features, you may enter: mood or emotion selections; feelings, activities, and reasons you tag; journal text and the prompt you responded to; habit names, mottos, notes, and reminder times; to-do titles, notes, and subtasks; goals and goal updates; drawings; the name you give your Tappy character; Tappy’s bedtime schedule; and your customization preferences (theme colors, faces, sounds, haptic intensity, and similar settings).</p>
             <p><strong>Where it lives:</strong> on your device, and in your iCloud if you have iCloud enabled for Tappy. <strong>Can Pacific see it?</strong> No. Tappy does not upload this content to Pacific servers, and Pacific has no ability to read your private iCloud database. We do not use it to train models, build profiles, or for advertising.</p>
 
             <h3 id="progress">3.2 Game and progress data</h3>
-            <p>Tappy keeps track of gameplay and care mechanics: tap counts, Sparks, Self-Care Streaks and Streak Freezes, energy and hunger, wardrobe and equipped items, badges, Daily Adventure quests and chest history, timers, and arcade scores.</p>
-            <p><strong>Where it lives:</strong> on your device and, for most of it, in your iCloud so that it syncs between your devices. The Apple Watch app keeps its own settings and tap counts on the watch. <strong>Can Pacific see it?</strong> No, except for aggregate Game Center scores and achievements you choose to submit (see Section 3.6).</p>
+            <p>Tappy keeps track of gameplay and care mechanics: tap counts, Sparks, Self-Care Streaks and Streak Freezes, energy and hunger, wardrobe and equipped items, badges, Daily Adventure quests and chest history, gift box history, timers, and arcade scores.</p>
+            <p><strong>Where it lives:</strong> on your device and, for most of it, in your iCloud so that it syncs between your devices. The Apple Watch app keeps its own settings and tap counts on the watch. <strong>Can Pacific see it?</strong> No, except for scores and achievements you choose to submit to Game Center, which appear on Apple’s leaderboards (see Section 3.6).</p>
 
             <h3 id="health-data">3.3 Apple Health data</h3>
             <p>If you turn on Apple Health integration, Tappy writes Mindful Minutes from breathing and meditation sessions and, with Tappy Plus, State of Mind entries derived from your mood entries into the Health app. Section 7 describes this in detail. <strong>Can Pacific see it?</strong> No. Health data stays in Apple Health on your device and is never transmitted to us.</p>
@@ -415,17 +413,17 @@
                     <tr>
                         <td>Location (While Using)</td>
                         <td>The compass fidget, which needs your device’s heading to point north.</td>
-                        <td>Tappy uses the heading and reads location only as required by iOS to provide heading. Location is not stored, not shared, and not used for anything else. Tappy estimates where the sun and moon are for the character’s backdrop from your device’s time zone, not from your location.</td>
+                        <td>While the compass is open, Tappy asks iOS for location and heading updates because iOS supplies compass heading through its location service. Tappy uses only the heading; it does not read, store, or share your coordinates, and it never uses location in the background. Tappy estimates where the sun and moon are for the character’s backdrop from your device’s time zone, not from your location.</td>
                     </tr>
                     <tr>
-                        <td>Motion sensors</td>
+                        <td>Motion sensors (no prompt)</td>
                         <td>Tilt-based physics fidgets (for example the ball pit, slinky, and bouncy ball).</td>
-                        <td>Accelerometer and gyroscope readings drive on-screen physics in real time and are not stored.</td>
+                        <td>iOS does not ask permission for these sensors. Accelerometer and gyroscope readings drive on-screen physics in real time and are not stored. Tappy does not access Motion &amp; Fitness activity data.</td>
                     </tr>
                     <tr>
                         <td>Local Network</td>
-                        <td>Nearby multiplayer (for example Connect Four over your local Wi‑Fi).</td>
-                        <td>Your device’s name (as set in iOS Settings, for example “Sam’s iPhone”) is shown to the nearby player you connect with, and game moves are exchanged directly between the two devices. Nothing goes through Pacific servers. Same-device games share nothing.</td>
+                        <td>Nearby multiplayer (for example Connect Four with someone next to you).</td>
+                        <td>Using Apple’s Multipeer Connectivity, a random player name that Tappy generates (for example “Tappy Player 482”) is visible to nearby devices while you are looking for a game. Your real name and your device’s name are not shared, and game moves are exchanged directly between the two devices over Wi‑Fi, peer-to-peer Wi‑Fi, or Bluetooth. Nothing goes through Pacific servers. Same-device games share nothing.</td>
                     </tr>
                     <tr>
                         <td>Face ID / Touch ID</td>
@@ -434,7 +432,7 @@
                     </tr>
                     <tr>
                         <td>Notifications</td>
-                        <td>Reminders you set (mood check-ins, habits, to-dos, Daily Adventure, timers), plus silent iCloud sync notifications.</td>
+                        <td>Reminders you set or turn on (mood check-ins, habits, to-dos, Daily Adventure, Tappy’s bedtime and care, timers), plus silent iCloud sync notifications.</td>
                         <td>Reminders are scheduled locally on your device. They may include your Tappy character’s name and the names of habits or to-dos you created, so they can be visible on your lock screen. They never include journal text. Silent sync notifications come from Apple’s iCloud service and contain no content.</td>
                     </tr>
                     <tr>
@@ -444,17 +442,17 @@
                     </tr>
                 </tbody>
             </table>
-            <p>Tappy does not request access to your microphone, photo library, contacts, calendar, Bluetooth, or precise background location.</p>
+            <p>Tappy does not request access to your microphone, photo library, contacts, or calendar, does not request the Bluetooth permission, and never uses location in the background.</p>
 
             <h3 id="game-center">3.6 Game Center and nearby multiplayer</h3>
-            <p>If you are signed in to Game Center, Tappy can submit arcade scores (for example tap counts, Snake, Tap-Tris, Bubble Pop times, and Mini Golf stars) to leaderboards and report tap-milestone achievements. Game Center is operated by Apple. Your Game Center nickname, avatar, scores, and achievements are handled under <a href="https://www.apple.com/legal/privacy/data/en/game-center/" target="_blank" rel="noopener">Apple’s Game Center privacy terms</a> and your Game Center settings, which you control in iOS Settings. Tappy never submits mood, journal, or health information to Game Center. Nearby multiplayer is described in Section 3.5.</p>
+            <p>If you are signed in to Game Center, Tappy can submit arcade scores (for example tap counts, Snake, Tap-Tris, Bubble Pop times, and Mini Golf stars) to leaderboards and report tap-milestone achievements. Game Center is operated by Apple. Leaderboard entries show your Game Center nickname and can be seen by other players, and by us through Apple’s tools, according to your Game Center settings. Your Game Center nickname, avatar, scores, and achievements are handled under <a href="https://www.apple.com/legal/privacy/data/en/game-center/" target="_blank" rel="noopener">Apple’s Game Center privacy terms</a> and your Game Center settings, which you control in iOS Settings. Tappy never submits mood, journal, or health information to Game Center. Nearby multiplayer is described in Section 3.5.</p>
 
             <h3 id="remote-config">3.7 Remote configuration and shop catalog</h3>
             <p>Tappy reads a small amount of information from a public, read-only Apple iCloud (CloudKit) database that Pacific maintains: announcements, sale banners, the minimum supported app version, the current legal-notice version, and the wardrobe and shop catalog. This lets us update content without shipping a new app version. The App only reads from this database; it never writes anything about you to it. The request goes to Apple’s CloudKit service, which handles it under Apple’s privacy policy. Pacific receives no per-user information from these reads.</p>
             <p>When you accept our Terms and this Privacy Policy in the App, Tappy records the version you accepted and the date on your device only. That record is not sent to us.</p>
 
             <h3 id="communications">3.8 Communications with us</h3>
-            <p>If you email us (for support, feedback, a privacy request, or anything else), we receive your email address, whatever you write, and any attachments you include. We use that information only to respond to you, to fix problems, and to keep a record of the request where the law requires it. Please do not send us journal entries or health details unless you want us to have them; we do not need them to help you.</p>
+            <p>If you email us (for support, feedback, a privacy request, or anything else), we receive your email address, whatever you write, and any attachments you include. We use that information only to respond to you, to fix problems, and to keep a record of the request where the law requires it. Our email provider stores this correspondence on our behalf. Emails from children under 13 are handled as described in Section 10.3. Please do not send us journal entries or health details unless you want us to have them; we do not need them to help you.</p>
             <p>If you have chosen in iOS Settings to share analytics with app developers, Apple may provide us with aggregated, de-identified crash reports and usage statistics through App Store Connect. These do not identify you, and we cannot link them to you.</p>
 
             <h3 id="site-visitors">3.9 Website visitors</h3>
@@ -491,8 +489,9 @@
             <p>Tappy stores your content in its private app container on your iPhone, iPad, and Apple Watch. iOS protects this storage with the device’s built-in encryption when your device is locked with a passcode. Other apps cannot read it. Anyone who can unlock your device can open Tappy, so the optional journal lock (Section 11) is there for shared devices.</p>
             <h3>6.2 In your iCloud</h3>
             <p>If iCloud is enabled for Tappy (iOS Settings → your name → iCloud → Saved to iCloud → Tappy), your content and progress are also stored in the private iCloud database tied to your Apple Account, which is how Tappy syncs between your iPhone and iPad. Apple encrypts this data in transit and at rest and, depending on your iCloud settings such as Advanced Data Protection, may also protect it end-to-end. This storage is part of your iCloud account and your iCloud storage quota; it is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple’s privacy policy</a> and the iCloud terms. Pacific cannot read, export, or delete your private iCloud data; only you can, using Apple’s settings.</p>
-            <h3>6.3 Widgets and the lock screen</h3>
+            <h3>6.3 Widgets, Live Activities, and the lock screen</h3>
             <p>If you add Tappy widgets, a small snapshot (today’s mood selection, streaks, habit names and progress, to-do titles, Sparks, and adventure progress) is shared with the widget through a private shared container on your device so it can be displayed on your home or lock screen. Anyone who can see your screen can see the widget. Remove the widget if you do not want that information visible.</p>
+            <p>When a timed quest or Focus timer is running, Tappy may show a countdown with the session’s name as a Live Activity on your lock screen and in the Dynamic Island. It is created and updated on your device, not by a Pacific server, and it ends when the session stops. You can turn Live Activities off in iOS Settings → Tappy.</p>
             <h3>6.4 Notifications</h3>
             <p>Reminders can show your character’s name and habit or to-do names on your lock screen. You can control what appears in iOS Settings → Notifications → Tappy (for example by turning off lock-screen previews), or turn reminders off inside Tappy.</p>
             <h3>6.5 Apple Watch</h3>
@@ -537,7 +536,7 @@
                     </tr>
                     <tr>
                         <td>Nearby players</td>
-                        <td>Your device name and game moves, over your local network only.</td>
+                        <td>A random player name and your game moves, sent directly between nearby devices.</td>
                         <td>Only when you start a nearby multiplayer game.</td>
                     </tr>
                     <tr>
@@ -546,7 +545,12 @@
                         <td>Only when you use the share sheet or export. Once shared, we cannot control what the recipient does with it.</td>
                     </tr>
                     <tr>
-                        <td>Website hosting and font providers</td>
+                        <td>Our email provider (service provider)</td>
+                        <td>Messages you send us and your email address.</td>
+                        <td>To host our support mailbox. Only when you email us.</td>
+                    </tr>
+                    <tr>
+                        <td>Website host (GitHub)</td>
                         <td>Standard web request data (IP address, browser type) when you visit tappy.net.</td>
                         <td>See Section 17.</td>
                     </tr>
@@ -588,8 +592,18 @@
             <p>You have the right to know what consumer health data is processed, to access it, to withdraw consent, and to have it deleted. Because this data is on your device and in your iCloud, you exercise these rights directly: view it in Tappy, export it as a CSV, revoke Apple Health access in the Health app, and delete it using the steps in Section 12. If you believe Pacific holds any consumer health data about you, or you want to make a request or appeal a decision, email <a href="mailto:cameron@pacific.dev">cameron@pacific.dev</a> with the subject line “Consumer Health Data Request.” We will respond within the time the applicable law requires (45 days in most states, extendable once if permitted), and we will not discriminate against you for exercising your rights. If we deny a request, you may appeal by replying to our response; if your appeal is denied, you may contact your state attorney general.</p>
 
             <h2 id="children">10. Children</h2>
-            <p>Tappy is a general-audience app that includes health and wellness topics; its age rating is shown on its App Store listing. Tappy is not directed to children under 13, and we do not knowingly collect personal information from children under 13 or from anyone else, because Tappy does not collect personal information beyond the anonymous purchase record described in Section 3.4.</p>
-            <p>If a child uses Tappy on a device a parent or guardian manages, the child’s content stays on that device and in the family’s iCloud account, subject to Apple’s Family Sharing, Screen Time, Ask to Buy, and Game Center parental controls. Parents and guardians are responsible for deciding whether Tappy’s wellness, journaling, Apple Health, and multiplayer features are appropriate for their child. If you believe we have received personal information from a child under 13 without verifiable parental consent as required by law (for example through a support email), contact us and we will delete it promptly.</p>
+            <p>Tappy is a general-audience app that includes health and wellness topics; its age rating is shown on its App Store listing. Tappy is not directed to children under 13. Because families and children may still use it, Tappy is built so that we collect almost nothing from anyone, whatever their age, and this section explains exactly what that means for children.</p>
+            <h3>10.1 What we collect from children</h3>
+            <p>A child’s mood entries, journal, habits, to-dos, drawings, character, and progress stay on the device and in the family’s iCloud account. We never receive them. The only information Pacific receives from any Tappy user, regardless of age, is (a) the anonymous purchase record described in Section 3.4, and (b) the contents of any email someone chooses to send us. We do not collect names, email addresses, photos, audio, precise location, or contact details through the App, and we do not let children make personal information public through Tappy: nearby multiplayer shows only a random player name, and Game Center is operated by Apple under its own parental controls.</p>
+            <h3>10.2 The purchase identifier</h3>
+            <p>The random identifier in the purchase record is the only persistent identifier associated with Tappy. We use it solely to support Tappy’s internal operations: validating purchases, restoring them on a new device, processing renewals and refunds, and preventing fraud. We make sure it is used for nothing else by never linking it to a name, email address, or other identifier; never using it to contact anyone, build a profile, or serve advertising; and limiting our subscription-management provider, RevenueCat, by contract to processing it only to provide its service to us.</p>
+            <h3>10.3 Emails from children</h3>
+            <p>If we learn that an email came from a child under 13, we use the child’s email address only to reply once to that message. We then delete the message and the address, and we do not contact the child again or add the address to any list.</p>
+            <h3>10.4 Parents’ rights</h3>
+            <p>A parent or guardian may at any time ask us to review any personal information we hold about their child, to delete it, and to refuse any further collection or use of it. Email <a href="mailto:cameron@pacific.dev">cameron@pacific.dev</a> with “Parent Request” in the subject line, or write to us at the address in Section 20. Because we hold no names or accounts, we may ask for details that let us find the information, such as the Apple order ID of a purchase or the email address the child used. We do not require a child to provide more information than Tappy needs in order to use any feature. Everything else is on the family’s device and iCloud, where a parent can review or delete it directly using Sections 11 and 12.</p>
+            <p>We do not disclose children’s personal information to anyone except RevenueCat as our service provider (Section 10.2) and where required by law (Section 8).</p>
+            <h3>10.5 Parental controls</h3>
+            <p>If a child uses Tappy on a device a parent or guardian manages, Apple’s Family Sharing, Screen Time, Ask to Buy, and Game Center parental controls apply. Parents and guardians are responsible for deciding whether Tappy’s wellness, journaling, Apple Health, and multiplayer features are appropriate for their child. If you believe we have received personal information from a child under 13 in a way this section does not describe, contact us and we will delete it promptly.</p>
             <p>Users in the European Union may be subject to a higher age of digital consent (up to 16) under national law; the same approach applies.</p>
 
             <h2 id="choices">11. Your choices and controls</h2>
@@ -601,9 +615,9 @@
                 <li><strong>Notifications.</strong> Manage reminders inside Tappy, and control lock-screen previews in iOS Settings → Notifications → Tappy.</li>
                 <li><strong>Widgets.</strong> Add or remove Tappy widgets from your home or lock screen to control what is visible there.</li>
                 <li><strong>Game Center.</strong> Sign out of Game Center or adjust its privacy settings in iOS Settings → Game Center to stop score submissions and control who sees your profile.</li>
-                <li><strong>Nearby multiplayer.</strong> Change your device name in iOS Settings → General → About → Name if you do not want it shown to nearby players, or deny the Local Network permission.</li>
+                <li><strong>Nearby multiplayer.</strong> Nearby players see only a random player name. To turn nearby multiplayer off entirely, deny the Local Network permission in iOS Settings → Tappy.</li>
                 <li><strong>Export.</strong> Export your mood journal as a CSV file (columns: date, mood, feelings, reasons, prompt, journal) from Tappy’s mood-diary settings at any time.</li>
-                <li><strong>Reduce Motion and haptics.</strong> Not privacy settings, but available in iOS Accessibility and Tappy’s settings if visual or haptic effects bother you.</li>
+                <li><strong>Reduce Haptics.</strong> Not a privacy setting, but available in Tappy’s settings if vibration bothers you. Tappy’s animation stays on when iOS Reduce Motion is enabled.</li>
             </ul>
 
             <h2 id="deletion">12. Deleting your data</h2>
@@ -643,7 +657,7 @@
                     <tr>
                         <td>Support emails</td>
                         <td>Pacific</td>
-                        <td>As long as needed to resolve your request and for a reasonable period afterward, generally no more than three years, unless a legal claim or obligation requires longer.</td>
+                        <td>As long as needed to resolve your request and for a reasonable period afterward, generally no more than three years, unless a legal claim or obligation requires longer. Emails from children under 13 are deleted after we reply once (Section 10.3).</td>
                     </tr>
                     <tr>
                         <td>Legal acceptance record</td>
@@ -689,7 +703,7 @@
             <p>tappy.net is a static informational site. It has no accounts, forms, comments, cookies set by us, analytics, or advertising. When you load a page (including when the App opens a tappy.net page such as this policy inside the App), the following happens:</p>
             <ul>
                 <li><strong>Hosting.</strong> The site is served by GitHub Pages (GitHub, Inc.). Like any web host, GitHub receives your IP address, browser type, and the page requested in its server logs, under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub’s privacy statement</a>. Pacific does not receive these logs.</li>
-                <li><strong>Fonts.</strong> Pages load web fonts from Google Fonts (fonts.googleapis.com and fonts.gstatic.com), which means Google receives your IP address and browser information for that request, under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s privacy policy</a>. Google states that Google Fonts requests are not used for advertising or cross-site tracking.</li>
+                <li><strong>Fonts.</strong> Web fonts are served from tappy.net itself, so no font provider receives information about your visit.</li>
                 <li><strong>App Store badge and Smart App Banner.</strong> The “Download on the App Store” badge is loaded from Apple’s servers, and the site uses Apple’s Smart App Banner tag so Safari can offer the App; these requests go to Apple under Apple’s privacy policy.</li>
                 <li><strong>Outbound links.</strong> Links to the App Store, pacific.dev, and social-media pages take you to third-party sites with their own privacy policies.</li>
             </ul>
