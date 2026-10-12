@@ -379,7 +379,7 @@
         let petTaps = 0;
         let questsDone = 0;
         let hatIndex = 0;
-        let level = 10;
+        let level = 4;
         let levelProgress = 0.6;
         let busy = false;
         let toastTimer = 0;
@@ -441,30 +441,34 @@
             seg.classList.remove('pop');
             void seg.offsetWidth;
             seg.classList.add('pop');
-            addSparks(SPARKS_PER_SEGMENT, hudPill);
+            flySpark(seg, hudPill, () => addSparks(SPARKS_PER_SEGMENT, hudPill));
             gainLevelProgress(0.06);
             careBar.setAttribute('aria-valuenow', String(done.size));
             if (done.size === ACTS.length) {
                 careBar.classList.add('full');
+                for (let i = 0; i < 6; i += 1) {
+                    setTimeout(() => flySpark(careBar, hudPill, () => {}), i * 80);
+                }
+                burstSparks(fx, 12, 90, careBar);
                 setTimeout(() => {
                     gift.classList.add('show');
                     gift.tabIndex = 0;
                     gift.removeAttribute('aria-hidden');
                     showToast('Care Bar full! A surprise gift appeared.', 3200);
                 }, 900);
-            } else if (done.size === ACTS.length - 1 && !done.has('selfCare')) {
-                setTimeout(() => showToast('Finish a quest in your Daily Adventure to fill the last one!', 3400), 1300);
             }
         };
 
-        /* Play fills from fidgets and Arcade games in the app, which this demo
-           can't open, so it starts filled. */
-        const prefillPlay = () => {
-            done.add('play');
-            segs.play.classList.add('done');
+        /* Play and Daily Adventure fill from fidgets/games and a quest in the
+           app. This demo can't open those, so they start filled. */
+        const prefillDemoActs = () => {
+            ['play', 'selfCare'].forEach((act) => {
+                done.add(act);
+                segs[act].classList.add('done');
+            });
             careBar.setAttribute('aria-valuenow', String(done.size));
         };
-        prefillPlay();
+        prefillDemoActs();
 
         const actions = {
             feed() {
@@ -549,8 +553,7 @@
                 segs[act].style.removeProperty('--p');
             });
             careBar.classList.remove('full');
-            prefillPlay();
-            if (questsDone > 0) fill('selfCare');
+            prefillDemoActs();
         };
 
         gift.addEventListener('click', () => {
