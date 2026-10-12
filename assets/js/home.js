@@ -457,6 +457,15 @@
             }
         };
 
+        /* Play fills from fidgets and Arcade games in the app, which this demo
+           can't open, so it starts filled. */
+        const prefillPlay = () => {
+            done.add('play');
+            segs.play.classList.add('done');
+            careBar.setAttribute('aria-valuenow', String(done.size));
+        };
+        prefillPlay();
+
         const actions = {
             feed() {
                 react('react-chomp', 750);
@@ -483,7 +492,6 @@
                     spawn('fx-confetti', { vars: { '--left': '50%', '--top': '48%', '--c': CONFETTI[i % CONFETTI.length], '--x': `${rand(-160, 160)}px`, '--y': `${rand(-150, 70)}px`, '--rot': `${rand(-540, 540)}deg`, '--delay': `${rand(0, 0.12)}s` } });
                 }
                 showToast('Woohoo! Party time!');
-                fill('play');
             },
             sleep() {
                 busy = true;
@@ -541,7 +549,7 @@
                 segs[act].style.removeProperty('--p');
             });
             careBar.classList.remove('full');
-            careBar.setAttribute('aria-valuenow', '0');
+            prefillPlay();
             if (questsDone > 0) fill('selfCare');
         };
 
@@ -1139,55 +1147,6 @@
             });
             haptic(12, 0);
         });
-    }
-
-    /* Box breathing orb */
-    const breath = $('#breath');
-    if (breath) {
-        const label = $('#breathLabel');
-        const count = $('#breathCount');
-        const phases = ['Breathe in', 'Hold', 'Breathe out', 'Hold'];
-        let timer = 0;
-        let phase = 0;
-        let sec = 4;
-
-        const step = () => {
-            sec -= 1;
-            if (sec === 0) {
-                phase = (phase + 1) % phases.length;
-                sec = 4;
-                label.textContent = phases[phase];
-            }
-            count.textContent = `${sec}`;
-        };
-
-        const start = () => {
-            if (timer) return;
-            phase = 0;
-            sec = 4;
-            label.textContent = phases[0];
-            count.textContent = '4';
-            breath.classList.remove('run');
-            void breath.offsetWidth;
-            breath.classList.add('run');
-            timer = setInterval(step, 1000);
-        };
-
-        const stop = () => {
-            clearInterval(timer);
-            timer = 0;
-            breath.classList.remove('run');
-        };
-
-        if (reduceMotion) {
-            label.textContent = 'In 4 · Hold 4';
-            count.textContent = 'Out 4 · Hold 4';
-        } else if ('IntersectionObserver' in window) {
-            new IntersectionObserver(([entry]) => {
-                if (entry.isIntersecting) start();
-                else stop();
-            }, { threshold: 0.4 }).observe(breath);
-        }
     }
 
     const tick = (ms = 10) => {

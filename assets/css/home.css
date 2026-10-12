@@ -2079,6 +2079,11 @@ ul {
     display: block;
 }
 
+.pet-scene[data-scene='beach'] .visitor,
+.pet-scene[data-scene='farm'] .visitor {
+    z-index: 4;
+}
+
 .pet-scene[data-scene='castle'] .visitor,
 .pet-scene[data-scene='space'] .visitor {
     bottom: 58%;
@@ -2765,24 +2770,23 @@ ul {
     transform: scale(0.5);
 }
 
-.breath.run .breath-orb::before {
-    animation: breathe-halo 16s ease-in-out infinite;
+/* A smooth pulse with no holds or labels: paced in/hold/out phases would read as breathing instructions. */
+.breath-orb::after {
+    animation: breath-pulse 4s ease-in-out infinite alternate;
 }
 
-.breath.run .breath-orb::after {
-    animation: breathe-core 16s ease-in-out infinite;
+.breath-orb::before {
+    animation: breath-glow 4s ease-in-out infinite alternate;
 }
 
-@keyframes breathe-core {
-    0% { transform: scale(0.5); }
-    25%, 50% { transform: scale(0.82); }
-    75%, 100% { transform: scale(0.5); }
+@keyframes breath-pulse {
+    from { transform: scale(0.74); }
+    to { transform: scale(0.84); }
 }
 
-@keyframes breathe-halo {
-    0% { transform: scale(0.62); opacity: 0.6; }
-    25%, 50% { transform: scale(1); opacity: 1; }
-    75%, 100% { transform: scale(0.62); opacity: 0.6; }
+@keyframes breath-glow {
+    from { transform: scale(0.84); opacity: 0.5; }
+    to { transform: scale(1); opacity: 0.9; }
 }
 
 .breath-label {
