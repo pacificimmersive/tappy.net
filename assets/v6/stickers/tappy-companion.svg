@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -16 112 124">
+  <defs>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <radialGradient id="glow" cx=".32" cy=".22" r=".64"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <filter id="sticker" x="-15%" y="-15%" width="130%" height="130%">
+      <feMorphology in="SourceAlpha" operator="dilate" radius="3.6" result="grown"/>
+      <feFlood flood-color="#fff"/>
+      <feComposite in2="grown" operator="in" result="outline"/>
+      <feMerge><feMergeNode in="outline"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#sticker)">
+    <rect x="27.25" y="74.5" width="9.5" height="14" rx="4.75" fill="#0db0dc"/>
+    <rect x="63.25" y="74.5" width="9.5" height="14" rx="4.75" fill="#0db0dc"/>
+    <ellipse cx="29.5" cy="88.5" rx="8.5" ry="5.75" fill="#0eb9e6"/>
+    <ellipse cx="70.5" cy="88.5" rx="8.5" ry="5.75" fill="#0eb9e6"/>
+    <rect x="12" y="50.5" width="11" height="24" rx="5.5" fill="#0fbeee" transform="rotate(24 17.5 50.5)"/>
+    <rect x="77" y="50.5" width="11" height="24" rx="5.5" fill="#0fbeee" transform="rotate(-24 82.5 50.5)"/>
+    <circle cx="50" cy="46" r="39" fill="#12c9fa"/>
+    <circle cx="50" cy="46" r="39" fill="url(#sheen)"/>
+    <circle cx="50" cy="46" r="39" fill="url(#glow)"/>
+    
+    <circle cx="34.5" cy="35.5" r="14" fill="#fff"/><circle cx="36.90" cy="35.10" r="6.25" fill="#000"/>
+    <circle cx="65.5" cy="33.5" r="14" fill="#fff"/><circle cx="63.10" cy="33.30" r="6.25" fill="#000"/>
+    <path d="M32 58.1Q43 65.8 54 58.1" fill="none" stroke="#004355" stroke-width="3.5" stroke-linecap="round" transform="rotate(15 43 60)"/>
+    <g fill="#006682"><rect x="20" y="17.90" width="16" height="4" transform="rotate(-25 28 19.90)"/><rect x="64" y="16.90" width="16" height="4" transform="rotate(25 72 18.90)"/></g>
+  </g>
+</svg>

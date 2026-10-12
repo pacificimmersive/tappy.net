@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-6 -6 112 112">
+  <defs>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fad980"/>
+      <stop offset=".28" stop-color="#cc9642"/>
+      <stop offset=".5" stop-color="#fad980"/>
+      <stop offset=".76" stop-color="#7d541f"/>
+      <stop offset="1" stop-color="#cc9642"/>
+    </linearGradient>
+    <radialGradient id="face">
+      <stop offset="0" stop-color="#faf0d6"/>
+      <stop offset="1" stop-color="#d6bf94"/>
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="50" r="55.5" fill="#fff"/>
+  <circle cx="50" cy="50" r="48.5" fill="url(#brass)" stroke="#7d541f" stroke-opacity=".85" stroke-width="2.5"/>
+  <circle cx="50" cy="50" r="35" fill="url(#face)" stroke="#7d541f" stroke-opacity=".55" stroke-width=".8"/>
+  <path d="M50 27L54 46L73 50L54 54L50 73L46 54L27 50L46 46Z" fill="#4f331a" fill-opacity=".1"/>
+  <path d="M50 74v7M74 50h7M19 50h7" fill="none" stroke="#4f331a" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M50 19v7" fill="none" stroke="#c72b21" stroke-width="2.6" stroke-linecap="round"/>
+  <g transform="rotate(37 50 50)">
+    <path d="M50 50L44.5 50L50 23L55.5 50Z" fill="#c72b21"/>
+    <path d="M50 50L55.5 50L50 77L44.5 50Z" fill="#454f5e"/>
+  </g>
+  <circle cx="50" cy="50" r="4.4" fill="#cc9642" stroke="#7d541f" stroke-width="1.2"/>
+</svg>

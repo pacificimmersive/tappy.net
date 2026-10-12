@@ -2,1696 +2,1158 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tappy - Sensory Fidget &amp; Focus App</title>
-    <meta name="description" content="Tappy app is an all-in-one sensory fidget and focus app with satisfying haptic tools, guided meditations, grounding exercises, audio-haptic Feelscapes, mood tracking, to-do and habit tools, and fun arcade games. Free on the App Store. 4.8 stars, 18K+ ratings.">
-    <meta name="keywords" content="Tappy, Tappy fidget, Tappy app, Tappy game, Tappy sensory, fidget app, sensory fidget, calming app, focus app, fidget spinner, haptic fidget, breathing app, grounding exercises, arcade games, pop it, fidget toys, self care app, ADHD fidget, sensory app, meditation app, mood tracker, to-do list app, habit tracker, feelscapes">
-    <meta name="author" content="Cameron Nazemi">
-    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Tappy: Self-Care Pet &amp; Fidget App for Stress Relief</title>
+    <meta name="description" content="Meet Tappy, the self-care pet who levels up as you destress. Build a Daily Adventure, play with 25+ haptic fidgets, breathe, journal, and track habits. Free on iPhone and Apple Watch.">
+    <meta name="keywords" content="Tappy, Tappy app, self care pet, self-care app, virtual pet, fidget app, haptic fidget, stress relief, sensory games, ADHD fidget, stim app, breathing exercises, mood journal, habit tracker, daily planner, white noise, sleep sounds, Feelscapes, Apple Watch fidget">
+    <meta name="author" content="Pacific Interactive LLC">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#6ccaee">
+    <meta name="color-scheme" content="light">
     <link rel="canonical" href="https://www.tappy.net/">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Tappy - Sensory Fidget &amp; Focus App">
-    <meta property="og:description" content="An all-in-one sensory fidget and focus app with haptic tools, meditations, grounding exercises, mood tracking, to-do tools, and arcade games. Free on the App Store.">
-    <meta property="og:image" content="https://www.tappy.net/assets/images/tappy-banner.png">
-    <meta property="og:url" content="https://www.tappy.net/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Tappy">
+    <meta property="og:url" content="https://www.tappy.net/">
+    <meta property="og:title" content="Tappy: Self-Care Pet &amp; Fidget App">
+    <meta property="og:description" content="Tappy 6.0 is here. Meet the self-care pet who grows with you: Daily Adventures, 25+ haptic fidgets, breathing, Feelscapes, mood journal, habit tracker, and arcade games.">
+    <meta property="og:image" content="https://www.tappy.net/assets/images/tappy-og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="The Tappy logo surrounded by sticker icons for fidgets, meditation, breathing, journaling, and Sparks">
+    <meta property="og:locale" content="en_US">
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tappy - Sensory Fidget &amp; Focus App">
-    <meta name="twitter:description" content="All-in-one sensory fidget and focus app with haptic tools, meditations, grounding exercises, mood tracking, to-do tools, and arcade games.">
-    <meta name="twitter:image" content="https://www.tappy.net/assets/images/tappy-banner.png">
+    <meta name="twitter:title" content="Tappy: Self-Care Pet &amp; Fidget App">
+    <meta name="twitter:description" content="Meet the self-care pet who levels up as you destress. Daily Adventures, 25+ haptic fidgets, breathing, journaling, and more.">
+    <meta name="twitter:image" content="https://www.tappy.net/assets/images/tappy-og.png">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Smart App Banner -->
     <meta name="apple-itunes-app" content="app-id=1492017640">
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Tappy",
-        "alternateName": "Tappy App",
-        "url": "https://www.tappy.net/"
-    }
-    </script>
+    <link rel="preload" href="/assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/v6/screens/home.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="stylesheet" href="/assets/fonts/nunito.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <script>document.documentElement.classList.add('js');</script>
 
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "MobileApplication",
-        "name": "Tappy",
-        "alternateName": "Tappy App",
-        "operatingSystem": "iOS",
-        "applicationCategory": "LifestyleApplication",
-        "description": "An all-in-one sensory fidget and focus app with satisfying haptic tools, guided meditations, grounding exercises, audio-haptic Feelscapes, breathing sessions, mood tracking, journaling, to-do lists, habit tracking, and fun arcade games.",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "url": "https://www.tappy.net",
-        "image": "https://www.tappy.net/assets/images/tappy-icon.png",
-        "installUrl": "https://apps.apple.com/us/app/tappy-sensory-fidget-focus/id1492017640",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "ratingCount": "18000"
-        },
-        "author": {
-            "@type": "Organization",
-            "name": "Pacific Interactive LLC"
-        }
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://www.tappy.net/#organization",
+                "name": "Pacific Interactive LLC",
+                "url": "https://www.pacific.dev",
+                "logo": "https://www.tappy.net/assets/images/icon-512.png",
+                "email": "cameron@pacific.dev"
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://www.tappy.net/#website",
+                "url": "https://www.tappy.net/",
+                "name": "Tappy",
+                "alternateName": ["Tappy App", "Tappy: Self Care Pet & Fidget"],
+                "inLanguage": "en-US",
+                "publisher": { "@id": "https://www.tappy.net/#organization" }
+            },
+            {
+                "@type": "MobileApplication",
+                "@id": "https://www.tappy.net/#app",
+                "name": "Tappy: Self Care Pet & Fidget",
+                "alternateName": "Tappy",
+                "description": "Tappy is a self-care pet who levels up as you destress, stay focused, and build a routine that's all yours. Create a Daily Adventure from 25+ self-care quests, collect Sparks to unlock outfits, scenes, and surprises, and use 25+ haptic fidgets, 9 breathing exercises, 40+ Feelscapes, a mood journal, habit tracker, planner, goals, focus timer, and 14+ arcade games.",
+                "url": "https://www.tappy.net/",
+                "installUrl": "https://apps.apple.com/us/app/tappy-self-care-pet-fidget/id1492017640",
+                "downloadUrl": "https://apps.apple.com/us/app/tappy-self-care-pet-fidget/id1492017640",
+                "image": "https://www.tappy.net/assets/images/icon-512.png",
+                "screenshot": [
+                    "https://www.tappy.net/assets/v6/gallery/shot-1.webp",
+                    "https://www.tappy.net/assets/v6/gallery/shot-2.webp",
+                    "https://www.tappy.net/assets/v6/gallery/shot-3.webp",
+                    "https://www.tappy.net/assets/v6/gallery/shot-4.webp",
+                    "https://www.tappy.net/assets/v6/gallery/shot-5.webp",
+                    "https://www.tappy.net/assets/v6/gallery/shot-6.webp",
+                    "https://www.tappy.net/assets/v6/gallery/shot-7.webp",
+                    "https://www.tappy.net/assets/v6/gallery/shot-8.webp"
+                ],
+                "operatingSystem": "iOS, watchOS",
+                "applicationCategory": "LifestyleApplication",
+                "softwareVersion": "6.0",
+                "featureList": [
+                    "Daily Adventure routine builder with 25+ self-care quests",
+                    "Virtual self-care pet you can name, pet, feed, hug, play with, and tuck in",
+                    "Sparks rewards, item shop, scenes, badges, and friendship levels",
+                    "25+ haptic sensory fidgets",
+                    "9 haptic-guided breathing exercises",
+                    "Guided meditations and a 5 senses grounding exercise",
+                    "40+ audio-haptic Feelscapes with a sleep timer",
+                    "Mood journal with insights",
+                    "Planner and to-dos",
+                    "Habit tracker with streaks and stats",
+                    "Goals and focus timer",
+                    "14+ arcade games and local multiplayer",
+                    "Apple Health, widgets, Live Activities, and Apple Watch"
+                ],
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "ratingCount": "20000",
+                    "bestRating": "5"
+                },
+                "publisher": { "@id": "https://www.tappy.net/#organization" }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://www.tappy.net/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is Tappy?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Tappy is a self-care pet and fidget app for iPhone and Apple Watch. Tappy levels up as you destress, stay focused, and build a routine that's all yours. It includes a Daily Adventure routine builder, 25+ haptic fidgets, breathing exercises, meditations, Feelscapes, a mood journal, habit tracker, planner, goals, a focus timer, and arcade games." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is Tappy free?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tappy is free to download on the App Store, with optional in-app purchases including Tappy Plus." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What's new in Tappy 6.0?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Tappy 6.0 turns Tappy into a self-care pet who grows with you. It adds the Daily Adventure, caring for Tappy with a Care Bar and daily surprise gifts, Sparks and the Shop, new scenes like the beach, a farm, a castle, and outer space, Bedtime, Goals, badges and friendship levels, a Daily Adventure widget, and Live Activities for timed quests." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What are Sparks?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Sparks are rewards you collect for everything you finish in Tappy, like quests, focus sessions, and your Daily Adventure. Spend them in the Shop on hats, glasses, outfits, props, toys, colors, and scenes to level Tappy up." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is Tappy good for fidgeting and stimming?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Tappy gives your hands something to do and your mind a place to settle, whether you're stimming at your desk, waiting in line, or riding out a stressful moment. Each of the 25+ fidgets has its own haptic feel, and breathing exercises, meditations, and a 5 senses exercise are there whenever you want a moment to slow down. Tappy is a fidget and self-care tool and is not a substitute for professional care." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I use Tappy's fidgets silently?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Turn sound on for satisfying audio, or off for a silent, discreet stim anywhere. You can also pin a haptic calming strip that floats over the app so it's always within reach." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does Tappy work on Apple Watch?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tappy on Apple Watch gives you a quick, discreet fidget on your wrist. On iPhone, Tappy also supports Apple Health mindful minutes, Home Screen widgets, and Live Activities for timed quests." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is my mood journal private?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Your journal entries stay on your device and in your own iCloud, and you can lock them with Face ID or Touch ID." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I go back to the original Tappy?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. On the home screen, tap More, then Switch to Classic Tappy." }
+                    }
+                ]
+            }
+        ]
     }
     </script>
-
-    <!-- Fonts -->
-    <link href="/assets/fonts/nunito.css" rel="stylesheet">
-
-
-
-    <style>
-        :root {
-            --tappy-blue: #3AADE0;
-            --tappy-light-blue: #87CEEB;
-            --tappy-dark-blue: #1B6B93;
-            --tappy-sky: #E8F6FC;
-            --tappy-orange: #FF8C42;
-            --tappy-pink: #FF6B8A;
-            --tappy-purple: #A66CFF;
-            --tappy-green: #4CD964;
-            --bg-dark: #0f1923;
-            --text-dark: #1a1a2e;
-            --text-light: #ffffff;
-            --radius: 20px;
-            --soft-border: #e8edf5;
-            --soft-shadow: 0 16px 30px rgba(16, 30, 54, 0.08);
-            --vivid-yellow: #FFCB2F;
-            --vivid-orange: #FF7F2A;
-            --vivid-blue: #19A8FF;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text-dark);
-            background: #ffffff;
-            overflow-x: hidden;
-        }
-
-        /* Nav */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 16px 32px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: background 0.3s, box-shadow 0.3s;
-        }
-
-        nav.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .nav-logo {
-            height: 78px;
-            margin-left: -10px;
-        }
-
-        .nav-download {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            padding: 10px 20px;
-            background: linear-gradient(180deg, #1e2540 0%, #131a30 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            font-weight: 800;
-            font-size: 14px;
-            letter-spacing: 0.2px;
-            box-shadow: 0 8px 20px rgba(6, 11, 25, 0.28);
-            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-        }
-
-        .nav-download:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(180deg, #273054 0%, #171f38 100%);
-            box-shadow: 0 10px 24px rgba(6, 11, 25, 0.34);
-        }
-
-        .nav-download:focus-visible {
-            outline: 2px solid rgba(130, 196, 255, 0.95);
-            outline-offset: 2px;
-        }
-
-        nav.scrolled .nav-download {
-            border-color: rgba(18, 26, 48, 0.16);
-            box-shadow: 0 6px 16px rgba(15, 23, 40, 0.16);
-        }
-
-        .nav-download svg {
-            width: 18px;
-            height: 18px;
-        }
-
-        .nav-download-mobile {
-            display: none;
-        }
-
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            --cloud-nav-offset: 110px;
-            background:
-                radial-gradient(ellipse 120% 55% at 50% 84%, rgba(255, 205, 135, 0.55) 0%, rgba(255, 205, 135, 0.18) 42%, transparent 70%),
-                radial-gradient(ellipse 90% 45% at 78% 62%, rgba(255, 128, 108, 0.34) 0%, transparent 62%),
-                linear-gradient(180deg,
-                    #243063 0%,
-                    #33457f 10%,
-                    #5a5892 21%,
-                    #886295 31%,
-                    #bf6a82 42%,
-                    #e67d73 52%,
-                    #ff9a78 62%,
-                    #ffb885 72%,
-                    #ffd29b 82%,
-                    #ffe6bb 92%,
-                    #fff3d6 100%
-                );
-            padding: 120px 32px 160px;
-            overflow: hidden;
-        }
-
-        .hero-text h1 { color: #fff; }
-        .hero-text p { color: rgba(255, 255, 255, 0.9); }
-        .hero-rating .rating-text { color: rgba(255, 255, 255, 0.75); }
-
-        .hero-cloud {
-            position: absolute;
-            pointer-events: none;
-            z-index: 1;
-            fill: #ffffff;
-            animation: cloud-drift 60s linear infinite;
-        }
-
-        .cloud-front {
-            opacity: 0.96;
-            filter: drop-shadow(0 10px 20px rgba(18, 26, 58, 0.08));
-        }
-
-        .cloud-back {
-            opacity: 0.38;
-        }
-
-        .hc1 { width: 255px; top: calc(2% + var(--cloud-nav-offset)); left: 3%; animation-duration: 82s; }
-        .hc2 { width: 215px; top: calc(1% + var(--cloud-nav-offset)); right: 7%; animation-duration: 95s; animation-delay: -30s; }
-        .hc3 { width: 155px; top: calc(10% + var(--cloud-nav-offset)); left: 32%; animation-duration: 72s; animation-delay: -15s; }
-        .hc4 { width: 240px; top: calc(7% + var(--cloud-nav-offset)); right: 25%; animation-duration: 98s; animation-delay: -50s; }
-        .hc5 { width: 145px; top: calc(12% + var(--cloud-nav-offset)); left: 63%; animation-duration: 78s; animation-delay: -40s; }
-        .hc6 { width: 175px; top: calc(4% + var(--cloud-nav-offset)); left: 46%; animation-duration: 86s; animation-delay: -20s; }
-
-        @keyframes cloud-drift {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(40px); }
-            100% { transform: translateX(0); }
-        }
-
-        .hero-atmosphere {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background:
-                radial-gradient(ellipse 100% 35% at 50% 80%, rgba(255, 200, 140, 0.3) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .hero-stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 40%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .hero-stars circle {
-            fill: #ffe8a3;
-            opacity: 0.55;
-            animation: star-twinkle 4.6s ease-in-out infinite;
-        }
-
-        .hero-stars circle:nth-child(3n) {
-            animation-duration: 5.2s;
-            animation-delay: -1.3s;
-        }
-
-        .hero-stars circle:nth-child(4n) {
-            animation-duration: 3.9s;
-            animation-delay: -2.1s;
-        }
-
-        .hero-stars circle:nth-child(5n) {
-            animation-duration: 6.1s;
-            animation-delay: -0.8s;
-        }
-
-        @keyframes star-twinkle {
-            0%, 100% {
-                opacity: 0.3;
-                filter: drop-shadow(0 0 0 rgba(255, 232, 163, 0));
-            }
-            45% {
-                opacity: 0.85;
-                filter: drop-shadow(0 0 6px rgba(255, 223, 140, 0.55));
-            }
-            70% {
-                opacity: 0.65;
-                filter: drop-shadow(0 0 3px rgba(255, 223, 140, 0.35));
-            }
-        }
-
-        /* Rolling hills at hero bottom */
-        .hero-hills {
-            position: absolute;
-            bottom: 0;
-            left: -1px;
-            right: 0;
-            width: calc(100% + 2px);
-            height: 140px;
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            margin-top: 92px;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-text h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            color: #f3f7ff;
-            text-shadow: 0 5px 18px rgba(18, 26, 58, 0.45);
-        }
-
-        .hero-text h1 span {
-            color: #f3f7ff;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            color: rgba(243, 247, 255, 0.9);
-            line-height: 1.6;
-            margin-bottom: 32px;
-            max-width: 480px;
-            text-shadow: 0 2px 10px rgba(18, 26, 58, 0.3);
-        }
-
-        .hero-cta {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .hero-downloads {
-            font-size: 0.9rem;
-            font-weight: 800;
-            letter-spacing: 0.2px;
-            color: rgba(243, 247, 255, 0.9);
-            text-shadow: 0 2px 10px rgba(18, 26, 58, 0.25);
-        }
-
-        .app-store-badge {
-            transition: transform 0.2s;
-            display: inline-block;
-        }
-
-        .app-store-badge:hover {
-            transform: scale(1.05);
-        }
-
-        .app-store-badge img {
-            height: 54px;
-        }
-
-        .hero-rating {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 14px;
-            border-radius: 999px;
-            background: rgba(32, 44, 84, 0.26);
-            border: 1px solid rgba(255, 255, 255, 0.28);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-        }
-
-        .hero-rating .stars {
-            color: #FFB800;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-        }
-
-        .hero-rating .rating-text {
-            font-size: 0.9rem;
-            color: rgba(243, 247, 255, 0.82);
-            font-weight: 700;
-        }
-
-        .hero-visual {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .hero-character {
-            width: 380px;
-            max-width: 100%;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .hero-blob {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--tappy-light-blue) 0%, transparent 70%);
-            opacity: 0;
-            z-index: -1;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-
-        /* Section wave dividers */
-        .wave-divider {
-            display: none;
-        }
-
-        .hero-hills path,
-        .wave-divider path,
-        .footer-wave path {
-            shape-rendering: geometricPrecision;
-        }
-
-        /* Features */
-        .features {
-            padding: 96px 32px 84px;
-            background: linear-gradient(180deg, #fffaf2 0%, #fff6e8 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .features-bg-shapes {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .features .section-header,
-        .features .features-grid {
-            position: relative;
-            z-index: 1;
-        }
-
-        .feature-bg-shape {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            will-change: transform;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 680px;
-            margin: 0 auto 54px;
-        }
-
-        .section-header h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 900;
-            margin-bottom: 14px;
-            line-height: 1.12;
-        }
-
-        .section-header p {
-            font-size: 1.06rem;
-            color: #5d6675;
-            line-height: 1.6;
-        }
-
-        .features-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .feature-card {
-            background: #ffffff;
-            border: 0;
-            border-radius: 14px;
-            padding: 30px 24px 28px;
-            text-align: center;
-            transition: transform 0.25s, box-shadow 0.25s;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 14px 24px rgba(20, 37, 65, 0.14);
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 14px;
-            left: 22px;
-            right: 22px;
-            height: 8px;
-            border-radius: 999px;
-            opacity: 0.78;
-        }
-
-        .feature-card::after {
-            content: '';
-            position: absolute;
-            width: 82px;
-            height: 82px;
-            right: -28px;
-            bottom: -28px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.24);
-        }
-
-        .feature-card:nth-child(1)::after {
-            width: 92px;
-            height: 92px;
-            right: -30px;
-            bottom: -34px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.22);
-        }
-
-        .feature-card:nth-child(2)::after {
-            width: 84px;
-            height: 84px;
-            left: -26px;
-            bottom: 18px;
-            right: auto;
-            border-radius: 14px;
-            transform: rotate(22deg);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .feature-card:nth-child(3)::after {
-            width: 110px;
-            height: 62px;
-            right: -22px;
-            top: -18px;
-            bottom: auto;
-            border-radius: 999px;
-            transform: rotate(-12deg);
-            background: rgba(255, 255, 255, 0.22);
-        }
-
-        .feature-card:nth-child(4)::after {
-            width: 76px;
-            height: 76px;
-            left: -18px;
-            top: -18px;
-            right: auto;
-            bottom: auto;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .feature-card:nth-child(5)::after {
-            width: 108px;
-            height: 72px;
-            right: -26px;
-            bottom: -12px;
-            border-radius: 16px;
-            transform: rotate(-18deg);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .feature-card:nth-child(6)::after {
-            width: 92px;
-            height: 92px;
-            left: 18px;
-            bottom: -42px;
-            right: auto;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.18);
-        }
-
-        .feature-card:nth-child(1) { background: linear-gradient(145deg, #ffd64f 0%, #ffc72a 100%); color: #162034; }
-        .feature-card:nth-child(2) { background: linear-gradient(145deg, #ff8e3f 0%, #ff7521 100%); color: #ffffff; }
-        .feature-card:nth-child(3) { background: linear-gradient(145deg, #38c2ff 0%, #129fff 100%); color: #ffffff; }
-        .feature-card:nth-child(4) { background: linear-gradient(145deg, #ff76ac 0%, #ff5a96 100%); color: #ffffff; }
-        .feature-card:nth-child(5) { background: linear-gradient(145deg, #8ce89d 0%, #61d97a 100%); color: #12301d; }
-        .feature-card:nth-child(6) { background: linear-gradient(145deg, #9f8bff 0%, #7a63ff 100%); color: #ffffff; }
-
-        .feature-card:nth-child(1)::before { background: rgba(22, 32, 52, 0.22); }
-        .feature-card:nth-child(2)::before { background: rgba(255, 255, 255, 0.34); }
-        .feature-card:nth-child(3)::before { background: rgba(255, 255, 255, 0.34); }
-        .feature-card:nth-child(4)::before { background: rgba(255, 255, 255, 0.34); }
-        .feature-card:nth-child(5)::before { background: rgba(18, 48, 29, 0.2); }
-        .feature-card:nth-child(6)::before { background: rgba(255, 255, 255, 0.34); }
-
-        .feature-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 20px 28px rgba(20, 37, 65, 0.2);
-        }
-
-        .feature-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 14px auto 20px;
-            font-size: 28px;
-            border: 2px solid rgba(255, 255, 255, 0.85);
-            background: rgba(255, 255, 255, 0.9) !important;
-            color: #1d2a44 !important;
-        }
-
-        .feature-card h3 {
-            font-size: 1.24rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
-        .feature-card p {
-            color: rgba(22, 32, 52, 0.84);
-            line-height: 1.64;
-            font-size: 0.95rem;
-        }
-
-        .feature-card:nth-child(2) p,
-        .feature-card:nth-child(3) p,
-        .feature-card:nth-child(4) p,
-        .feature-card:nth-child(6) p {
-            color: rgba(255, 255, 255, 0.92);
-        }
-
-        /* Screenshots */
-        .screenshots {
-            padding: 84px 32px 96px;
-            background: linear-gradient(180deg, #15a7ff 0%, #0f9af6 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .screenshots-bg-shapes {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .screenshot-bg-shape {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            will-change: transform;
-        }
-
-        .screenshots .section-header h2 {
-            color: #ffffff;
-        }
-
-        .screenshots .section-header p {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .screenshots .section-header {
-            position: relative;
-            z-index: 1;
-        }
-
-        .screenshots-track {
-            max-width: 1160px;
-            margin: 0 auto;
-            display: flex;
-            width: max-content;
-            gap: 20px;
-            background: rgba(255, 255, 255, 0.22);
-            border-radius: 16px;
-            padding: 18px;
-            backdrop-filter: blur(2px);
-            position: relative;
-            z-index: 1;
-            animation: scroll-left 42s linear infinite;
-        }
-
-        .screenshots-track:hover {
-            animation-play-state: paused;
-        }
-
-        .screenshot-item {
-            flex-shrink: 0;
-            width: 220px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 18px rgba(12, 33, 62, 0.28);
-            transition: transform 0.22s, box-shadow 0.22s;
-            border: 4px solid #ffffff;
-            background: #ffffff;
-        }
-
-        .screenshot-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 18px 28px rgba(20, 35, 66, 0.16);
-        }
-
-        .screenshot-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        @keyframes scroll-left {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 84px 32px 94px;
-            background: linear-gradient(180deg, #fff7ec 0%, #fff2dd 100%);
-            position: relative;
-        }
-
-        .testimonials-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .testimonial-card {
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-            border: 0;
-            box-shadow: 0 14px 22px rgba(20, 37, 65, 0.14);
-            transition: transform 0.22s, box-shadow 0.22s;
-            color: #ffffff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonial-card::before {
-            content: '';
-            position: absolute;
-            left: -20px;
-            bottom: -20px;
-            width: 64px;
-            height: 64px;
-            border-radius: 14px;
-            transform: rotate(18deg);
-            background: rgba(255, 255, 255, 0.16);
-        }
-
-        .testimonial-card::after {
-            content: '';
-            position: absolute;
-            top: -18px;
-            right: -18px;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.24);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 28px rgba(20, 37, 65, 0.2);
-        }
-
-        .testimonial-card:nth-child(1) {
-            background: linear-gradient(145deg, #ffbc26 0%, #ff9d1a 100%);
-            color: #1f2a43;
-        }
-
-        .testimonial-card:nth-child(1)::before {
-            left: auto;
-            right: -22px;
-            bottom: 16px;
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            transform: none;
-            background: rgba(255, 255, 255, 0.18);
-        }
-
-        .testimonial-card:nth-child(1)::after {
-            top: -16px;
-            left: -20px;
-            right: auto;
-            width: 92px;
-            height: 58px;
-            border-radius: 999px;
-            transform: rotate(-14deg);
-            background: rgba(255, 255, 255, 0.16);
-        }
-
-        .testimonial-card:nth-child(2) {
-            background: linear-gradient(145deg, #1ab4ff 0%, #0d97f0 100%);
-            color: #ffffff;
-        }
-
-        .testimonial-card:nth-child(2)::before {
-            left: -16px;
-            bottom: -18px;
-            width: 86px;
-            height: 56px;
-            border-radius: 999px;
-            transform: rotate(16deg);
-            background: rgba(255, 255, 255, 0.18);
-        }
-
-        .testimonial-card:nth-child(2)::after {
-            top: 16px;
-            right: -18px;
-            width: 64px;
-            height: 64px;
-            border-radius: 14px;
-            transform: rotate(20deg);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .testimonial-card:nth-child(3) {
-            background: linear-gradient(145deg, #ff8739 0%, #ff6d1c 100%);
-            color: #ffffff;
-        }
-
-        .testimonial-card:nth-child(3)::before {
-            left: auto;
-            right: -22px;
-            bottom: -22px;
-            width: 88px;
-            height: 88px;
-            border-radius: 50%;
-            transform: none;
-            background: rgba(255, 255, 255, 0.18);
-        }
-
-        .testimonial-card:nth-child(3)::after {
-            top: -16px;
-            right: 18px;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            transform: none;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .testimonial-stars {
-            color: #FFB800;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-        }
-
-        .testimonial-card:nth-child(1) .testimonial-stars {
-            color: #b45300;
-            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
-        }
-
-        .testimonial-card:nth-child(2) .testimonial-stars,
-        .testimonial-card:nth-child(3) .testimonial-stars {
-            color: #ffe082;
-        }
-
-        .testimonial-card h4 {
-            font-size: 1rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-        }
-
-        .testimonial-card p {
-            color: rgba(31, 42, 67, 0.86);
-            font-size: 0.9rem;
-            line-height: 1.7;
-            flex: 1;
-        }
-
-        .testimonial-card:nth-child(2) p,
-        .testimonial-card:nth-child(3) p {
-            color: rgba(255, 255, 255, 0.93);
-        }
-
-        .testimonial-author {
-            display: block;
-            margin-top: 16px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: currentColor;
-            opacity: 0.92;
-        }
-
-        /* CTA */
-        .cta {
-            padding: 86px 32px 96px;
-            text-align: center;
-            position: relative;
-            background: #ffffff;
-            overflow: hidden;
-        }
-
-        .cta-bg-shapes {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .cta-bg-shape {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            will-change: transform;
-        }
-
-        .cta-hills {
-            display: none;
-        }
-
-        .cta-content {
-            max-width: 720px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-            background: linear-gradient(145deg, #1696ff 0%, #0c83e6 100%);
-            border-radius: 16px;
-            padding: 48px 36px;
-            color: #fffaf2;
-            box-shadow: 0 20px 34px rgba(16, 85, 156, 0.32);
-            overflow: hidden;
-        }
-
-        .cta-content::before {
-            content: '';
-            position: absolute;
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            right: -50px;
-            top: -42px;
-            background: rgba(255, 215, 102, 0.92);
-        }
-
-        .cta-content::after {
-            content: '';
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            border-radius: 18px;
-            left: -30px;
-            bottom: -26px;
-            transform: rotate(18deg);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .cta-character {
-            width: 140px;
-            margin-bottom: 18px;
-            position: relative;
-            z-index: 1;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        .cta h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 900;
-            margin-bottom: 10px;
-            color: #ffffff;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta h2 span {
-            color: #fff9d9;
-            -webkit-text-fill-color: #fff9d9;
-        }
-
-        .cta p {
-            font-size: 1.04rem;
-            color: rgba(255, 251, 242, 0.95);
-            margin-bottom: 32px;
-            line-height: 1.6;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta .app-store-badge {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Wave: CTA to Footer */
-        .footer-wave {
-            display: none;
-        }
-
-        /* Footer */
-        footer {
-            background: #ffffff;
-            color: #677184;
-            padding: 42px 32px;
-            text-align: center;
-            border-top: 1px solid #dce4ef;
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            height: 32px;
-            margin-bottom: 16px;
-            opacity: 1;
-        }
-
-        footer p {
-            font-size: 0.85rem;
-            line-height: 1.8;
-        }
-
-        footer a {
-            color: #46536b;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        footer a:hover {
-            color: var(--tappy-blue);
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .hero {
-                --cloud-nav-offset: 82px;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 40px;
-                margin-top: 48px;
-            }
-
-            .hero-text p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-cta {
-                justify-content: center;
-                align-items: center;
-            }
-
-            .hero-character {
-                width: 280px;
-            }
-
-            /* Smaller clouds on mobile so hero text can sit higher */
-            .hc1 { width: 118px; top: calc(2% + var(--cloud-nav-offset)); left: -4%; }
-            .hc2 { width: 100px; top: calc(1% + var(--cloud-nav-offset)); right: -3%; }
-            .hc3, .hc4, .hc5, .hc6 { display: none; }
-
-            .features-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-                max-width: 400px;
-            }
-
-            .screenshots-track {
-                max-width: 100%;
-                padding: 14px;
-            }
-
-            nav {
-                padding: 12px 20px;
-            }
-
-            .nav-logo {
-                height: 58px;
-                margin-left: -8px;
-            }
-
-            .nav-download .nav-download-desktop {
-                display: none;
-            }
-
-            .nav-download .nav-download-mobile {
-                display: inline;
-            }
-
-            .nav-download {
-                padding: 10px 14px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero {
-                --cloud-nav-offset: 78px;
-            }
-
-            .hero {
-                padding: 100px 20px 60px;
-            }
-
-            .hero-content {
-                margin-top: 40px;
-                gap: 28px;
-            }
-
-            .hc1 { width: 95px; }
-            .hc2 { width: 82px; }
-
-            .features, .screenshots, .cta, .testimonials {
-                padding: 60px 20px;
-            }
-
-            .screenshots-track {
-                max-width: 100%;
-                gap: 16px;
-            }
-
-            .screenshot-item {
-                width: 180px;
-            }
-
-            .cta-content {
-                border-radius: 12px;
-                padding: 38px 24px;
-            }
-
-            .cta-character {
-                width: 118px;
-            }
-        }
-
-        /* Animations on scroll */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Nav -->
-    <nav id="navbar">
-        <a href="/">
-            <img
-                src="assets/images/tappy-logo-light.png"
-                alt="Tappy"
-                class="nav-logo"
-                id="navLogo"
-                data-light-logo="assets/images/tappy-logo-light.png"
-                data-dark-logo="assets/images/tappy-logo-dark.png"
-            >
-        </a>
-        <a href="https://apps.apple.com/us/app/tappy-sensory-fidget-focus/id1492017640" class="nav-download" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            <span class="nav-download-desktop">Download on App Store</span>
-            <span class="nav-download-mobile" aria-hidden="true">Download App</span>
-        </a>
-    </nav>
-
-    <!-- Hero -->
-    <section class="hero" id="home">
-        <div class="hero-atmosphere"></div>
-        <svg class="hero-stars" viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid slice">
-            <circle cx="80" cy="45" r="1.2" fill="white" opacity="0.6"/>
-            <circle cx="200" cy="80" r="0.8" fill="white" opacity="0.4"/>
-            <circle cx="340" cy="30" r="1.0" fill="white" opacity="0.5"/>
-            <circle cx="450" cy="95" r="0.7" fill="white" opacity="0.35"/>
-            <circle cx="520" cy="25" r="1.3" fill="white" opacity="0.55"/>
-            <circle cx="650" cy="60" r="0.9" fill="white" opacity="0.45"/>
-            <circle cx="720" cy="110" r="0.7" fill="white" opacity="0.3"/>
-            <circle cx="830" cy="40" r="1.1" fill="white" opacity="0.5"/>
-            <circle cx="910" cy="85" r="0.8" fill="white" opacity="0.4"/>
-            <circle cx="150" cy="140" r="0.7" fill="white" opacity="0.3"/>
-            <circle cx="300" cy="160" r="0.9" fill="white" opacity="0.25"/>
-            <circle cx="480" cy="150" r="0.6" fill="white" opacity="0.2"/>
-            <circle cx="600" cy="170" r="0.8" fill="white" opacity="0.2"/>
-            <circle cx="760" cy="155" r="0.7" fill="white" opacity="0.25"/>
-            <circle cx="880" cy="140" r="0.6" fill="white" opacity="0.2"/>
-            <circle cx="50" cy="100" r="0.6" fill="white" opacity="0.35"/>
-            <circle cx="420" cy="55" r="1.0" fill="white" opacity="0.45"/>
-            <circle cx="570" cy="120" r="0.5" fill="white" opacity="0.25"/>
-            <circle cx="950" cy="50" r="0.9" fill="white" opacity="0.4"/>
-            <circle cx="270" cy="70" r="0.7" fill="white" opacity="0.35"/>
-            <circle cx="680" cy="35" r="1.1" fill="white" opacity="0.5"/>
-            <circle cx="130" cy="20" r="0.8" fill="white" opacity="0.5"/>
-            <circle cx="380" cy="105" r="0.6" fill="white" opacity="0.3"/>
-            <circle cx="800" cy="80" r="0.9" fill="white" opacity="0.35"/>
-        </svg>
-        <svg class="hero-cloud cloud-front hc1" viewBox="0 0 280 140" aria-hidden="true">
-            <path d="M33 102c-17 0-31-12-31-28 0-13 9-24 22-27 2-22 22-39 47-39 12 0 23 4 31 11 8-11 22-18 38-18 24 0 44 16 49 37 3-1 6-1 9-1 19 0 34 14 34 31 0 19-17 34-38 34H33z"/>
-        </svg>
-        <svg class="hero-cloud cloud-front hc2" viewBox="0 0 260 130" aria-hidden="true">
-            <path d="M29 95c-15 0-27-11-27-25 0-11 8-21 18-24 2-20 20-35 42-35 10 0 20 4 27 10 7-10 20-16 35-16 22 0 40 14 45 34 3-1 5-1 8-1 17 0 31 12 31 28 0 16-14 29-32 29H29z"/>
-        </svg>
-        <svg class="hero-cloud cloud-back hc3" viewBox="0 0 210 110" aria-hidden="true">
-            <path d="M22 80c-12 0-22-9-22-20 0-9 6-17 15-19 2-16 16-28 33-28 8 0 15 3 21 8 6-8 16-13 27-13 17 0 31 11 35 26 2 0 4-1 6-1 13 0 24 10 24 22s-11 23-25 23H22z"/>
-        </svg>
-        <svg class="hero-cloud cloud-back hc4" viewBox="0 0 240 120" aria-hidden="true">
-            <path d="M28 87c-13 0-24-9-24-22 0-10 7-18 16-21 2-17 17-30 36-30 9 0 17 3 23 8 6-9 18-14 30-14 19 0 34 12 38 29 2 0 4-1 7-1 15 0 27 11 27 24 0 15-12 27-28 27H28z"/>
-        </svg>
-        <svg class="hero-cloud cloud-back hc5" viewBox="0 0 200 105" aria-hidden="true">
-            <path d="M20 75c-11 0-20-8-20-18 0-8 6-15 14-18 2-15 15-26 31-26 8 0 14 2 19 7 6-7 15-12 25-12 15 0 28 10 31 24 2 0 3-1 5-1 12 0 21 9 21 20 0 13-10 24-23 24H20z"/>
-        </svg>
-        <svg class="hero-cloud cloud-back hc6" viewBox="0 0 220 112" aria-hidden="true">
-            <path d="M24 82c-12 0-22-9-22-20 0-9 7-17 15-20 2-17 17-29 35-29 8 0 16 3 22 8 6-8 16-13 28-13 17 0 31 11 35 27 2 0 4-1 6-1 14 0 24 10 24 22 0 14-11 26-26 26H24z"/>
-        </svg>
-        <svg class="hero-hills" viewBox="0 0 1440 140" preserveAspectRatio="none">
-            <path d="M0,140 L0,100 Q180,40 360,75 Q540,110 720,60 Q900,10 1080,50 Q1260,90 1440,45 L1440,140 Z" fill="rgba(255,225,180,0.35)"/>
-            <path d="M0,140 L0,110 Q200,55 400,85 Q600,115 800,70 Q1000,30 1200,65 Q1350,95 1440,60 L1440,140 Z" fill="rgba(255,235,195,0.5)"/>
-            <path d="M0,140 L0,115 Q240,80 480,100 Q720,120 960,90 Q1200,60 1440,85 L1440,140 Z" fill="#fff0d0"/>
-        </svg>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>The Ultimate Sensory Fidget &amp; <span>Focus App.</span></h1>
-                <p>Tappy is your all-in-one sensory fidget app with satisfying haptic toys, guided meditations, grounding exercises, audio-haptic Feelscapes, mood tracking, to-do and habit tools, and quick arcade games. Personalized themes, sounds, and haptics make every tap feel fun, calming, and uniquely yours.</p>
-                <div class="hero-cta">
-                    <a href="https://apps.apple.com/us/app/tappy-sensory-fidget-focus/id1492017640" class="app-store-badge" target="_blank" rel="noopener" aria-label="Download Tappy on the App Store">
-                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-                    </a>
-                    <div class="hero-rating">
-                        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                        <span class="rating-text">4.8 &middot; 18K+ Ratings</span>
-                    </div>
-                    <p class="hero-downloads">Over 1 million downloads worldwide.</p>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-blob"></div>
-                <img src="assets/images/tappy-character.png" alt="Tappy and friends characters" class="hero-character">
-            </div>
-        </div>
-    </section>
-
-    <!-- Wave: Hero to Features -->
-    <svg class="wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" style="background: #fef5ec;">
-        <path d="M0,0 L1440,0 L1440,10 Q1080,55 720,25 Q360,0 0,40 Z" fill="#fff0d0"/>
-        <path d="M0,30 Q360,60 720,30 Q1080,0 1440,30 L1440,60 L0,60 Z" fill="#fef5ec"/>
-    </svg>
-
-    <!-- Features -->
-    <section class="features" id="features">
-        <div class="features-bg-shapes" aria-hidden="true"></div>
-        <div class="section-header fade-in">
-            <h2>Your one-stop sensory <span style="color: var(--tappy-blue);">fidget app.</span></h2>
-            <p>Tappy is a feature-packed sensory fidget and focus app designed for daily grounding, routines, and fun.</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                </div>
-                <h3>Sensory Fidget Tools</h3>
-                <p>Ultra-satisfying haptic fidget toys right on your phone. Buttons, toggles, spinners, dials, and more — all with incredible haptic feedback and sound effects.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-                </div>
-                <h3>Meditations, Grounding &amp; Feelscapes</h3>
-                <p>Guided meditations, grounding exercises, audio-haptic Feelscapes&trade;, breathing sessions, and ambient soundscapes to help you unwind, focus, and reset.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M2 9h20"/><path d="M12 22V9"/></svg>
-                </div>
-                <h3>Arcade Games</h3>
-                <p>Quick, fun haptic mini-games like Zen Pond, Tap-Tris, Snake, and Bubble Popper. Play solo or challenge friends with multiplayer!</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
-                </div>
-                <h3>Mood &amp; Journal</h3>
-                <p>Track your mood, journal about your day, and view insights over time. Your entries stay on your device and in your own iCloud, and you can lock them with Face ID or Touch ID.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-                </div>
-                <h3>To-Do &amp; Habit Tracking</h3>
-                <p>Plan your day with a built-in to-do list, track daily goals like reading or movement, and stay consistent with simple progress insights.</p>
-            </div>
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
-                </div>
-                <h3>Customize Everything</h3>
-                <p>Name your Tappy, pick a theme color, choose your favorite face, and adjust haptic intensity. Make it truly yours.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Wave: Features to Screenshots -->
-    <svg class="wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" style="background: var(--bg-dark);">
-        <path d="M0,0 Q360,50 720,25 Q1080,0 1440,40 L1440,60 L0,60 Z" fill="var(--bg-dark)"/>
-        <path d="M0,0 L1440,0 L1440,5 Q1080,45 720,20 Q360,0 0,30 Z" fill="#fdf0f8"/>
-    </svg>
-
-    <!-- Screenshots -->
-    <section class="screenshots">
-        <div class="screenshots-bg-shapes" aria-hidden="true"></div>
-        <div class="section-header fade-in">
-            <h2>See Tappy in action.</h2>
-            <p>A peek inside the app that makes sensory focus and daily routines actually fun.</p>
-        </div>
-        <div class="screenshots-track">
-            <div class="screenshot-item"><img src="assets/screenshots/00-main.png" alt="Tappy app with sensory fidget and focus tools" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/01-tap.png" alt="Tappy - tap your new favorite haptic digital pet" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/02-fidget.png" alt="Tappy fidget tools with ultra satisfying haptics" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/03-arcade.png" alt="Tappy arcade - fun quick haptic mini-games" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/04-relax.png" alt="Tappy relax with audio-haptic Feelscapes and meditations" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/05-customize.png" alt="Tappy customizer - haptics, moods, and more" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/06-pop.png" alt="Tappy Pop It - satisfying bubble popping" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/07-spin.png" alt="Tappy fidget spinner with haptic feedback" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/08-mood.png" alt="Tappy mood tracking, journaling, and habit tracker" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/09-soundscapes.png" alt="Tappy immersive soundscapes - vibrations, visuals, and sounds" loading="lazy"></div>
-            <!-- Duplicate for seamless marquee loop -->
-            <div class="screenshot-item"><img src="assets/screenshots/00-main.png" alt="Tappy app" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/01-tap.png" alt="Tappy tap" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/02-fidget.png" alt="Tappy fidget" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/03-arcade.png" alt="Tappy arcade" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/04-relax.png" alt="Tappy relax" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/05-customize.png" alt="Tappy customize" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/06-pop.png" alt="Tappy pop" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/07-spin.png" alt="Tappy spin" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/08-mood.png" alt="Tappy mood" loading="lazy"></div>
-            <div class="screenshot-item"><img src="assets/screenshots/09-soundscapes.png" alt="Tappy soundscapes" loading="lazy"></div>
-        </div>
-    </section>
-
-    <!-- Wave: Screenshots to Testimonials -->
-    <svg class="wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" style="background: #fef0f0;">
-        <path d="M0,0 L1440,0 L1440,20 Q1080,55 720,30 Q360,5 0,40 Z" fill="var(--bg-dark)"/>
-    </svg>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="section-header fade-in">
-            <h2>Loved by thousands.</h2>
-            <p>See what people are saying about Tappy on the App Store.</p>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>There was a lot of thought put into this app. The visuals, sounds and haptics are all very good quality. The app is responsive and I've never experienced a bug. It is well worth it. Very soothing. I highly recommend.</p>
-                <span class="testimonial-author">&mdash; Tappy User</span>
-            </div>
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>I absolutely love this thing. It is like the best ever I cannot stop. I just got it not that long ago and it is already one of my favorite apps ever. If I could, I would rate it 100 out of 100.</p>
-                <span class="testimonial-author">&mdash; Tappy User</span>
-            </div>
-            <div class="testimonial-card fade-in">
-                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p>Tappy is great. I love how it makes you relax. I really get to relax more and I get to meditate a lot and that just saved my day.</p>
-                <span class="testimonial-author">&mdash; Tappy User</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Wave: Testimonials to CTA -->
-    <svg class="wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" style="background: #f0eafc;">
-        <path d="M0,0 L1440,0 L1440,25 Q1080,55 720,30 Q360,5 0,45 Z" fill="#f0eafc"/>
-    </svg>
-
-    <!-- CTA -->
-    <section class="cta">
-        <div class="cta-bg-shapes" aria-hidden="true"></div>
-        <svg class="cta-hills" viewBox="0 0 1440 80" preserveAspectRatio="none">
-            <path d="M0,80 L0,50 Q240,10 480,35 Q720,60 960,25 Q1200,0 1440,30 L1440,80 Z" fill="rgba(214, 198, 255, 0.20)"/>
-            <path d="M0,80 L0,60 Q300,30 600,50 Q900,70 1200,40 L1440,55 L1440,80 Z" fill="rgba(236, 226, 255, 0.30)"/>
-        </svg>
-        <div class="cta-content fade-in">
-            <img src="assets/images/tappy-wave.png" alt="Tappy waving" class="cta-character">
-            <h2>Start <span>tapping!</span></h2>
-            <p>Join hundreds of thousands of users who love Tappy. Free to download on the App Store.</p>
-            <a href="https://apps.apple.com/us/app/tappy-sensory-fidget-focus/id1492017640" class="app-store-badge" target="_blank" rel="noopener" aria-label="Download Tappy on the App Store">
-                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+    <header class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo" aria-label="Tappy home">
+                <img src="/assets/v6/logo-dark.webp" width="322" height="120" alt="Tappy">
             </a>
+            <nav class="nav-links" aria-label="Main">
+                <a href="#adventure">Daily Adventure</a>
+                <a href="#care">Care</a>
+                <a href="#toolkit">Wellness</a>
+                <a href="#playground">Fidgets &amp; games</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <a class="btn btn-yellow btn-sm" href="https://apps.apple.com/us/app/tappy-self-care-pet-fidget/id1492017640" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Get Tappy
+            </a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-    </section>
+        <nav class="mobile-menu" id="mobileMenu" aria-label="Main" hidden>
+            <a href="#whats-new">What's new in 6.0</a>
+            <a href="#adventure">Daily Adventure</a>
+            <a href="#care">Take care of Tappy</a>
+            <a href="#toolkit">Wellness &amp; focus</a>
+            <a href="#playground">Fidgets &amp; games</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#faq">FAQ</a>
+            <a class="store-badge" href="https://apps.apple.com/us/app/tappy-self-care-pet-fidget/id1492017640" target="_blank" rel="noopener">
+                <img src="/assets/v6/app-store-badge.svg" width="150" height="50" alt="Download Tappy on the App Store" style="height:50px">
+            </a>
+        </nav>
+    </header>
 
-    <!-- Wave: CTA to Footer -->
-    <svg class="footer-wave" viewBox="0 0 1440 50" preserveAspectRatio="none">
-        <path d="M0,0 Q360,45 720,20 Q1080,0 1440,30 L1440,50 L0,50 Z" fill="var(--bg-dark)"/>
-        <path d="M0,0 L1440,0 L1440,5 Q1080,40 720,15 Q360,0 0,25 Z" fill="#eab87a"/>
-    </svg>
+    <main id="main">
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <img src="assets/images/tappy-logo-dark.png" alt="Tappy" class="footer-logo">
-            <p>&copy; 2019&ndash;2026 Pacific Interactive LLC. All rights reserved.</p>
-            <p style="margin-top: 8px;">
-                <a href="https://apps.apple.com/us/app/tappy-sensory-fidget-focus/id1492017640" target="_blank" rel="noopener">App Store</a>
-                &nbsp;&middot;&nbsp;
-                <a href="/privacy/">Privacy Policy</a>
-                &nbsp;&middot;&nbsp;
-                <a href="/privacy/#consumer-health-data">Consumer Health Data</a>
-                &nbsp;&middot;&nbsp;
-                <a href="/terms/">Terms</a>
-                &nbsp;&middot;&nbsp;
-                <a href="https://www.pacific.dev" target="_blank" rel="noopener">Pacific Interactive</a>
-            </p>
+        <!-- Hero -->
+        <section class="hero dots-white" id="top">
+            <div class="hero-sky" aria-hidden="true">
+                <svg class="sky-cloud c1" viewBox="0 0 280 140"><path d="M33 102c-17 0-31-12-31-28 0-13 9-24 22-27 2-22 22-39 47-39 12 0 23 4 31 11 8-11 22-18 38-18 24 0 44 16 49 37 3-1 6-1 9-1 19 0 34 14 34 31 0 19-17 34-38 34H33z"/></svg>
+                <svg class="sky-cloud c2" viewBox="0 0 260 130"><path d="M29 95c-15 0-27-11-27-25 0-11 8-21 18-24 2-20 20-35 42-35 10 0 20 4 27 10 7-10 20-16 35-16 22 0 40 14 45 34 3-1 5-1 8-1 17 0 31 12 31 28 0 16-14 29-32 29H29z"/></svg>
+                <svg class="sky-cloud c3" viewBox="0 0 210 110"><path d="M22 80c-12 0-22-9-22-20 0-9 6-17 15-19 2-16 16-28 33-28 8 0 15 3 21 8 6-8 16-13 27-13 17 0 31 11 35 26 2 0 4-1 6-1 13 0 24 10 24 22s-11 23-25 23H22z"/></svg>
+                <svg class="twinkle" style="--s:26px; top:150px; left:46%; --delay:-1s" viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg>
+                <svg class="twinkle" style="--s:16px; top:300px; left:3%; --delay:-2.2s" viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg>
+                <svg class="twinkle" style="--s:20px; top:110px; right:12%; --delay:-0.4s" viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg>
+                <svg class="twinkle" style="--s:14px; top:58%; right:3%; --delay:-3s" viewBox="0 0 24 24"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg>
+            </div>
+
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <a class="new-pill" href="#whats-new">
+                        <span class="new-tag"><img src="/assets/v6/stickers/spark.webp" width="14" height="14" alt="">New</span>
+                        Tappy 6.0 is here
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                    <h1 class="hero-title">
+                        <span class="outline">Meet Tappy,</span>
+                        <span class="outline">your self&#8209;care pet.</span>
+                    </h1>
+                    <p class="hero-lede">Tappy levels up as you destress, stay focused, and build a routine that's all yours. Breathe, fidget, journal your mood, track habits, set goals, and play games, then use your Sparks to outfit Tappy.</p>
+                    <div class="hero-actions">
+                        <a class="store-badge" href="https://apps.apple.com/us/app/tappy-self-care-pet-fidget/id1492017640" target="_blank" rel="noopener">
+                            <img src="/assets/v6/app-store-badge.svg" width="174" height="58" alt="Download Tappy on the App Store">
+                        </a>
+                        <a class="btn btn-white" href="#adventure">See how it works</a>
+                    </div>
+                    <p class="hero-proof">
+                        <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                        <span><strong>4.8</strong> from 20,000+ ratings</span>
+                        <span class="sep" aria-hidden="true"></span>
+                        <span>1M+ downloads</span>
+                    </p>
+                </div>
+
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="phone">
+                        <img src="/assets/v6/screens/home.webp" width="600" height="1262" alt="" fetchpriority="high">
+                    </div>
+                    <div class="hero-float f-spark" style="--w:76px; --depth:-22px; --r:-12deg; --dur:5.5s"><img class="sticker" src="/assets/v6/stickers/spark.webp" width="320" height="319" alt=""></div>
+                    <div class="hero-float f-fidget" style="--w:100px; --depth:30px; --r:12deg; --dur:6s; --delay:-2s"><img class="sticker" src="/assets/v6/stickers/fidget.webp" width="320" height="290" alt=""></div>
+                    <div class="hero-float f-journal" style="--w:92px; --depth:26px; --r:-8deg; --dur:5s; --delay:-1s"><img class="sticker" src="/assets/v6/stickers/journal.webp" width="320" height="304" alt=""></div>
+                    <div class="hero-float f-relax" style="--w:88px; --depth:-18px; --r:6deg; --dur:6.5s; --delay:-3s"><img class="sticker" src="/assets/v6/stickers/relax.webp" width="320" height="310" alt=""></div>
+                    <div class="hero-float f-breathe hide-sm" style="--w:78px; --depth:16px; --r:-4deg; --dur:7s; --delay:-4s"><img class="sticker" src="/assets/v6/stickers/breathe.webp" width="305" height="320" alt=""></div>
+                    <div class="hero-float f-chip1" style="--w:auto; --depth:-12px; --r:-4deg; --dur:5.8s; --delay:-1.5s">
+                        <span class="float-chip"><img src="/assets/v6/stickers/spark.webp" width="30" height="30" alt="">+25 Sparks</span>
+                    </div>
+                    <div class="hero-float f-chip2" style="--w:auto; --depth:14px; --r:3deg; --dur:6.2s; --delay:-3.4s">
+                        <span class="float-chip"><span class="chip-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></svg></span>Care Bar full!</span>
+                    </div>
+                </div>
+            </div>
+
+            <svg class="cloudbank" viewBox="0 0 1440 170" preserveAspectRatio="none" overflow="visible" aria-hidden="true">
+                <path fill="#ffffff" opacity="0.7" d="M0 170V84a60 60 0 0 1 120-14a80 80 0 0 1 160-12a70 70 0 0 1 140 12a90 90 0 0 1 170-20a70 70 0 0 1 140 18a80 80 0 0 1 150-14a60 60 0 0 1 120 10a90 90 0 0 1 170-12a70 70 0 0 1 130 16a60 60 0 0 1 140 6V170Z"/>
+                <path fill="#fff6e4" d="M0 170V116a60 60 0 0 1 110-20a80 80 0 0 1 150-10a70 70 0 0 1 130 10a90 90 0 0 1 170-20a70 70 0 0 1 130 20a80 80 0 0 1 150-15a60 60 0 0 1 120 10a90 90 0 0 1 170-10a70 70 0 0 1 130 15a60 60 0 0 1 180 10V170Z"/>
+            </svg>
+        </section>
+
+        <!-- Quest ticker -->
+        <div class="ticker-zone" aria-hidden="true">
+            <div class="ticker ticker-b">
+                <div class="ticker-track">
+                    <span>Self-care pet <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>Sparks &amp; the Shop <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>New scenes <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>Bedtime <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>Goals <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>Badges <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>Widgets <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>Live Activities <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                </div>
+            </div>
+            <div class="ticker ticker-a">
+                <div class="ticker-track">
+                    <span>Daily Adventure <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>25+ haptic fidgets <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>Breathing exercises <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>40+ Feelscapes <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>Mood journal <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>Habit tracker <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>Planner &amp; to-dos <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>14+ arcade games <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                    <span>Apple Watch <img src="/assets/v6/stickers/spark.webp" width="24" height="24" alt=""></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- What's new -->
+        <section class="section whats-new" id="whats-new" aria-labelledby="whats-new-title">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow"><img src="/assets/v6/stickers/spark.webp" width="20" height="20" alt="">Introducing Tappy 6.0</span>
+                    <h2 class="h2" id="whats-new-title">Our biggest update <span class="hl">ever.</span></h2>
+                    <p class="lede">Tappy is now a self-care pet who grows with you. Here's everything that's new.</p>
+                </div>
+                <ul class="new-grid">
+                    <li class="new-tile" data-reveal>
+                        <div class="tile-icon"><img class="sticker" src="/assets/v6/stickers/brass-compass.svg" width="320" height="320" alt="" loading="lazy"></div>
+                        <h3>Daily Adventure</h3>
+                        <p>Build your own routine from 25+ self-care quests, then open a treasure chest of Sparks.</p>
+                    </li>
+                    <li class="new-tile" data-reveal style="--reveal-delay:.06s">
+                        <div class="tile-icon"><img class="sticker" src="/assets/v6/stickers/tappy-companion.svg" width="112" height="124" alt="" loading="lazy"></div>
+                        <h3>Take care of Tappy</h3>
+                        <p>Name Tappy, then pet, feed, hug, play, and tuck Tappy in. Fill the Care Bar for a daily gift.</p>
+                    </li>
+                    <li class="new-tile" data-reveal style="--reveal-delay:.12s">
+                        <div class="tile-icon"><img class="sticker" src="/assets/v6/stickers/spark.webp" width="320" height="319" alt="" loading="lazy"></div>
+                        <h3>Sparks &amp; the Shop</h3>
+                        <p>Collect Sparks for everything you do. Spend them on hats, outfits, toys, and colors.</p>
+                    </li>
+                    <li class="new-tile" data-reveal style="--reveal-delay:.18s">
+                        <div class="tile-icon"><img class="sticker" src="/assets/v6/stickers/scenes.svg" width="100" height="100" alt="" loading="lazy"></div>
+                        <h3>New scenes</h3>
+                        <p>The beach, a farm, a castle, outer space, and more, with visitors to find in the Field Guide.</p>
+                    </li>
+                    <li class="new-tile" data-reveal>
+                        <div class="tile-icon">
+                            <svg class="sticker" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="#5b3df5" stroke="#fff" stroke-width="5"/><path d="M37 15a17 17 0 1 0 12 27a14 14 0 0 1-12-27z" fill="#ffd84d"/><circle cx="19" cy="21" r="2.2" fill="#fff"/><circle cx="46" cy="22" r="1.6" fill="#fff"/><circle cx="24" cy="46" r="1.4" fill="#fff"/></svg>
+                        </div>
+                        <h3>Bedtime</h3>
+                        <p>Set a bedtime and Tappy switches into a bedtime outfit when it's time to wind down.</p>
+                    </li>
+                    <li class="new-tile" data-reveal style="--reveal-delay:.06s">
+                        <div class="tile-icon">
+                            <svg class="sticker" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="#2fe08a" stroke="#fff" stroke-width="5"/><path d="M24 49V16" stroke="#15334a" stroke-width="4" stroke-linecap="round"/><path d="M24 17h19l-4.5 7.5L43 32H24z" fill="#ff6b7a" stroke="#15334a" stroke-width="3" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3>Goals</h3>
+                        <p>Set short and long-term goals, break them into steps, and track your progress.</p>
+                    </li>
+                    <li class="new-tile" data-reveal style="--reveal-delay:.12s">
+                        <div class="tile-icon">
+                            <svg class="sticker" viewBox="0 0 64 64" aria-hidden="true"><path d="M20 4h10l6 18H26z" fill="#3dd5ff" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><path d="M44 4H34l-6 18h10z" fill="#ff6b7a" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><circle cx="32" cy="39" r="21" fill="#ffd84d" stroke="#fff" stroke-width="5"/><circle cx="32" cy="39" r="13" fill="#ffb800"/><path d="M32 30.5l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z" fill="#fff"/></svg>
+                        </div>
+                        <h3>Badges &amp; friendship</h3>
+                        <p>Earn badges and friendship levels as you hit new milestones together.</p>
+                    </li>
+                    <li class="new-tile" data-reveal style="--reveal-delay:.18s">
+                        <div class="tile-icon">
+                            <svg class="sticker" viewBox="0 0 64 64" aria-hidden="true"><rect x="5" y="5" width="54" height="54" rx="17" fill="#15334a" stroke="#fff" stroke-width="5"/><rect x="15" y="15" width="15" height="15" rx="5" fill="#ffd84d"/><rect x="34" y="15" width="15" height="15" rx="5" fill="#3dd5ff"/><rect x="15" y="34" width="34" height="15" rx="5" fill="#2fe08a"/></svg>
+                        </div>
+                        <h3>Widgets &amp; Live Activities</h3>
+                        <p>A new Daily Adventure widget, plus Live Activities for timed quests.</p>
+                    </li>
+                </ul>
+                <p class="classic-note" data-reveal>Prefer the original? Tap <strong>More &rsaquo; Switch to Classic Tappy</strong> on the home screen.</p>
+            </div>
+        </section>
+
+        <!-- Daily Adventure -->
+        <section class="section adventure dots-ink" id="adventure" aria-labelledby="adventure-title">
+            <div class="container split">
+                <div class="split-copy" data-reveal>
+                    <span class="eyebrow"><img src="/assets/v6/stickers/brass-compass.svg" width="20" height="20" alt="">Daily Adventure</span>
+                    <h2 class="h2" id="adventure-title">Your routine, turned into an <span class="hl hl-sky">adventure.</span></h2>
+                    <p class="lede">Create your own Daily Adventure from self-care quests, then complete it each day. Tappy cheers you on with a treasure compass on every quest.</p>
+                    <ul class="ticks">
+                        <li><img src="/assets/v6/stickers/spark.webp" width="30" height="30" alt="">Choose from 25+ quests: breathe, fidget, journal, drink water, step outside, move your body, practice gratitude, reach out to a friend, brush your teeth, wind down, or write your own.</li>
+                        <li><img src="/assets/v6/stickers/spark.webp" width="30" height="30" alt="">Arrange them in any order and set a daily reminder to build a routine that sticks.</li>
+                        <li><img src="/assets/v6/stickers/spark.webp" width="30" height="30" alt="">Finish your adventure to open a treasure chest of Sparks. The bigger the adventure, the bigger the reward.</li>
+                    </ul>
+                    <p class="try-hint">
+                        Try it! Tap a quest
+                        <svg viewBox="0 0 54 30" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20c12-12 28-14 44-6"/><path d="M38 6l10 8-11 5"/></svg>
+                    </p>
+                </div>
+
+                <div class="split-visual">
+                    <div class="adv-wrap">
+                        <div class="adv-card" id="questBoard" data-reveal>
+                            <svg class="adv-paper" aria-hidden="true"></svg>
+                            <div class="adv-inner">
+                                <div class="adv-head">
+                                    <div class="compass" aria-hidden="true">
+                                        <span class="compass-face"></span>
+                                        <svg class="compass-dial" viewBox="0 0 100 100">
+                                            <path class="compass-rose" d="M50 27L54 46L73 50L54 54L50 73L46 54L27 50L46 46Z"/>
+                                            <g class="compass-ticks"><path d="M50 74v7M74 50h7M19 50h7"/></g>
+                                            <path class="compass-north" d="M50 19v7"/>
+                                            <g class="compass-spin"><g class="compass-needle">
+                                                <path d="M50 50L44.5 50L50 23L55.5 50Z" fill="#c72b21"/>
+                                                <path d="M50 50L55.5 50L50 77L44.5 50Z" fill="#454f5e"/>
+                                            </g></g>
+                                            <circle cx="50" cy="50" r="4.4" fill="#cc9642" stroke="#7d541f" stroke-width="1.2"/>
+                                        </svg>
+                                    </div>
+                                    <div class="adv-titles">
+                                        <div class="adv-title-row">
+                                            <h3>Daily Adventure</h3>
+                                            <span class="adv-edit" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 12h3M11 12h9M4 17h11M19 17h1"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="17" r="2"/></svg></span>
+                                        </div>
+                                        <p class="adv-sub" id="questStatus" aria-live="polite">Pick any quest to begin your self-care journey!</p>
+                                    </div>
+                                </div>
+
+                                <div class="adv-trail">
+                                    <ul class="quest-list">
+                                        <li>
+                                            <button class="quest" type="button" data-target="1" style="--q:#ffb84d">
+                                                <span class="node" aria-hidden="true">
+                                                    <svg class="node-ring" viewBox="0 0 44 44"><circle class="track" cx="22" cy="22" r="18.25"/><circle class="arc" cx="22" cy="22" r="18.25" pathLength="100"/></svg>
+                                                    <span class="node-chip"></span>
+                                                    <span class="node-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><circle cx="8.6" cy="9.6" r="1.5" fill="#f6ead0"/><circle cx="15.4" cy="9.6" r="1.5" fill="#f6ead0"/><path d="M7.6 13.6a5 5 0 0 0 8.8 0" fill="none" stroke="#f6ead0" stroke-width="1.9" stroke-linecap="round"/></svg></span>
+                                                    <span class="node-done"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9"/></svg></span>
+                                                </span>
+                                                <span class="q-body"><span class="q-title">Log your mood</span><span class="q-bar"><i></i></span></span>
+                                                <span class="q-meta" aria-hidden="true"><span class="q-pill">0/1</span><svg class="q-chev" viewBox="0 0 8 14"><path d="M1.5 1.5L6.5 7l-5 5.5"/></svg></span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="quest" type="button" data-target="1" style="--q:#5cc7f5">
+                                                <span class="node" aria-hidden="true">
+                                                    <svg class="node-ring" viewBox="0 0 44 44"><circle class="track" cx="22" cy="22" r="18.25"/><circle class="arc" cx="22" cy="22" r="18.25" pathLength="100"/></svg>
+                                                    <span class="node-chip"></span>
+                                                    <span class="node-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M3 9h11a3 3 0 1 0-3-3"/><path d="M3 13h15a3 3 0 1 1-3 3"/><path d="M3 17h6"/></svg></span>
+                                                    <span class="node-done"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9"/></svg></span>
+                                                </span>
+                                                <span class="q-body"><span class="q-title">Breathe</span><span class="q-bar"><i></i></span></span>
+                                                <span class="q-meta" aria-hidden="true"><span class="q-pill">0/1</span><svg class="q-chev" viewBox="0 0 8 14"><path d="M1.5 1.5L6.5 7l-5 5.5"/></svg></span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="quest" type="button" data-target="2" style="--q:#42c7b8">
+                                                <span class="node" aria-hidden="true">
+                                                    <svg class="node-ring" viewBox="0 0 44 44"><circle class="track" cx="22" cy="22" r="18.25"/><circle class="arc" cx="22" cy="22" r="18.25" pathLength="100"/></svg>
+                                                    <span class="node-chip"></span>
+                                                    <span class="node-icon emoji">&#129463;</span>
+                                                    <span class="node-done"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9"/></svg></span>
+                                                </span>
+                                                <span class="q-body"><span class="q-title">Brush your teeth 2&times;</span><span class="q-bar"><i></i></span></span>
+                                                <span class="q-meta" aria-hidden="true"><span class="q-pill">0/2</span><svg class="q-chev" viewBox="0 0 8 14"><path d="M1.5 1.5L6.5 7l-5 5.5"/></svg></span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="quest" type="button" data-target="1" style="--q:#cc947a">
+                                                <span class="node" aria-hidden="true">
+                                                    <svg class="node-ring" viewBox="0 0 44 44"><circle class="track" cx="22" cy="22" r="18.25"/><circle class="arc" cx="22" cy="22" r="18.25" pathLength="100"/></svg>
+                                                    <span class="node-chip"></span>
+                                                    <span class="node-icon emoji">&#128719;&#65039;</span>
+                                                    <span class="node-done"><svg viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9"/></svg></span>
+                                                </span>
+                                                <span class="q-body"><span class="q-title">Make your bed</span><span class="q-bar"><i></i></span></span>
+                                                <span class="q-meta" aria-hidden="true"><span class="q-pill">0/1</span><svg class="q-chev" viewBox="0 0 8 14"><path d="M1.5 1.5L6.5 7l-5 5.5"/></svg></span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <button class="reward" id="rewardBar" type="button" data-state="locked">
+                                    <span class="reward-fill" id="rewardFill"></span>
+                                    <span class="reward-row r-locked">
+                                        <svg class="r-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h.5A1.5 1.5 0 0 1 19 11.5v8a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 5 19.5v-8A1.5 1.5 0 0 1 6.5 10zm2.5 0h5V8a2.5 2.5 0 0 0-5 0z"/></svg>
+                                        <span class="r-title">Collect today's Sparks</span>
+                                        <span class="r-count" id="rewardCount">0/4</span>
+                                        <span class="r-chip"><img src="/assets/v6/stickers/spark.webp" width="16" height="16" alt="">+108</span>
+                                    </span>
+                                    <span class="reward-row r-ready">
+                                        <svg class="r-ico r-gift" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9.5A1.5 1.5 0 0 1 4.5 8h15A1.5 1.5 0 0 1 21 9.5V12H3zM4 13h7v8H5.5A1.5 1.5 0 0 1 4 19.5zM13 13h7v6.5a1.5 1.5 0 0 1-1.5 1.5H13zM11 8h2v4h-2zM12 7.5C10 4 6.5 3.5 6.5 6c0 1.6 2.4 1.9 5.5 1.5zm0 0c2-3.5 5.5-4 5.5-1.5 0 1.6-2.4 1.9-5.5 1.5z"/></svg>
+                                        <span class="r-title">Open the chest</span>
+                                        <span class="r-chip"><img src="/assets/v6/stickers/spark.webp" width="16" height="16" alt="">+108</span>
+                                    </span>
+                                    <span class="reward-row r-claimed">
+                                        <svg class="r-chest" viewBox="0 0 40 34" aria-hidden="true"><path d="M5 15h30v15a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z" fill="#c8773a" stroke="#4f331a" stroke-width="1.8"/><path d="M5 15l3-11q12-4 24 0l3 11" fill="#e2a15a" stroke="#4f331a" stroke-width="1.8" stroke-linejoin="round" transform="rotate(-14 5 15)"/><ellipse cx="20" cy="15" rx="13" ry="3" fill="#ffd84d"/><rect x="17.5" y="18" width="5" height="6" rx="1.2" fill="#ffc83d" stroke="#4f331a" stroke-width="1.4"/></svg>
+                                        <span class="r-title">Sparks collected!</span>
+                                        <span class="r-chip filled"><img src="/assets/v6/stickers/spark.webp" width="16" height="16" alt="">+108</span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <button class="adv-replay" type="button" id="questReset" hidden>Replay the demo</button>
+                        <p class="demo-note">A simplified, playable preview. The real app looks a little different.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Care -->
+        <section class="section care dots-ink" id="care" aria-labelledby="care-title">
+            <div class="container">
+                <div class="split">
+                    <div class="split-visual">
+                        <div class="stage" id="petCard" data-reveal>
+                            <div class="pet-scene" id="petScene" data-scene="beach">
+                                <div class="scene-art scene-beach" aria-hidden="true">
+                                    <svg viewBox="0 0 400 540" preserveAspectRatio="xMidYMax slice">
+                                        <defs>
+                                            <linearGradient id="skyBeach" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f8ff0"/><stop offset=".42" stop-color="#2fb3fb"/><stop offset=".56" stop-color="#7fd6ff"/></linearGradient>
+                                            <linearGradient id="seaBeach" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#175491"/><stop offset=".25" stop-color="#2178b8"/><stop offset=".55" stop-color="#36a6d1"/><stop offset=".82" stop-color="#73d6d9"/><stop offset="1" stop-color="#a8e8db"/></linearGradient>
+                                            <linearGradient id="sandBeach" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0dba8"/><stop offset="1" stop-color="#d1b885"/></linearGradient>
+                                        </defs>
+                                        <rect width="400" height="540" fill="url(#skyBeach)"/>
+                                        <g fill="#fff" opacity=".55"><ellipse cx="300" cy="200" rx="46" ry="10"/><ellipse cx="320" cy="192" rx="24" ry="11"/><ellipse cx="80" cy="236" rx="30" ry="6"/></g>
+                                        <rect y="300" width="400" height="120" fill="url(#seaBeach)"/>
+                                        <g stroke="#fff" stroke-linecap="round" opacity=".45">
+                                            <path d="M150 312h40M240 318h26M320 310h30M60 326h34M180 334h50M290 342h36" stroke-width="2"/>
+                                            <path d="M110 352h44M230 360h60M30 366h40M330 372h40" stroke-width="2.5"/>
+                                        </g>
+                                        <ellipse cx="70" cy="302" rx="30" ry="4.5" fill="#f0dba8"/>
+                                        <path d="M70 300q-2-20 6-34" stroke="#6b4a2a" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+                                        <g fill="#337557"><path d="M76 266q-18-4-27 8q12-2 27-8z"/><path d="M76 266q18-6 27 5q-12-1-27-5z"/><path d="M76 266q-7-13-22-13q9 7 22 13z"/><path d="M76 266q9-13 24-11q-11 5-24 11z"/></g>
+                                        <path d="M0 408Q100 396 200 404T400 400V540H0Z" fill="url(#sandBeach)"/>
+                                        <path d="M0 406Q100 394 200 402T400 398" fill="none" stroke="#fff" stroke-width="4" opacity=".7" stroke-linecap="round"/>
+                                        <g fill="#fff" opacity=".5"><circle cx="54" cy="470" r="2.5"/><circle cx="340" cy="456" r="2"/><circle cx="300" cy="500" r="2"/><circle cx="120" cy="508" r="1.6"/></g>
+                                    </svg>
+                                </div>
+                                <div class="scene-art scene-farm" aria-hidden="true">
+                                    <svg viewBox="0 0 400 344" preserveAspectRatio="xMidYMax slice">
+                                        <defs><linearGradient id="skyFarm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5cc4ff"/><stop offset="1" stop-color="#d9f3ff"/></linearGradient></defs>
+                                        <rect width="400" height="344" fill="url(#skyFarm)"/>
+                                        <g fill="#fff" opacity=".8"><ellipse cx="120" cy="90" rx="34" ry="10"/><ellipse cx="138" cy="82" rx="20" ry="12"/></g>
+                                        <path d="M0 200Q90 150 190 186T400 170V344H0Z" fill="#a6e07a"/>
+                                        <g transform="translate(244 130)">
+                                            <path d="M0 32L36 6L72 32V86H0Z" fill="#e85a4a"/>
+                                            <path d="M-6 34L36 2L78 34" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <rect x="24" y="52" width="24" height="34" fill="#fff"/>
+                                            <path d="M24 52l24 34M48 52L24 86" stroke="#e85a4a" stroke-width="3"/>
+                                        </g>
+                                        <path d="M0 236Q120 206 240 226T400 218V344H0Z" fill="#74c94f"/>
+                                        <g stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".9"><path d="M110 248v-26M140 248v-26M170 248v-26"/><path d="M104 230h72M104 242h72"/></g>
+                                        <path d="M0 262Q140 246 260 256T400 252V344H0Z" fill="#5fb843"/>
+                                    </svg>
+                                </div>
+                                <div class="scene-art scene-castle" aria-hidden="true">
+                                    <svg viewBox="0 0 400 344" preserveAspectRatio="xMidYMax slice">
+                                        <defs><linearGradient id="skyCastle" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8f6dff"/><stop offset=".7" stop-color="#ffb5cf"/><stop offset="1" stop-color="#ffd9a8"/></linearGradient></defs>
+                                        <rect width="400" height="344" fill="url(#skyCastle)"/>
+                                        <g fill="#fff" opacity=".85"><circle cx="120" cy="40" r="2"/><circle cx="160" cy="24" r="1.6"/><circle cx="270" cy="36" r="2"/><circle cx="250" cy="80" r="1.4"/></g>
+                                        <g fill="#7b5fd6">
+                                            <path d="M130 230V120h30v-14h10v14h10v-14h10v14h10V230Z"/>
+                                            <path d="M210 230V120h10v-14h10v14h10v-14h10v14h30V230Z"/>
+                                            <path d="M160 230V150h80V230Z"/>
+                                            <path d="M180 74l20-30 20 30Z" fill="#ff8fb8"/>
+                                            <path d="M180 150V74h40V150Z"/>
+                                        </g>
+                                        <path d="M200 44V20" stroke="#5b46a8" stroke-width="3"/>
+                                        <path d="M200 20h22l-6 6 6 6h-22Z" fill="#ffd84d"/>
+                                        <path d="M186 230v-30a14 14 0 0 1 28 0v30Z" fill="#3b2a77"/>
+                                        <g fill="#ffe27a"><rect x="144" y="140" width="10" height="14" rx="5"/><rect x="246" y="140" width="10" height="14" rx="5"/><rect x="195" y="96" width="10" height="16" rx="5"/></g>
+                                        <path d="M0 236Q100 216 200 228T400 222V344H0Z" fill="#7bd389"/>
+                                        <path d="M0 266Q130 250 250 260T400 256V344H0Z" fill="#62c272"/>
+                                    </svg>
+                                </div>
+                                <div class="scene-art scene-space" aria-hidden="true">
+                                    <svg viewBox="0 0 400 344" preserveAspectRatio="xMidYMax slice">
+                                        <defs><linearGradient id="skySpace" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d1440"/><stop offset="1" stop-color="#3a2f8a"/></linearGradient></defs>
+                                        <rect width="400" height="344" fill="url(#skySpace)"/>
+                                        <g fill="#fff"><circle cx="110" cy="30" r="1.8"/><circle cx="130" cy="70" r="1.2"/><circle cx="170" cy="24" r="2"/><circle cx="210" cy="90" r="1.3"/><circle cx="250" cy="30" r="1.6"/><circle cx="290" cy="120" r="1.4"/><circle cx="100" cy="150" r="1.2"/><circle cx="150" cy="140" r="1.6"/><circle cx="280" cy="20" r="1.2"/></g>
+                                        <path d="M130 110c1 6 4 9 10 10-6 1-9 4-10 10-1-6-4-9-10-10 6-1 9-4 10-10z" fill="#ffd84d"/>
+                                        <circle cx="262" cy="84" r="28" fill="#ff9a5c"/>
+                                        <path d="M240 96q30-28 62-22" stroke="#ff7a2f" stroke-width="5" fill="none" opacity=".6"/>
+                                        <ellipse cx="262" cy="86" rx="50" ry="11" fill="none" stroke="#ffd84d" stroke-width="5" transform="rotate(-14 262 86)"/>
+                                        <path d="M0 240Q100 220 200 232T400 226V344H0Z" fill="#c9c3ef"/>
+                                        <g fill="#aaa2e0"><ellipse cx="130" cy="282" rx="24" ry="7"/><ellipse cx="270" cy="300" rx="30" ry="8"/><ellipse cx="200" cy="262" rx="14" ry="4"/></g>
+                                    </svg>
+                                </div>
+
+                                <div class="night-veil"></div>
+
+                                <button class="visitor" id="visitor" type="button" aria-label="Tap the visitor for bonus Sparks">
+                                    <svg class="v v-crab" viewBox="0 22 100 78" aria-hidden="true"><defs><linearGradient id="crabShell" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fa9e75"/><stop offset=".5" stop-color="#ed754d"/><stop offset="1" stop-color="#b34d33"/></linearGradient></defs><g fill="none" stroke="#b34d33" stroke-width="4.5" stroke-linecap="round"><path d="M28 68Q8 65 6 84"/><path d="M72 68Q92 65 94 84"/><path d="M28 75Q8 72 6 91"/><path d="M72 75Q92 72 94 91"/><path d="M28 82Q8 79 6 98"/><path d="M72 82Q92 79 94 98"/></g><circle cx="12" cy="58" r="10.5" fill="#ed754d"/><circle cx="88" cy="58" r="10.5" fill="#ed754d"/><g stroke="#b34d33" stroke-width="2.5" stroke-linecap="round"><path d="M2 55L10 58.5M98 55L90 58.5"/></g><ellipse cx="50" cy="66" rx="30" ry="19" fill="url(#crabShell)"/><g fill="#b34d33" opacity=".55"><circle cx="40" cy="62" r="2.5"/><circle cx="56" cy="58" r="2.5"/><circle cx="64" cy="69" r="2.5"/></g><g stroke="#b34d33" stroke-width="4" stroke-linecap="round"><path d="M40 50L36 34M60 50L64 34"/></g><circle cx="36" cy="32" r="7" fill="#fafaf5"/><circle cx="64" cy="32" r="7" fill="#fafaf5"/><circle cx="36" cy="32" r="3.5" fill="#1f1a1f"/><circle cx="64" cy="32" r="3.5" fill="#1f1a1f"/><path d="M44 56Q50 61 56 56" fill="none" stroke="#1f1a1f" stroke-opacity=".7" stroke-width="2" stroke-linecap="round"/></svg>
+                                    <svg class="v v-chicken" viewBox="0 0 64 56" aria-hidden="true"><g stroke="#f5a623" stroke-width="3" stroke-linecap="round"><path d="M27 44v9M35 44v9M24 53h6M32 53h6"/></g><path d="M14 30q-10-4-11-14q6 3 9 1q-1-6 2-10q4 8 10 13z" fill="#f1ece4"/><ellipse cx="30" cy="33" rx="18" ry="13" fill="#fff"/><path d="M20 31q8 9 18 2q-6 8-14 5z" fill="#e9e2d6"/><circle cx="45" cy="19" r="9" fill="#fff"/><path d="M38 13q0-6 4-5q1-4 4-2q2-3 5 0q3 1 1 5z" fill="#e8423f"/><path d="M53 18l7 3-7 3z" fill="#ff9a1f"/><path d="M52 24q2 6-2 7q-3-3 0-7z" fill="#e8423f"/><circle cx="47.5" cy="17.5" r="2" fill="#1d1d1f"/></svg>
+                                    <svg class="v v-dragon" viewBox="-2 -14 104 80" aria-hidden="true"><defs><linearGradient id="dragonBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#61bd70"/><stop offset="1" stop-color="#388a52"/></linearGradient><linearGradient id="dragonWing" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9e7adb"/><stop offset="1" stop-color="#7052b3"/></linearGradient></defs><g class="d-fly"><g class="d-wing-far"><path d="M59.00 35.25Q47.13 2.74 19.44 -0.87Q25.77 8.52 24.19 17.91Q31.31 16.47 36.06 23.69Q43.18 23.69 47.92 31.64Q53.46 29.47 59.00 35.25Z" fill="#7052b3" transform="rotate(18 59 35.25)"/></g><g class="d-tail"><path d="M34 46.5Q16 60 6 37.5" fill="none" stroke="#61bd70" stroke-width="7" stroke-linecap="round"/><rect x="0.5" y="32.75" width="8" height="8" rx="1" fill="#fa9e4d" transform="rotate(45 4.5 36.75)"/></g><g fill="#fa9e4d"><path d="M33 37.5L36 29.25L39 37.5Z"/><path d="M41 35.6L44 27.35L47 35.6Z"/><path d="M49 35.25L52 27.0L55 35.25Z"/><path d="M57 36.4L60 28.15L63 36.4Z"/></g><g fill="#388a52"><rect x="41" y="51.4" width="6" height="9.75" rx="3" transform="rotate(-35 44 56.25)"/><rect x="57" y="51.4" width="6" height="9.75" rx="3" transform="rotate(-35 60 56.25)"/></g><ellipse cx="50" cy="43.5" rx="23" ry="11.25" fill="url(#dragonBody)"/><ellipse cx="54" cy="49.5" rx="16" ry="5.6" fill="#fae08f"/><g fill="#388a52" opacity=".28"><rect x="46.4" y="45.75" width="1.2" height="7.5" rx=".6"/><rect x="53.4" y="45.75" width="1.2" height="7.5" rx=".6"/><rect x="60.4" y="45.75" width="1.2" height="7.5" rx=".6"/></g><path d="M64 42Q76 39 78 24" fill="none" stroke="#61bd70" stroke-width="11" stroke-linecap="round"/><g fill="#faf0cc"><rect x="72.25" y="5.63" width="3.5" height="9.75" rx="1.75" transform="rotate(-32 74 15.38)"/><rect x="79.25" y="5.63" width="3.5" height="9.75" rx="1.75" transform="rotate(-16 81 15.38)"/></g><circle cx="79" cy="22.5" r="10.5" fill="#61bd70"/><ellipse cx="90" cy="26.25" rx="8.5" ry="5.63" fill="#61bd70"/><ellipse cx="95.5" cy="24" rx="1.1" ry=".83" fill="#388a52"/><circle cx="84" cy="27.75" r="2.25" fill="#fa9999" opacity=".5"/><path d="M86 29.25Q91 32.25 96 28.5" fill="none" stroke="#0f1414" stroke-opacity=".6" stroke-width="1.2" stroke-linecap="round"/><circle cx="80" cy="20.25" r="3.75" fill="#fafaf5"/><circle cx="80.8" cy="20.25" r="2.06" fill="#0f1414"/><g class="d-wing-near"><path d="M54.00 37.50Q40.20 -0.30 8.00 -4.50Q15.36 6.42 13.52 17.34Q21.80 15.66 27.32 24.06Q35.60 24.06 41.12 33.30Q47.56 30.78 54.00 37.50Z" fill="url(#dragonWing)"/><path d="M54.00 37.50L35.60 8.10M35.60 8.10L8.00 -4.50M35.60 8.10L13.52 17.34M35.60 8.10L27.32 24.06" fill="none" stroke="#7052b3" stroke-width="1.2" stroke-linecap="round"/></g></g></svg>
+                                    <svg class="v v-ufo" viewBox="0 0 72 52" aria-hidden="true"><path d="M26 36l-10 16h40l-10-16z" fill="#fff6a8" opacity=".55"/><path d="M22 22a14 14 0 0 1 28 0z" fill="#8ff0ff"/><circle cx="36" cy="16" r="5" fill="#7ed957"/><circle cx="34.5" cy="15" r="1.4" fill="#1d1d1f"/><circle cx="37.5" cy="15" r="1.4" fill="#1d1d1f"/><ellipse cx="36" cy="28" rx="32" ry="10" fill="#c9d6e8"/><g fill="#ffd84d"><circle cx="18" cy="29" r="3"/><circle cx="36" cy="32" r="3"/><circle cx="54" cy="29" r="3"/></g></svg>
+                                </button>
+
+                                <button class="pet" id="pet" type="button" aria-label="Pet Tappy">
+                                    <svg class="tappy" id="tappy" viewBox="0 -24 100 124" overflow="visible" data-face="idle" data-hat="none" aria-hidden="true">
+                                        <defs>
+                                            <linearGradient id="tappySheen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+                                            <radialGradient id="tappyGlow" cx=".32" cy=".22" r=".64"><stop offset="0" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+                                            <clipPath id="eyeClipL"><ellipse class="t-lid" cx="34.5" cy="35.5" rx="14" ry="14"/></clipPath>
+                                            <clipPath id="eyeClipR"><ellipse class="t-lid" cx="65.5" cy="33.5" rx="14" ry="14"/></clipPath>
+                                        </defs>
+                                        <ellipse class="t-shadow" cx="50" cy="95" rx="30" ry="3.5" fill="#000" opacity=".12"/>
+                                        <g class="t-legs">
+                                            <rect x="27.25" y="74.5" width="9.5" height="14" rx="4.75" fill="#0db0dc"/>
+                                            <rect x="63.25" y="74.5" width="9.5" height="14" rx="4.75" fill="#0db0dc"/>
+                                            <ellipse cx="29.5" cy="88.5" rx="8.5" ry="5.75" fill="#0eb9e6"/>
+                                            <ellipse cx="70.5" cy="88.5" rx="8.5" ry="5.75" fill="#0eb9e6"/>
+                                        </g>
+                                        <g class="t-body">
+                                            <g class="t-arm t-arm-l"><rect x="12" y="50.5" width="11" height="24" rx="5.5" fill="#0fbeee"/></g>
+                                            <g class="t-arm t-arm-r"><rect x="77" y="50.5" width="11" height="24" rx="5.5" fill="#0fbeee"/></g>
+                                            <circle cx="50" cy="46" r="39" fill="#12c9fa"/>
+                                            <circle cx="50" cy="46" r="39" fill="url(#tappySheen)"/>
+                                            <circle cx="50" cy="46" r="39" fill="url(#tappyGlow)"/>
+                                            <g class="t-blush" fill="#ff8c99" opacity=".6"><ellipse cx="28.5" cy="52" rx="6.25" ry="3"/><ellipse cx="71.5" cy="52" rx="6.25" ry="3"/></g>
+                                            <g class="t-eyes-open">
+                                                <g class="t-eye" clip-path="url(#eyeClipL)"><circle cx="34.5" cy="35.5" r="14" fill="#fff"/><circle cx="36.9" cy="35.1" r="6.25" fill="#000"/></g>
+                                                <g class="t-eye" clip-path="url(#eyeClipR)"><circle cx="65.5" cy="33.5" r="14" fill="#fff"/><circle cx="63.1" cy="33.3" r="6.25" fill="#000"/></g>
+                                                <g class="t-blink-lids" fill="none" stroke="#004355" stroke-width="6.7" stroke-linecap="round" opacity="0">
+                                                    <path d="M24.7 38.3Q34.5 29.3 44.3 38.3"/><path d="M55.7 36.3Q65.5 27.3 75.3 36.3"/>
+                                                </g>
+                                            </g>
+                                            <g class="t-eyes-closed" fill="none" stroke="#004355" stroke-width="6.7" stroke-linecap="round">
+                                                <path d="M24.7 38.3Q34.5 29.3 44.3 38.3"/><path d="M55.7 36.3Q65.5 27.3 75.3 36.3"/>
+                                            </g>
+                                            <path class="t-mouth t-smile" d="M32 58.1Q43 65.8 54 58.1" fill="none" stroke="#004355" stroke-width="3.5" stroke-linecap="round" transform="rotate(15 43 60)"/>
+                                            <path class="t-mouth t-open" d="M30 55H56Q56 72 43 72Q30 72 30 55Z" fill="#004355" transform="rotate(4 43 60)"/>
+                                            <ellipse class="t-mouth t-oh" cx="44" cy="60" rx="4.5" ry="5.5" fill="#004355"/>
+                                            <g class="t-hat t-beanie">
+                                                <path d="M23 18A27 22 0 0 1 77 18Z" fill="#ffd13b"/>
+                                                <path d="M23 18A27 22 0 0 1 36.5 -0.5L42 18Z" fill="#ff4757"/>
+                                                <path d="M50 -4A27 22 0 0 1 63.5 -0.5L58 18H50Z" fill="#2f80ed"/>
+                                                <path d="M63.5 -0.5A27 22 0 0 1 77 18H58Z" fill="#27ae60"/>
+                                                <rect x="20.5" y="15" width="59" height="7" rx="3.5" fill="#e8323f"/>
+                                                <rect x="49" y="-9" width="2" height="6" fill="#9aa3ad"/>
+                                                <g class="t-prop"><ellipse cx="42" cy="-9.5" rx="8" ry="1.8" fill="#2f80ed"/><ellipse cx="58" cy="-9.5" rx="8" ry="1.8" fill="#ffd13b"/></g>
+                                                <circle cx="50" cy="-9.5" r="2.2" fill="#e8323f"/>
+                                            </g>
+                                            <g class="t-hat t-party">
+                                                <path d="M36 16L50 -18L64 16Z" fill="#ff6b9a"/>
+                                                <path d="M40.5 5.5L58.5 2.5M44 -3.5L55.5 -5.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+                                                <rect x="34" y="13" width="32" height="5" rx="2.5" fill="#ffd84d"/>
+                                                <circle cx="50" cy="-19" r="4.5" fill="#ffd84d"/>
+                                            </g>
+                                            <g class="t-brows" fill="#006682"><rect x="20" y="17.9" width="16" height="4" transform="rotate(-25 28 19.9)"/><rect x="64" y="16.9" width="16" height="4" transform="rotate(25 72 18.9)"/></g>
+                                        </g>
+                                    </svg>
+                                </button>
+
+                                <button class="gift" id="gift" type="button" aria-label="Open your daily surprise gift" tabindex="-1" aria-hidden="true">
+                                    <svg viewBox="0 0 80 84" aria-hidden="true">
+                                        <rect x="10" y="38" width="60" height="42" rx="6" fill="#ff6b7a"/>
+                                        <rect x="34" y="38" width="12" height="42" fill="#ffd84d"/>
+                                        <g class="gift-lid">
+                                            <path d="M40 26q-16-20-24-8q-2 8 24 8zM40 26q16-20 24-8q2 8-24 8z" fill="#ffd84d" stroke="#e6a800" stroke-width="2" stroke-linejoin="round"/>
+                                            <rect x="5" y="24" width="70" height="16" rx="5" fill="#ff8a96"/>
+                                            <rect x="34" y="24" width="12" height="16" fill="#ffd84d"/>
+                                        </g>
+                                    </svg>
+                                </button>
+
+                                <div class="fx-layer" id="fxLayer"></div>
+
+                                <div class="hud">
+                                    <div class="care-bar" id="careBar" role="progressbar" aria-label="Care Bar" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0">
+                                        <span class="care-heart" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></svg></span>
+                                        <span class="care-segs" aria-hidden="true">
+                                            <span class="seg" data-act="pet"><i></i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 11.5V5.5a1.5 1.5 0 0 1 3 0V10h.5V4a1.5 1.5 0 0 1 3 0v6h.5V5.5a1.5 1.5 0 0 1 3 0V14c0 4.4-2.8 8-7.2 8-2.9 0-4.6-1.5-6-3.8L2.6 14a1.6 1.6 0 0 1 2.6-1.8L8 15z"/></svg></span>
+                                            <span class="seg" data-act="feed"><i></i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 3v6a2.5 2.5 0 0 0 5 0V3M8.5 9v12M17 3c-2.5 2-2.5 8 0 10v8"/></svg></span>
+                                            <span class="seg" data-act="love"><i></i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></svg></span>
+                                            <span class="seg" data-act="play"><i></i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h10a5 5 0 0 1 4.8 6.4l-1 3.3a2.6 2.6 0 0 1-4.5.8L14.6 16H9.4l-1.7 1.5a2.6 2.6 0 0 1-4.5-.8l-1-3.3A5 5 0 0 1 7 7z"/></svg></span>
+                                            <span class="seg" data-act="sleep"><i></i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 15.5A8 8 0 1 1 9 4.6a6.6 6.6 0 0 0 10 10.9z"/></svg></span>
+                                            <span class="seg" data-act="selfCare"><i></i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z" fill="currentColor" stroke-linejoin="round"/></svg></span>
+                                        </span>
+                                    </div>
+                                    <div class="hud-chips">
+                                        <span class="hud-chip" data-spark-display><img src="/assets/v6/stickers/spark.webp" width="18" height="18" alt="Sparks"><span data-spark-count>124</span></span>
+                                        <span class="hud-chip hud-level"><span class="lv-label">Level</span><span class="lv-ring"><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="track" cx="12" cy="12" r="10.75"/><circle class="arc" id="levelArc" cx="12" cy="12" r="10.75" pathLength="100"/></svg><b id="levelNum">10</b></span></span>
+                                    </div>
+                                </div>
+
+                                <div class="pet-bubble" id="petToast" role="status" aria-live="polite"></div>
+
+                                <div class="dock" role="group" aria-label="Care for Tappy">
+                                    <button class="dock-btn" type="button" data-care="feed" style="--t:#38ad6b"><span class="d-ico"><i style="--icon:url('/assets/v6/stickers/feed.webp')"></i></span>Feed</button>
+                                    <button class="dock-btn" type="button" data-care="love" style="--t:#f2527f"><span class="d-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path transform="translate(0 0) scale(.42)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/><path transform="translate(11 0.5) scale(.5)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/><path transform="translate(0.5 8.5) scale(.66)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/><path transform="translate(15 13) scale(.38)" d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></svg></span>Hug</button>
+                                    <button class="dock-btn" type="button" data-care="play" style="--t:#299eeb"><span class="d-ico"><i style="--icon:url('/assets/v6/stickers/celebrate.webp')"></i></span>Celebrate</button>
+                                    <button class="dock-btn" type="button" data-care="sleep" style="--t:#7057d1"><span class="d-ico"><i style="--icon:url('/assets/v6/stickers/sleep.webp')"></i></span>Sleep</button>
+                                    <button class="dock-btn" type="button" data-dock="shop" style="--t:#eb9e24"><span class="d-ico"><i style="--icon:url('/assets/v6/stickers/shop.webp')"></i></span>Shop</button>
+                                    <button class="dock-btn neutral" type="button" data-dock="more"><span class="d-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5.5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="18.5" cy="12" r="2"/></svg></span>More</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="scene-picker" role="group" aria-label="Choose a scene">
+                            <button class="scene-btn" type="button" data-scene="beach" aria-pressed="true">Beach</button>
+                            <button class="scene-btn" type="button" data-scene="farm" aria-pressed="false">Farm</button>
+                            <button class="scene-btn" type="button" data-scene="castle" aria-pressed="false">Castle</button>
+                            <button class="scene-btn" type="button" data-scene="space" aria-pressed="false">Outer space</button>
+                        </div>
+                        <p class="demo-note">A simplified, playable preview. The real app looks a little different.</p>
+                    </div>
+
+                    <div class="split-copy" data-reveal>
+                        <span class="eyebrow"><img src="/assets/v6/stickers/tappy-face.webp" width="20" height="20" alt="">Take care of Tappy</span>
+                        <h2 class="h2" id="care-title">Your pocket-sized <span class="hl hl-mint">best friend.</span></h2>
+                        <p class="lede">Give Tappy a name, then pet, feed, hug, play, and tuck Tappy in. Do all five plus a quest to fill the Care Bar for a daily surprise gift.</p>
+                        <ul class="ticks">
+                            <li><img src="/assets/v6/stickers/spark.webp" width="30" height="30" alt="">Spend Sparks on dozens of hats, glasses, outfits, and props, with new items added regularly.</li>
+                            <li><img src="/assets/v6/stickers/spark.webp" width="30" height="30" alt="">Unlock scenes like the beach, a farm, a castle, and outer space, where visitors like a crab or a dragon wander by. Tap one for bonus Sparks.</li>
+                            <li><img src="/assets/v6/stickers/spark.webp" width="30" height="30" alt="">Earn badges as you hit new milestones together.</li>
+                        </ul>
+                        <p class="try-hint">
+                            <svg viewBox="0 0 54 30" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="point-card"><path d="M3 20c12-12 28-14 44-6"/><path d="M38 6l10 8-11 5"/></svg>
+                            Try it! Tap Tappy, then the buttons
+                        </p>
+                    </div>
+                </div>
+
+                <div class="care-cards">
+                    <article class="care-card shop dots-white" data-reveal>
+                        <h3>Dress Tappy up</h3>
+                        <p>Hats, glasses, outfits, props, and colors. Pirate captain? Propeller beanie? Tappy pulls it all off.</p>
+                        <div class="phone phone-rise"><img src="/assets/v6/screens/shop.webp" width="600" height="1347" alt="The Tappy Item Shop showing Tappy dressed as a pirate with hats to equip" loading="lazy"></div>
+                    </article>
+                    <article class="care-card worlds dots-white" data-reveal style="--reveal-delay:.08s">
+                        <h3>Discover new worlds</h3>
+                        <p>Explore new scenes and meet the visitors who wander by. Log every one in the Field Guide.</p>
+                        <img class="sticker" src="/assets/v6/stickers/tappy-wave.svg" width="112" height="124" alt="Tappy waving" loading="lazy">
+                    </article>
+                    <article class="care-card bedtime" data-reveal style="--reveal-delay:.16s">
+                        <h3>Bedtime reminders</h3>
+                        <p>Set a bedtime and get a gentle reminder to wind down. Tappy even has a bedtime outfit.</p>
+                        <svg class="night-star" style="width:18px; left:30%; bottom:30%" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg>
+                        <svg class="night-star" style="width:12px; left:16%; bottom:16%; animation-delay:-1.2s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg>
+                        <svg class="night-star" style="width:14px; left:50%; bottom:12%; animation-delay:-2s" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c1 7 5 11 12 12-7 1-11 5-12 12-1-7-5-11-12-12 7-1 11-5 12-12z"/></svg>
+                        <span class="moon" aria-hidden="true"></span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wellness & focus -->
+        <section class="section toolkit" id="toolkit" aria-labelledby="toolkit-title">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow"><img src="/assets/v6/stickers/toolbox.svg" width="20" height="20" alt="">Built right in</span>
+                    <h2 class="h2" id="toolkit-title">Breathe, unwind, plan, track, <span class="hl hl-pink">repeat.</span></h2>
+                    <p class="lede">Calming breathing and sounds for the hard moments, plus a mood journal, habit tracker, planner, and focus timer for every day. All in one app.</p>
+                </div>
+
+                <div class="bento">
+                    <article class="bento-card bento-checkin dots-white" data-reveal>
+                        <img class="card-sticker sticker" src="/assets/v6/stickers/journal.webp" width="320" height="304" alt="" loading="lazy">
+                        <h3>Stay focused &amp; on track.</h3>
+                        <p>Everything in Check In helps you take your day one step at a time.</p>
+                        <ul class="focus-list">
+                            <li><b>Planner &amp; To-Dos</b>A timeline of timed and anytime tasks, with priorities and reminders.</li>
+                            <li><b>Goals</b>Set short and long-term goals, break them into steps, and celebrate your progress.</li>
+                            <li><b>Focus Timer</b>Beat procrastination and collect Sparks as you focus.</li>
+                        </ul>
+                        <div class="phone phone-rise" style="margin-top:auto"><img src="/assets/v6/screens/checkin.webp" width="600" height="1350" alt="Tappy Check In screen with mood journal, habit tracker, and planner" loading="lazy"></div>
+                    </article>
+
+                    <article class="bento-card bento-relax" data-reveal style="--reveal-delay:.08s">
+                        <img class="card-sticker sticker" src="/assets/v6/stickers/relax.webp" width="320" height="310" alt="" loading="lazy">
+                        <h3>Destress &amp; unwind.</h3>
+                        <p>Guided meditations, a 5 senses exercise to ground you in the present, and 40+ Feelscapes: soothing vibration patterns paired with a soundscape, with a sleep timer.</p>
+                        <ul class="chip-list">
+                            <li class="chip">Rain on an umbrella</li>
+                            <li class="chip">Campfire</li>
+                            <li class="chip">Ocean waves</li>
+                            <li class="chip">Footsteps in the snow</li>
+                            <li class="chip">White noise</li>
+                        </ul>
+                        <div class="phone phone-rise" style="margin-top:auto"><img src="/assets/v6/screens/relax.webp" width="600" height="1338" alt="Tappy Relax screen with meditations, nature Feelscapes, and white noise" loading="lazy"></div>
+                    </article>
+
+                    <article class="bento-card sm bento-breathe dots-white" data-reveal>
+                        <img class="card-sticker sticker" src="/assets/v6/stickers/breathe.webp" width="305" height="320" alt="" loading="lazy">
+                        <h3>9 breathing exercises.</h3>
+                        <p>Calm down, refocus, or fall asleep, guided by vibrations you can follow with your eyes closed.</p>
+                        <div class="breath" id="breath">
+                            <div class="breath-orb">
+                                <p class="breath-label" aria-live="off"><span id="breathLabel">Breathe in</span><small id="breathCount">Box breathing</small></p>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bento-card sm bento-mood dots-white" data-reveal style="--reveal-delay:.08s">
+                        <img class="card-sticker sticker" src="/assets/v6/stickers/mood.webp" width="200" height="150" alt="" loading="lazy">
+                        <h3>Mood Journal &amp; Insights.</h3>
+                        <p>Reflect on how you feel, tag your feelings and what's behind them, and spot trends in Insights.</p>
+                        <div class="mood-demo" id="moodDemo">
+                            <p class="mood-q" id="moodQ">How are you feeling today?</p>
+                            <div class="mood-row" role="group" aria-label="Pick a mood">
+                                <button class="mood-btn" type="button" data-mood="awful" aria-pressed="false" aria-label="Awful"><img src="/assets/v6/moods/awful.webp" width="96" height="96" alt="" loading="lazy"></button>
+                                <button class="mood-btn" type="button" data-mood="bad" aria-pressed="false" aria-label="Bad"><img src="/assets/v6/moods/bad.webp" width="96" height="96" alt="" loading="lazy"></button>
+                                <button class="mood-btn" type="button" data-mood="okay" aria-pressed="false" aria-label="Okay"><img src="/assets/v6/moods/okay.webp" width="96" height="96" alt="" loading="lazy"></button>
+                                <button class="mood-btn" type="button" data-mood="good" aria-pressed="false" aria-label="Good"><img src="/assets/v6/moods/good.webp" width="96" height="96" alt="" loading="lazy"></button>
+                                <button class="mood-btn" type="button" data-mood="great" aria-pressed="false" aria-label="Great"><img src="/assets/v6/moods/great.webp" width="96" height="96" alt="" loading="lazy"></button>
+                            </div>
+                            <div class="mood-week" aria-hidden="true">
+                                <span style="--h:.55" data-m="okay"></span><span style="--h:.8" data-m="good"></span><span style="--h:.35" data-m="bad"></span><span style="--h:.8" data-m="good"></span><span style="--h:1" data-m="great"></span><span style="--h:.55" data-m="okay"></span><span class="today" id="moodToday" style="--h:.12"></span>
+                            </div>
+                            <div class="mood-days" aria-hidden="true"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>Today</span></div>
+                        </div>
+                    </article>
+
+                    <article class="bento-card sm bento-habit dots-white" data-reveal style="--reveal-delay:.16s">
+                        <img class="card-sticker sticker" src="/assets/v6/stickers/habit.webp" width="344" height="343" alt="" loading="lazy">
+                        <h3>Habit Tracker with streaks.</h3>
+                        <p>Build healthy routines with custom icons, colors, schedules, reminders, streaks, and stats.</p>
+                        <ul class="habit-list" id="habitList">
+                            <li><button class="habit" type="button" aria-pressed="false" data-streak="4" style="--c:#4bb8f0"><i style="--icon:url(/assets/v6/habits/water.webp)"></i><span class="habit-name">Drink water<small><b>4</b> day streak</small></span><span class="habit-check" aria-hidden="true"></span></button></li>
+                            <li><button class="habit" type="button" aria-pressed="false" data-streak="12" style="--c:#f2a33a"><i style="--icon:url(/assets/v6/habits/read.webp)"></i><span class="habit-name">Read 10 pages<small><b>12</b> day streak</small></span><span class="habit-check" aria-hidden="true"></span></button></li>
+                            <li><button class="habit" type="button" aria-pressed="false" data-streak="2" style="--c:#36c27a"><i style="--icon:url(/assets/v6/habits/walk.webp)"></i><span class="habit-name">Go for a walk<small><b>2</b> day streak</small></span><span class="habit-check" aria-hidden="true"></span></button></li>
+                        </ul>
+                        <p class="habit-tip">Tap to check off today</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fidget playground -->
+        <section class="section playground dots-ink" id="playground" aria-labelledby="playground-title">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow"><img src="/assets/v6/stickers/fidget.webp" width="20" height="20" alt="">Playground</span>
+                    <h2 class="h2" id="playground-title">Go ahead, <span class="hl hl-sky">fidget.</span></h2>
+                    <p class="lede">25+ haptic fidgets and 14+ arcade games for whenever your hands need something to do. Try three fidgets right here. On a phone, you'll feel the haptics too.</p>
+                    <div class="pg-toggles" role="group" aria-label="Fidget settings">
+                        <button class="pg-toggle" type="button" id="hapticToggle" aria-pressed="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M3 9v6M21 9v6"/></svg>
+                            Haptics <b>On</b>
+                        </button>
+                        <button class="pg-toggle" type="button" id="soundToggle" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9a4 4 0 0 1 0 6"/></svg>
+                            Sound <b>Off</b>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pg-grid">
+                    <article class="pg-card" data-reveal>
+                        <header class="pg-head">
+                            <h3>Ball Pit</h3>
+                            <button class="pg-mini" type="button" id="ballClear">Clear</button>
+                        </header>
+                        <div class="pg-screen pg-balls">
+                            <canvas id="ballCanvas" aria-label="Ball pit: tap or drag to drop balls"></canvas>
+                            <p class="pg-hint" id="ballHint">Tap or drag to drop balls</p>
+                        </div>
+                    </article>
+
+                    <article class="pg-card" data-reveal style="--reveal-delay:.08s">
+                        <header class="pg-head">
+                            <h3>Fidget Spinner</h3>
+                            <span class="pg-stat"><b id="spinRpm">0</b> RPM</span>
+                        </header>
+                        <div class="pg-screen pg-spin" id="spinStage" aria-label="Fidget spinner: drag in a circle to spin" role="img">
+                            <img class="spinner-img" id="spinner" src="/assets/v6/fidgets/spinner.webp" width="420" height="420" alt="" draggable="false" loading="lazy">
+                            <img class="spinner-face" src="/assets/v6/stickers/tappy-face.webp" width="320" height="320" alt="" draggable="false" loading="lazy">
+                            <p class="pg-hint">Flick it to spin</p>
+                        </div>
+                    </article>
+
+                    <article class="pg-card" data-reveal style="--reveal-delay:.16s">
+                        <header class="pg-head">
+                            <h3>Bubble Wrap</h3>
+                            <button class="pg-mini" type="button" id="bubbleRefill">Refill</button>
+                        </header>
+                        <div class="pg-screen pg-bubbles">
+                            <div class="bubble-grid" id="bubbleGrid" role="group" aria-label="Bubble wrap"></div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="bento pg-more">
+                    <article class="bento-card bento-fidget dots-white" data-reveal>
+                        <img class="card-sticker sticker" src="/assets/v6/stickers/fidget.webp" width="320" height="290" alt="" loading="lazy">
+                        <h3>Sensory fidgets you can feel.</h3>
+                        <p>Stimming at your desk, waiting in line, or riding out a stressful moment? Tappy gives your hands something to do and your mind a place to settle. Each of the 25+ fidgets has its own haptic feel.</p>
+                        <ul class="chip-list">
+                            <li class="chip">Bubble Wrap</li>
+                            <li class="chip">Light switch</li>
+                            <li class="chip">Zipper</li>
+                            <li class="chip">Velcro</li>
+                            <li class="chip">Fidget Spinner</li>
+                            <li class="chip">Slinky</li>
+                            <li class="chip">Vinyl record</li>
+                            <li class="chip">Neon strings</li>
+                            <li class="chip">Cosmic Vortex</li>
+                            <li class="chip">Haptic calming strip</li>
+                        </ul>
+                        <div class="phone phone-rise" style="margin-top:auto"><img src="/assets/v6/screens/fidget.webp" width="600" height="1346" alt="Tappy fidget screen with buttons, toggles, joysticks, and a color dial" loading="lazy"></div>
+                    </article>
+
+                    <article class="bento-card bento-arcade dots-white" data-reveal style="--reveal-delay:.08s">
+                        <img class="card-sticker sticker" src="/assets/v6/stickers/arcade.webp" width="303" height="320" alt="" loading="lazy">
+                        <h3>14+ arcade games.</h3>
+                        <p>Mini Golf, Taptris, Snake, Zen Pond, Color Swipe, Runner, and Pop It! Challenge a friend on one phone, then climb Game Center leaderboards.</p>
+                        <div class="phone phone-rise"><img src="/assets/v6/screens/arcade.webp" width="600" height="1340" alt="Tappy Arcade with single player and multiplayer games" loading="lazy"></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Numbers -->
+        <section class="numbers dots-white" aria-label="Tappy by the numbers">
+            <div class="container numbers-grid">
+                <div data-reveal><span class="num" style="--c:#ffd84d">25+</span><span class="num-label">Self-care quests</span></div>
+                <div data-reveal style="--reveal-delay:.05s"><span class="num" style="--c:#3dd5ff">25+</span><span class="num-label">Haptic fidgets</span></div>
+                <div data-reveal style="--reveal-delay:.1s"><span class="num" style="--c:#ffa3b5">40+</span><span class="num-label">Feelscapes</span></div>
+                <div data-reveal style="--reveal-delay:.15s"><span class="num" style="--c:#2fe08a">15</span><span class="num-label">Arcade games</span></div>
+                <div data-reveal style="--reveal-delay:.2s"><span class="num" style="--c:#ff9a5c">9</span><span class="num-label">Breathing exercises</span></div>
+            </div>
+        </section>
+
+        <!-- Apple -->
+        <section class="section apple" id="apple" aria-labelledby="apple-title">
+            <div class="container split">
+                <div class="split-copy" data-reveal>
+                    <span class="eyebrow"><img src="/assets/v6/stickers/tappy-face.webp" width="20" height="20" alt="">iPhone + Apple Watch</span>
+                    <h2 class="h2" id="apple-title">Calm, wherever you <span class="hl">are.</span></h2>
+                    <p class="lede">Tappy works on your Home Screen, your Lock Screen, and your Apple Watch, so a calm moment is always a tap away.</p>
+                    <div class="apple-list">
+                        <div class="apple-item">
+                            <span class="ai-ico" style="--bg:#ffe3ea; --fg:#ff2d55"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 3 4.5 6.8 4.5c2.1 0 3.6 1.1 5.2 3 1.6-1.9 3.1-3 5.2-3 3.8 0 5.9 3.9 4.4 7.3C19.5 16.4 12 21 12 21z"/></svg></span>
+                            <h3>Apple Health</h3>
+                            <p>Save mindful minutes, and sync your mood as State of Mind with Tappy Plus.</p>
+                        </div>
+                        <div class="apple-item">
+                            <span class="ai-ico" style="--bg:#fff4c4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="18" height="7.5" rx="2"/></svg></span>
+                            <h3>Widgets</h3>
+                            <p>Check off habits and see your Daily Adventure from your Home Screen.</p>
+                        </div>
+                        <div class="apple-item">
+                            <span class="ai-ico" style="--bg:#dff4fc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5"/><path d="M7 12h6"/><circle cx="17" cy="12" r="1.2" fill="currentColor"/></svg></span>
+                            <h3>Live Activities</h3>
+                            <p>Follow timed quests right from your Lock Screen.</p>
+                        </div>
+                        <div class="apple-item">
+                            <span class="ai-ico" style="--bg:#ffe9dc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="6" width="14" height="12" rx="4"/><path d="M8 6l1-4h6l1 4M8 18l1 4h6l1-4"/></svg></span>
+                            <h3>Apple Watch</h3>
+                            <p>A quick, discreet fidget on your wrist.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="devices" data-reveal aria-hidden="true">
+                    <div class="lockscreen">
+                        <div class="lockscreen-inner">
+                            <p class="ls-date">Monday, October 12</p>
+                            <p class="ls-time">9:41</p>
+                            <div class="live-activity">
+                                <img src="/assets/v6/stickers/breathe.webp" width="40" height="40" alt="">
+                                <div>
+                                    <p class="la-title">Breathe quest</p>
+                                    <p class="la-sub">Daily Adventure &middot; 3 of 5</p>
+                                </div>
+                                <span class="la-time" id="laTime">0:42</span>
+                                <div class="la-bar"><span id="laBar"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="widget-head">
+                            <img src="/assets/v6/stickers/brass-compass.svg" width="32" height="32" alt="">
+                            <strong>Daily<br>Adventure</strong>
+                        </div>
+                        <ul>
+                            <li class="done"><i></i><span>Drink water</span></li>
+                            <li class="done"><i></i><span>Fidget break</span></li>
+                            <li><i></i><span>Breathe</span></li>
+                            <li><i></i><span>Journal</span></li>
+                        </ul>
+                    </div>
+                    <div class="watch">
+                        <div class="watch-band top"></div>
+                        <div class="watch-body">
+                            <div class="watch-screen">
+                                <img src="/assets/v6/stickers/tappy-face.webp" width="92" height="92" alt="">
+                                <span>Tap to fidget</span>
+                            </div>
+                        </div>
+                        <div class="watch-band bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="section gallery dots-white" aria-labelledby="gallery-title">
+            <div class="container section-head" data-reveal>
+                <h2 class="h2" id="gallery-title"><span class="outline">Take a peek inside.</span></h2>
+            </div>
+            <div class="gallery-scroller">
+                <div class="gallery-track" id="galleryTrack">
+                    <figure class="gallery-item"><img src="/assets/v6/gallery/shot-1.webp" width="540" height="1169" alt="Tappy stress relief: sensory fidgets and games, soundscapes and meditations, guided breathing, mood journal, habit tracker, and daily planner" loading="lazy"></figure>
+                    <figure class="gallery-item"><img src="/assets/v6/gallery/shot-2.webp" width="540" height="1169" alt="Your new self-care best friend: Tappy on the beach wearing a propeller hat, glasses, and cape" loading="lazy"></figure>
+                    <figure class="gallery-item"><img src="/assets/v6/gallery/shot-3.webp" width="540" height="1169" alt="Fidget with ultra satisfying haptic fidget tools" loading="lazy"></figure>
+                    <figure class="gallery-item"><img src="/assets/v6/gallery/shot-4.webp" width="540" height="1169" alt="Arcade: fun quick haptic mini-games like Mini Golf, Hot Spot, and Color Swipe" loading="lazy"></figure>
+                    <figure class="gallery-item"><img src="/assets/v6/gallery/shot-5.webp" width="540" height="1169" alt="Relax with meditations and audio-haptic Feelscapes" loading="lazy"></figure>
+                    <figure class="gallery-item"><img src="/assets/v6/gallery/shot-6.webp" width="540" height="1169" alt="Customize Tappy with outfits, backgrounds, colors, and haptics" loading="lazy"></figure>
+                    <figure class="gallery-item"><img src="/assets/v6/gallery/shot-7.webp" width="540" height="1169" alt="Mood journal, habit tracker, planner, and more" loading="lazy"></figure>
+                    <figure class="gallery-item"><img src="/assets/v6/gallery/shot-8.webp" width="540" height="1169" alt="Immersive rain soundscape with a sleep timer" loading="lazy"></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews -->
+        <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <div class="rating-badge"><div><strong>4.8</strong><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span></div></div>
+                    <h2 class="h2" id="reviews-title">Loved by <span class="hl">thousands.</span></h2>
+                    <p class="lede">Rated 4.8 stars from 20,000+ ratings. Here's what people are saying on the App Store.</p>
+                </div>
+                <div class="reviews-grid">
+                    <figure class="review" data-reveal>
+                        <img class="review-sticker review-tappy" src="/assets/v6/stickers/tappy-cheer.svg" width="112" height="124" alt="" loading="lazy">
+                        <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <blockquote>There was a lot of thought put into this app. The visuals, sounds and haptics are all very good quality. The app is responsive and I've never experienced a bug. It is well worth it. Very soothing. I highly recommend.</blockquote>
+                        <figcaption><img src="/assets/v6/stickers/tappy-face.webp" width="34" height="34" alt="">App Store review</figcaption>
+                    </figure>
+                    <figure class="review" data-reveal style="--reveal-delay:.08s">
+                        <img class="review-sticker sticker" src="/assets/v6/stickers/fidget.webp" width="320" height="290" alt="" loading="lazy">
+                        <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <blockquote>I absolutely love this thing. It is like the best ever I cannot stop. I just got it not that long ago and it is already one of my favorite apps ever. If I could, I would rate it 100 out of 100.</blockquote>
+                        <figcaption><img src="/assets/v6/stickers/tappy-face.webp" width="34" height="34" alt="">App Store review</figcaption>
+                    </figure>
+                    <figure class="review" data-reveal style="--reveal-delay:.16s">
+                        <img class="review-sticker sticker" src="/assets/v6/stickers/relax.webp" width="320" height="310" alt="" loading="lazy">
+                        <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <blockquote>Tappy is great. I love how it makes you relax. I really get to relax more and I get to meditate a lot and that just saved my day.</blockquote>
+                        <figcaption><img src="/assets/v6/stickers/tappy-face.webp" width="34" height="34" alt="">App Store review</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section faq" id="faq" aria-labelledby="faq-title">
+            <div class="container faq-grid">
+                <div class="faq-side" data-reveal>
+                    <span class="eyebrow"><img src="/assets/v6/stickers/spark.webp" width="20" height="20" alt="">FAQ</span>
+                    <h2 class="h2" id="faq-title">Questions? Tappy's got <span class="hl hl-sky">answers.</span></h2>
+                    <p class="lede">Still curious? Email <a href="mailto:cameron@pacific.dev">cameron@pacific.dev</a>.</p>
+                    <img class="sticker" src="/assets/v6/stickers/tappy-curious.svg" width="112" height="124" alt="" loading="lazy">
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item" open>
+                        <summary>What is Tappy?</summary>
+                        <div class="faq-answer"><p>Tappy is a self-care pet and fidget app for iPhone and Apple Watch. Tappy levels up as you destress, stay focused, and build a routine that's all yours. It includes a Daily Adventure routine builder, 25+ haptic fidgets, breathing exercises, meditations, Feelscapes, a mood journal, habit tracker, planner, goals, a focus timer, and arcade games.</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Is Tappy free?</summary>
+                        <div class="faq-answer"><p>Yes. Tappy is free to download on the App Store, with optional in-app purchases including Tappy Plus.</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What's new in Tappy 6.0?</summary>
+                        <div class="faq-answer">
+                            <p>Tappy is now a self-care pet who grows with you. It's our biggest update ever:</p>
+                            <ul>
+                                <li>Daily Adventure: build your own routine from 25+ self-care quests and open a treasure chest of Sparks.</li>
+                                <li>Take care of Tappy: pet, feed, hug, play, and tuck Tappy in, and fill the Care Bar for a daily surprise gift.</li>
+                                <li>Sparks and the Shop: spend Sparks on hats, outfits, toys, and colors.</li>
+                                <li>New scenes: the beach, a farm, a castle, outer space, and more, with visitors to discover in the Field Guide.</li>
+                                <li>Bedtime, Goals, badges, and friendship levels.</li>
+                                <li>A Daily Adventure widget, plus Live Activities for timed quests.</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What are Sparks?</summary>
+                        <div class="faq-answer"><p>Sparks are rewards you collect for everything you finish in Tappy, like quests, focus sessions, and your Daily Adventure. Spend them in the Shop on hats, glasses, outfits, props, toys, colors, and scenes to level Tappy up.</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Is Tappy good for fidgeting and stimming?</summary>
+                        <div class="faq-answer">
+                            <p>Tappy gives your hands something to do and your mind a place to settle, whether you're stimming at your desk, waiting in line, or riding out a stressful moment. Each of the 25+ fidgets has its own haptic feel, and breathing exercises, meditations, and a 5 senses exercise are there whenever you want a moment to slow down.</p>
+                            <p>Tappy is a fidget and self-care tool and is not a substitute for professional care.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can I use Tappy's fidgets silently?</summary>
+                        <div class="faq-answer"><p>Yes. Turn sound on for satisfying audio, or off for a silent, discreet stim anywhere. You can also pin a haptic calming strip that floats over the app so it's always within reach.</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Does Tappy work on Apple Watch?</summary>
+                        <div class="faq-answer"><p>Yes. Tappy on Apple Watch gives you a quick, discreet fidget on your wrist. On iPhone, Tappy also supports Apple Health mindful minutes, Home Screen widgets, and Live Activities for timed quests.</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Is my mood journal private?</summary>
+                        <div class="faq-answer"><p>Your journal entries stay on your device and in your own iCloud, and you can lock them with Face ID or Touch ID. Read the <a href="/privacy/">Privacy Policy</a> for details.</p></div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can I go back to the original Tappy?</summary>
+                        <div class="faq-answer"><p>Yes. On the home screen, tap More, then Switch to Classic Tappy.</p></div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="section final" aria-labelledby="final-title">
+            <div class="container">
+                <div class="final-card dots-white" data-reveal>
+                    <div>
+                        <h2 class="h2" id="final-title"><span class="outline">Your next adventure starts today.</span></h2>
+                        <p>Free to download on the App Store. Join over a million people who've downloaded Tappy.</p>
+                        <div class="final-actions">
+                            <a class="store-badge" href="https://apps.apple.com/us/app/tappy-self-care-pet-fidget/id1492017640" target="_blank" rel="noopener">
+                                <img src="/assets/v6/app-store-badge.svg" width="174" height="58" alt="Download Tappy on the App Store" loading="lazy">
+                            </a>
+                            <span class="hero-proof"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span><strong>4.8</strong> &middot; 20K+ ratings</span></span>
+                        </div>
+                    </div>
+                    <img class="chars sticker" src="/assets/v6/characters.webp" width="1000" height="913" alt="Tappy waving next to two friends: a big orange character in a cowboy hat and a small green one" loading="lazy">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer dots-white">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="/assets/v6/logo-light.webp" width="322" height="120" alt="Tappy" loading="lazy">
+                    <p>The self-care pet and fidget app that levels up as you destress, stay focused, and build a routine that's all yours.</p>
+                    <a class="store-badge" href="https://apps.apple.com/us/app/tappy-self-care-pet-fidget/id1492017640" target="_blank" rel="noopener">
+                        <img src="/assets/v6/app-store-badge.svg" width="150" height="50" alt="Download Tappy on the App Store" loading="lazy" style="height:50px">
+                    </a>
+                </div>
+                <div>
+                    <h2>Explore</h2>
+                    <ul>
+                        <li><a href="#whats-new">What's new in 6.0</a></li>
+                        <li><a href="#adventure">Daily Adventure</a></li>
+                        <li><a href="#care">Take care of Tappy</a></li>
+                        <li><a href="#toolkit">Wellness &amp; focus</a></li>
+                        <li><a href="#playground">Fidgets &amp; games</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Legal</h2>
+                    <ul>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                        <li><a href="/privacy/#consumer-health-data">Consumer Health Data</a></li>
+                        <li><a href="/terms/">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Company</h2>
+                    <ul>
+                        <li><a href="https://www.pacific.dev" target="_blank" rel="noopener">Pacific Interactive</a></li>
+                        <li><a href="mailto:cameron@pacific.dev">Contact</a></li>
+                        <li><a href="https://apps.apple.com/us/app/tappy-self-care-pet-fidget/id1492017640" target="_blank" rel="noopener">App Store</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2019&ndash;<span id="year">2026</span> Pacific Interactive LLC. All rights reserved.</p>
+                <p>Tappy is a fidget and self-care tool and is not a substitute for professional care.</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Nav scroll effect
-        const nav = document.getElementById('navbar');
-        const navLogo = document.getElementById('navLogo');
-
-        const updateNavState = () => {
-            const isScrolled = window.scrollY > 50;
-            nav.classList.toggle('scrolled', isScrolled);
-            navLogo.src = isScrolled ? navLogo.dataset.darkLogo : navLogo.dataset.lightLogo;
-        };
-
-        window.addEventListener('scroll', updateNavState);
-        updateNavState();
-
-        // Random background accents for Features section
-        const generateFeatureShapes = () => {
-            const featuresSection = document.getElementById('features');
-            const shapesLayer = featuresSection?.querySelector('.features-bg-shapes');
-            if (!featuresSection || !shapesLayer) return;
-
-            const colors = [
-                'rgba(25, 168, 255, 0.2)',
-                'rgba(255, 162, 61, 0.2)',
-                'rgba(255, 122, 166, 0.18)',
-                'rgba(255, 203, 47, 0.18)',
-                'rgba(140, 232, 157, 0.18)',
-                'rgba(122, 99, 255, 0.16)'
-            ];
-            const shapeTypes = ['circle', 'square', 'pill', 'diamond'];
-            const isMobile = window.matchMedia('(max-width: 900px)').matches;
-            const shapeCount = isMobile ? 7 : 12;
-            const xAnchors = isMobile ? [12, 30, 48, 66, 84] : [8, 20, 32, 44, 56, 68, 80, 92];
-            const yAnchors = isMobile ? [14, 30, 46, 62, 78, 90] : [10, 24, 38, 52, 66, 80, 92];
-            const points = [];
-
-            xAnchors.forEach((x) => {
-                yAnchors.forEach((y) => {
-                    points.push({ x, y });
-                });
-            });
-
-            for (let i = points.length - 1; i > 0; i -= 1) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [points[i], points[j]] = [points[j], points[i]];
-            }
-
-            shapesLayer.innerHTML = '';
-
-            for (let i = 0; i < shapeCount; i += 1) {
-                const shape = document.createElement('span');
-                shape.className = 'feature-bg-shape';
-                const type = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
-                const size = isMobile
-                    ? Math.floor(42 + Math.random() * 66)
-                    : Math.floor(60 + Math.random() * 96);
-                const anchor = points[i % points.length];
-                const x = anchor.x + (Math.random() * 8 - 4);
-                const y = anchor.y + (Math.random() * 8 - 4);
-                const rotation = Math.floor(Math.random() * 60) - 30;
-
-                let width = size;
-                let height = size;
-                let borderRadius = '50%';
-                let shapeRotation = rotation;
-
-                if (type === 'square') {
-                    borderRadius = `${Math.max(10, Math.floor(size * 0.2))}px`;
-                } else if (type === 'pill') {
-                    width = Math.floor(size * 1.5);
-                    height = Math.floor(size * 0.72);
-                    borderRadius = '999px';
-                } else if (type === 'diamond') {
-                    borderRadius = `${Math.max(8, Math.floor(size * 0.18))}px`;
-                    shapeRotation = rotation + 45;
-                }
-
-                shape.style.left = `${x}%`;
-                shape.style.top = `${y}%`;
-                shape.style.width = `${width}px`;
-                shape.style.height = `${height}px`;
-                shape.style.borderRadius = borderRadius;
-                shape.style.background = colors[Math.floor(Math.random() * colors.length)];
-                shape.style.transform = `translate(-50%, -50%) rotate(${shapeRotation}deg)`;
-
-                shapesLayer.appendChild(shape);
-            }
-        };
-
-        generateFeatureShapes();
-
-        // Random background accents for Screenshots section
-        const generateScreenshotsShapes = () => {
-            const section = document.querySelector('.screenshots');
-            const shapesLayer = section?.querySelector('.screenshots-bg-shapes');
-            if (!section || !shapesLayer) return;
-
-            const shapeTypes = ['circle', 'square', 'pill', 'diamond'];
-            const isMobile = window.matchMedia('(max-width: 900px)').matches;
-            const shapeCount = isMobile ? 6 : 10;
-            const xAnchors = isMobile ? [12, 30, 48, 66, 84] : [8, 22, 36, 50, 64, 78, 92];
-            const yAnchors = isMobile ? [16, 34, 52, 70, 86] : [12, 28, 44, 60, 76, 90];
-            const points = [];
-
-            xAnchors.forEach((x) => {
-                yAnchors.forEach((y) => {
-                    points.push({ x, y });
-                });
-            });
-
-            for (let i = points.length - 1; i > 0; i -= 1) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [points[i], points[j]] = [points[j], points[i]];
-            }
-
-            shapesLayer.innerHTML = '';
-
-            for (let i = 0; i < shapeCount; i += 1) {
-                const shape = document.createElement('span');
-                shape.className = 'screenshot-bg-shape';
-                const type = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
-                const size = isMobile
-                    ? Math.floor(52 + Math.random() * 72)
-                    : Math.floor(74 + Math.random() * 114);
-                const anchor = points[i % points.length];
-                const x = anchor.x + (Math.random() * 8 - 4);
-                const y = anchor.y + (Math.random() * 8 - 4);
-                const rotation = Math.floor(Math.random() * 70) - 35;
-                const opacity = isMobile
-                    ? (0.08 + Math.random() * 0.1).toFixed(3)
-                    : (0.09 + Math.random() * 0.12).toFixed(3);
-
-                let width = size;
-                let height = size;
-                let borderRadius = '50%';
-                let shapeRotation = rotation;
-
-                if (type === 'square') {
-                    borderRadius = `${Math.max(10, Math.floor(size * 0.2))}px`;
-                } else if (type === 'pill') {
-                    width = Math.floor(size * 1.55);
-                    height = Math.floor(size * 0.7);
-                    borderRadius = '999px';
-                } else if (type === 'diamond') {
-                    borderRadius = `${Math.max(8, Math.floor(size * 0.16))}px`;
-                    shapeRotation = rotation + 45;
-                }
-
-                shape.style.left = `${x}%`;
-                shape.style.top = `${y}%`;
-                shape.style.width = `${width}px`;
-                shape.style.height = `${height}px`;
-                shape.style.borderRadius = borderRadius;
-                shape.style.background = `rgba(255, 255, 255, ${opacity})`;
-                shape.style.transform = `translate(-50%, -50%) rotate(${shapeRotation}deg)`;
-
-                shapesLayer.appendChild(shape);
-            }
-        };
-
-        generateScreenshotsShapes();
-
-        // Random floating color accents for CTA section
-        const generateCtaShapes = () => {
-            const section = document.querySelector('.cta');
-            const shapesLayer = section?.querySelector('.cta-bg-shapes');
-            if (!section || !shapesLayer) return;
-
-            const colors = [
-                'rgba(25, 168, 255, 0.26)',
-                'rgba(255, 162, 61, 0.28)',
-                'rgba(255, 122, 166, 0.24)',
-                'rgba(255, 203, 47, 0.26)',
-                'rgba(122, 99, 255, 0.2)',
-                'rgba(140, 232, 157, 0.22)'
-            ];
-            const shapeTypes = ['circle', 'square', 'pill', 'diamond'];
-            const isMobile = window.matchMedia('(max-width: 900px)').matches;
-            const shapeCount = isMobile ? 4 : 7;
-
-            const sectionRect = section.getBoundingClientRect();
-            const safeBounds = {
-                minX: 10,
-                maxX: 90,
-                minY: 14,
-                maxY: 86
-            };
-            const maxAttempts = 120;
-
-            shapesLayer.innerHTML = '';
-            const placed = [];
-
-            for (let i = 0, attempts = 0; placed.length < shapeCount && attempts < maxAttempts; attempts += 1) {
-                const shape = document.createElement('span');
-                shape.className = 'cta-bg-shape';
-                const type = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
-                const size = isMobile
-                    ? Math.floor(38 + Math.random() * 44)
-                    : Math.floor(52 + Math.random() * 68);
-                const x = safeBounds.minX + Math.random() * (safeBounds.maxX - safeBounds.minX);
-                const y = safeBounds.minY + Math.random() * (safeBounds.maxY - safeBounds.minY);
-                const rotation = Math.floor(Math.random() * 70) - 35;
-
-                let width = size;
-                let height = size;
-                let borderRadius = '50%';
-                let shapeRotation = rotation;
-
-                if (type === 'square') {
-                    borderRadius = `${Math.max(10, Math.floor(size * 0.2))}px`;
-                } else if (type === 'pill') {
-                    width = Math.floor(size * 1.55);
-                    height = Math.floor(size * 0.7);
-                    borderRadius = '999px';
-                } else if (type === 'diamond') {
-                    borderRadius = `${Math.max(8, Math.floor(size * 0.16))}px`;
-                    shapeRotation = rotation + 45;
-                }
-
-                const centerX = (x / 100) * sectionRect.width;
-                const centerY = (y / 100) * sectionRect.height;
-                const spacing = isMobile ? 10 : 14;
-                const overlapsExisting = placed.some((p) =>
-                    Math.abs(centerX - p.centerX) < (width + p.width) / 2 + spacing &&
-                    Math.abs(centerY - p.centerY) < (height + p.height) / 2 + spacing
-                );
-                if (overlapsExisting) continue;
-
-                shape.style.left = `${x}%`;
-                shape.style.top = `${y}%`;
-                shape.style.width = `${width}px`;
-                shape.style.height = `${height}px`;
-                shape.style.borderRadius = borderRadius;
-                shape.style.background = colors[Math.floor(Math.random() * colors.length)];
-                shape.style.transform = `translate(-50%, -50%) rotate(${shapeRotation}deg)`;
-
-                shapesLayer.appendChild(shape);
-                placed.push({ centerX, centerY, width, height });
-                i += 1;
-            }
-        };
-
-        generateCtaShapes();
-
-        // Fade-in on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-    </script>
-
-
+    <script src="/assets/js/home.js" defer></script>
 </body>
 </html>
