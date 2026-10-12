@@ -46,6 +46,7 @@
 }
 
 html {
+    overflow-x: clip;
     scroll-behavior: smooth;
     scroll-padding-top: 96px;
     -webkit-text-size-adjust: 100%;
@@ -871,6 +872,10 @@ ul {
     grid-template-columns: 1fr 1fr;
     gap: clamp(40px, 6vw, 90px);
     align-items: center;
+}
+
+.split > * {
+    min-width: 0;
 }
 
 .split-copy .lede {
@@ -3844,6 +3849,7 @@ ul {
     }
 
     .devices {
+        width: 100%;
         max-width: 520px;
         margin: 0 auto;
     }
