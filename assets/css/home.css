@@ -3175,9 +3175,23 @@ ul {
     backdrop-filter: blur(10px);
 }
 
-.live-activity img {
+.live-activity img,
+.la-ico {
     width: 40px;
     height: 40px;
+}
+
+.la-ico {
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(18, 201, 250, 0.18);
+    color: var(--tappy);
+}
+
+.la-ico svg {
+    width: 22px;
+    height: 22px;
 }
 
 .la-title {
@@ -3210,7 +3224,7 @@ ul {
 .la-bar span {
     display: block;
     height: 100%;
-    width: 62%;
+    width: 26%;
     background: var(--tappy);
     border-radius: inherit;
 }

@@ -1196,15 +1196,16 @@
         });
     });
 
-    /* Live Activity countdown */
+    /* Live Activity countdown: a 25 minute Focus timer. */
     const laTime = $('#laTime');
     const laBar = $('#laBar');
-    if (laTime && !reduceMotion) {
-        let left = 42;
-        const total = 60;
+    if (laTime && laBar && !reduceMotion) {
+        let left = 18 * 60 + 24;
+        const total = 25 * 60;
         setInterval(() => {
             left = left <= 0 ? total : left - 1;
-            laTime.textContent = `0:${String(left).padStart(2, '0')}`;
+            const minutes = Math.floor(left / 60);
+            laTime.textContent = `${minutes}:${String(left % 60).padStart(2, '0')}`;
             laBar.style.width = `${((total - left) / total) * 100}%`;
         }, 1000);
     }
