@@ -735,14 +735,7 @@
             src.start(t);
         };
 
-        const hapticToggle = $('#hapticToggle');
         const soundToggle = $('#soundToggle');
-        hapticToggle.addEventListener('click', () => {
-            hapticsOn = !hapticsOn;
-            hapticToggle.setAttribute('aria-pressed', String(hapticsOn));
-            $('b', hapticToggle).textContent = hapticsOn ? 'On' : 'Off';
-            haptic(15, 0);
-        });
         soundToggle.addEventListener('click', () => {
             soundOn = !soundOn;
             soundToggle.setAttribute('aria-pressed', String(soundOn));
@@ -1037,7 +1030,6 @@
                 lastArm = arm;
                 const speed = Math.abs(omega);
                 haptic(Math.min(6 + speed * 0.4, 18), Math.max(22, 90 - speed * 3));
-                if (speed < 40) blip(1600 + speed * 20, 0.02, 0.05, 'square');
             }
         };
 
