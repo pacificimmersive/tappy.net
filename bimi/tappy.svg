@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <title>Tappy</title>
+  <rect width="1000" height="1000" fill="#3ED5FF"/>
+  <path d="M303.3 339.6Q377.5 273.3 451.7 339.6M576.2 339.6Q650.5 273.3 724.7 339.6" fill="none" stroke="#004259" stroke-width="55.2" stroke-linecap="round"/>
+  <path d="M295.3 463.6L677.1 528.8A200.9 200.9 0 1 1 295.3 463.6Z" fill="#004259" stroke="#004259" stroke-width="43.2" stroke-linejoin="round"/>
+</svg>
