@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Tappy Press Kit: Logos, Screenshots &amp; Brand Assets</title>
-    <meta name="description" content="Download the Tappy press kit: official logos, app icon, Tappy 6.0 screenshots, character artwork, brand colors, a fact sheet, and copy-ready descriptions of the self-care pet and fidget app.">
+    <meta name="description" content="Download the Tappy press kit: official logos, app icon, Tappy 6.0 screenshots, character artwork, brand colors, a fact sheet, and copy-ready descriptions of the fidget and self-care app.">
     <meta name="author" content="Pacific Interactive LLC">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#6ccaee">
@@ -615,14 +615,18 @@
                                 <h3>One-line description</h3>
                                 <button class="copy-btn" type="button" data-copy="#blurb-short">Copy</button>
                             </div>
-                            <p id="blurb-short">Tappy is a self-care pet and fidget app that levels up as you destress, stay focused, and build a routine that's all yours.</p>
+                            <p id="blurb-short">Tappy is a sensory fidget and self-care app where every tap, click, and swipe comes alive with satisfying sounds, haptics, and animations, plus a self-care pet who levels up as you breathe, journal, and build healthy habits.</p>
                         </div>
                         <div class="card blurb">
                             <div class="blurb-top">
                                 <h3>Full description</h3>
                                 <button class="copy-btn" type="button" data-copy="#blurb-long">Copy</button>
                             </div>
-                            <p id="blurb-long">Tappy is a self-care pet and fidget app that levels up as you destress, stay focused, and build a routine that's all yours. Build a Daily Adventure from 25+ self-care quests, take care of Tappy, and collect Sparks to unlock outfits, scenes, and surprises. Along the way, Tappy includes 25+ haptic fidgets, breathing exercises, guided meditations, audio-haptic Feelscapes, a mood journal, habit tracker, planner, goals, a focus timer, and arcade games. Free on the App Store with optional Tappy Plus.</p>
+                            <div id="blurb-long">
+                                <p>Tappy is a sensory fidget and self-care app where every tap, click, and swipe comes alive with satisfying sounds, haptics, and animations, plus a self-care pet who levels up as you breathe, journal, and build healthy habits. Join over a million people who fidget, stim, check in, and unwind with Tappy.</p>
+                                <p>Tappy grows with you as you destress, stay focused, and build a routine that's all yours. Complete a Daily Adventure of quests and collect Sparks to unlock outfits, scenes, and surprises.</p>
+                                <p>And it's all in one app: 25+ sensory fidgets, 9 breathing exercises, 40+ calming soundscapes, a mood journal, daily gratitude, a habit tracker, goal tracking, and 15 arcade games.</p>
+                            </div>
                         </div>
                         <div class="card blurb">
                             <div class="blurb-top">
@@ -986,7 +990,7 @@
                         <li><a href="/#whats-new">What's new in 6.0</a></li>
                         <li><a href="/#adventure">Daily Adventure</a></li>
                         <li><a href="/#care">Take care of Tappy</a></li>
-                        <li><a href="/#toolkit">Wellness &amp; focus</a></li>
+                        <li><a href="/#toolkit">Self-care &amp; focus</a></li>
                         <li><a href="/#playground">Fidgets &amp; games</a></li>
                         <li><a href="/#faq">FAQ</a></li>
                     </ul>
@@ -1055,7 +1059,7 @@
 
             document.querySelectorAll('[data-copy]').forEach((btn) => {
                 btn.addEventListener('click', () => {
-                    const text = document.querySelector(btn.dataset.copy).textContent.trim();
+                    const text = document.querySelector(btn.dataset.copy).innerText.trim();
                     copy(text, () => {
                         btn.textContent = 'Copied!';
                         btn.classList.add('copied');

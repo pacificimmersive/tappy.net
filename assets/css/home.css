@@ -325,6 +325,26 @@ ul {
     margin-bottom: 28px;
 }
 
+.relax-shots {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    margin: auto 0 32px;
+}
+
+.bento-relax .relax-shots .phone {
+    --phone-w: 190px;
+    height: auto;
+    aspect-ratio: auto;
+    margin: 0;
+    transform: none;
+}
+
+.bento-relax .relax-shots .phone img {
+    height: auto;
+}
+
 .phone-rise img {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -2480,6 +2500,113 @@ ul {
     color: var(--white);
 }
 
+.bento-showcase {
+    grid-column: span 6;
+    min-height: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    background-color: var(--ink);
+    color: var(--white);
+}
+
+.bento-showcase p {
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.showcase-copy {
+    flex: 0 1 320px;
+    padding-bottom: 36px;
+}
+
+.showcase-shots {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 22px;
+    align-self: stretch;
+    align-items: flex-end;
+}
+
+.showcase-shots figure {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 12px;
+}
+
+.showcase-shots figcaption,
+.cozy-shots figcaption {
+    font-weight: 900;
+    text-align: center;
+}
+
+.bento-showcase .phone {
+    --phone-w: 200px;
+    --phone-h: 380px;
+    margin: 0;
+}
+
+.bento-cozy {
+    grid-column: span 6;
+    min-height: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+    padding: 36px 34px 0;
+    background: linear-gradient(180deg, #7b6cf0 0%, #b98cf2 55%, #f6b6d8 100%);
+    color: var(--white);
+}
+
+.bento-cozy p {
+    color: rgba(255, 255, 255, 0.94);
+}
+
+.cozy-copy {
+    flex: 0 1 340px;
+    padding-bottom: 36px;
+}
+
+.cozy-shots {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.cozy-pond {
+    flex: 1;
+    max-width: 440px;
+    align-self: center;
+    margin-bottom: 36px;
+}
+
+.cozy-pond img {
+    width: 100%;
+    height: auto;
+    border-radius: 22px;
+    border: 3px solid var(--ink);
+    box-shadow: 0 6px 0 var(--ink);
+}
+
+.cozy-pond figcaption {
+    margin-top: 10px;
+}
+
+.bento-cozy .phone {
+    --phone-w: 200px;
+    --phone-h: 380px;
+    margin: auto 0 0;
+    flex-shrink: 0;
+}
+
+.bento-fidget .phone,
+.bento-arcade .phone {
+    --phone-h: 500px;
+}
+
 .bento-arcade p,
 .bento-relax p {
     color: rgba(255, 255, 255, 0.94);
@@ -4119,6 +4246,76 @@ ul {
         --phone-w: 230px;
         --phone-h: 260px;
         margin-top: 10px;
+    }
+
+    .bento-fidget .phone,
+    .bento-arcade .phone {
+        --phone-h: 420px;
+    }
+
+    .relax-shots {
+        gap: 10px;
+    }
+
+    .bento-relax .relax-shots .phone {
+        --phone-w: 150px;
+        --phone-h: 300px;
+    }
+
+    .bento-showcase {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 28px 24px 0;
+    }
+
+    .showcase-copy {
+        flex: none;
+        padding-bottom: 0;
+    }
+
+    .showcase-shots {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .showcase-shots figure:last-child {
+        display: none;
+    }
+
+    .bento-showcase .phone {
+        --phone-w: 150px;
+        --phone-h: 290px;
+    }
+
+    .bento-cozy {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 28px 24px 0;
+    }
+
+    .cozy-copy {
+        flex: none;
+        padding-bottom: 0;
+    }
+
+    .cozy-shots {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .cozy-pond {
+        flex-basis: 100%;
+        max-width: none;
+        margin-bottom: 8px;
+    }
+
+    .bento-cozy .phone {
+        --phone-w: 150px;
+        --phone-h: 290px;
+        margin: 0;
     }
 
     .numbers-grid {
