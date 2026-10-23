@@ -38,7 +38,7 @@
     <link rel="preload" href="/assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/v6/screens/home.webp" as="image" type="image/webp" fetchpriority="high">
     <link rel="stylesheet" href="/assets/fonts/nunito.css">
-    <link rel="stylesheet" href="/assets/css/home.css">
+    <link rel="stylesheet" href="/assets/css/home.css?v=20261023">
     <script>document.documentElement.classList.add('js');</script>
 
     <script type="application/ld+json">
@@ -178,9 +178,7 @@
             </a>
             <nav class="nav-links" aria-label="Main">
                 <a href="#playground">Fidgets &amp; games</a>
-                <a href="#adventure">Daily Adventure</a>
-                <a href="#care">Care</a>
-                <a href="#toolkit">Self-care</a>
+                <a href="#adventure">Self-care</a>
                 <a href="#reviews">Reviews</a>
                 <a href="#faq">FAQ</a>
             </nav>
@@ -195,9 +193,7 @@
         <nav class="mobile-menu" id="mobileMenu" aria-label="Main" hidden>
             <a href="#playground">Fidgets &amp; games</a>
             <a href="#whats-new">What's new in 6.0</a>
-            <a href="#adventure">Daily Adventure</a>
-            <a href="#care">Take care of Tappy</a>
-            <a href="#toolkit">Self-care &amp; focus</a>
+            <a href="#adventure">Self-care</a>
             <a href="#reviews">Reviews</a>
             <a href="#faq">FAQ</a>
             <a class="store-badge" href="https://apps.apple.com/us/app/tappy-self-care-pet-fidget/id1492017640" target="_blank" rel="noopener">
@@ -298,6 +294,110 @@
                 </div>
             </div>
         </div>
+
+        <!-- Fidget playground -->
+        <section class="section playground dots-ink" id="playground" aria-labelledby="playground-title">
+            <div class="container">
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow"><img src="/assets/v6/stickers/fidget.webp" width="20" height="20" alt="">Playground</span>
+                    <h2 class="h2" id="playground-title">Go ahead, <span class="hl hl-sky">fidget.</span></h2>
+                    <p class="lede">25+ haptic fidgets and 14+ arcade games for whenever your hands need something to do. Try three fidgets right here.</p>
+                    <div class="pg-toggles" role="group" aria-label="Fidget settings">
+                        <button class="pg-toggle" type="button" id="soundToggle" aria-pressed="false">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9a4 4 0 0 1 0 6"/></svg>
+                            Sound <b>Off</b>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pg-grid">
+                    <article class="pg-card" data-reveal>
+                        <header class="pg-head">
+                            <h3>Ball Pit</h3>
+                            <button class="pg-mini" type="button" id="ballClear">Clear</button>
+                        </header>
+                        <div class="pg-screen pg-balls">
+                            <canvas id="ballCanvas" aria-label="Ball pit: tap or drag to drop balls"></canvas>
+                            <p class="pg-hint" id="ballHint">Tap or drag to drop balls</p>
+                        </div>
+                    </article>
+
+                    <article class="pg-card" data-reveal style="--reveal-delay:.08s">
+                        <header class="pg-head">
+                            <h3>Fidget Spinner</h3>
+                            <span class="pg-stat"><b id="spinRpm">0</b> RPM</span>
+                        </header>
+                        <div class="pg-screen pg-spin" id="spinStage" aria-label="Fidget spinner: drag in a circle to spin" role="img">
+                            <img class="spinner-img" id="spinner" src="/assets/v6/fidgets/spinner.webp" width="420" height="420" alt="" draggable="false" loading="lazy">
+                            <img class="spinner-face" src="/assets/v6/stickers/tappy-face.webp" width="320" height="320" alt="" draggable="false" loading="lazy">
+                            <p class="pg-hint">Flick it to spin</p>
+                        </div>
+                    </article>
+
+                    <article class="pg-card" data-reveal style="--reveal-delay:.16s">
+                        <header class="pg-head">
+                            <h3>Bubble Wrap</h3>
+                            <button class="pg-mini" type="button" id="bubbleRefill">Refill</button>
+                        </header>
+                        <div class="pg-screen pg-bubbles">
+                            <div class="bubble-grid" id="bubbleGrid" role="group" aria-label="Bubble wrap"></div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="bento pg-more">
+                    <article class="bento-card bento-fidget dots-white" data-reveal>
+                        <img class="card-sticker sticker" src="/assets/v6/stickers/fidget.webp" width="320" height="290" alt="" loading="lazy">
+                        <h3>Sensory fidgets you can feel.</h3>
+                        <p>Stimming at your desk, waiting in line, or riding out a stressful moment? Tappy gives your hands something to do and your mind a place to settle. Each of the 25+ fidgets has its own haptic feel.</p>
+                        <ul class="chip-list">
+                            <li class="chip">Bubble Wrap</li>
+                            <li class="chip">Light switch</li>
+                            <li class="chip">Zipper</li>
+                            <li class="chip">Velcro</li>
+                            <li class="chip">Fidget Spinner</li>
+                            <li class="chip">Slinky</li>
+                            <li class="chip">Vinyl record</li>
+                            <li class="chip">Neon strings</li>
+                            <li class="chip">Cosmic Vortex</li>
+                            <li class="chip">Haptic calming strip</li>
+                        </ul>
+                        <div class="phone phone-rise" style="margin-top:auto"><img src="/assets/v6/screens/fidget-grid.webp" width="600" height="1304" alt="Tappy fidget grid with Fluid, Ball Pit, a lamp, buttons, toggles, and joysticks" loading="lazy"></div>
+                    </article>
+
+                    <article class="bento-card bento-arcade dots-white" data-reveal style="--reveal-delay:.08s">
+                        <img class="card-sticker sticker" src="/assets/v6/stickers/arcade.webp" width="303" height="320" alt="" loading="lazy">
+                        <h3>14+ arcade games.</h3>
+                        <p>Cloud Hop, Mini Golf, Zen Pond, Hot Spot, Color Swipe, Tappy Stack, and Pop It! Challenge a friend on one phone, then climb Game Center leaderboards.</p>
+                        <div class="phone phone-rise"><img src="/assets/v6/screens/arcade.webp" width="600" height="1304" alt="Tappy Arcade with Cloud Hop, Mini Golf, Hot Spot, and Color Swipe" loading="lazy"></div>
+                    </article>
+
+                    <article class="bento-card bento-showcase dots-white" data-reveal style="--reveal-delay:.1s">
+                        <div class="showcase-copy">
+                            <h3>Pop, clack, and click.</h3>
+                            <p>Pop a never-ending sheet of rainbow Bubble Wrap, build a glowing mechanical keypad with real switch sounds, or browse the whole collection by feel: clicky, calming, satisfying, or spin.</p>
+                        </div>
+                        <div class="showcase-shots">
+                            <figure><div class="phone phone-rise"><img src="/assets/v6/screens/bubble-wrap.webp" width="600" height="1304" alt="Rainbow Bubble Wrap fidget with a few bubbles popped" loading="lazy"></div><figcaption>Bubble Wrap</figcaption></figure>
+                            <figure><div class="phone phone-rise"><img src="/assets/v6/screens/mech-keys.webp" width="600" height="1304" alt="Mechanical Keys fidget: a glowing RGB keypad" loading="lazy"></div><figcaption>Mechanical Keys</figcaption></figure>
+                            <figure><div class="phone phone-rise"><img src="/assets/v6/screens/fidget-list.webp" width="600" height="1304" alt="Fidget list with Aurora Orb, Ball Pit, Blob, Breathing Flower, and Bubble Wrap" loading="lazy"></div><figcaption>25+ fidgets</figcaption></figure>
+                        </div>
+                    </article>
+
+                    <article class="bento-card bento-cozy dots-white" data-reveal style="--reveal-delay:.12s">
+                        <div class="cozy-copy">
+                            <h3>Cozy games for every mood.</h3>
+                            <p>Bounce Tappy up through the clouds in Cloud Hop, sink a hole-in-one in Mini Golf, or unwind at your own peaceful koi pond with nature sounds in Zen Pond.</p>
+                        </div>
+                        <div class="cozy-shots">
+                            <figure class="cozy-pond"><img src="/assets/v6/screens/zen-pond.webp" width="1000" height="699" alt="Zen Pond: koi fish, turtles, and lily pads in a peaceful pond" loading="lazy"><figcaption>Zen Pond</figcaption></figure>
+                            <div class="phone phone-rise"><img src="/assets/v6/screens/mini-golf.webp" width="600" height="1304" alt="Mini Golf: a putting green with a flag and a ball" loading="lazy"></div>
+                            <div class="phone phone-rise"><img src="/assets/v6/screens/cloud-hop.webp" width="600" height="1305" alt="Cloud Hop: Tappy bouncing up through the clouds" loading="lazy"></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
         <!-- What's new -->
         <section class="section whats-new" id="whats-new" aria-labelledby="whats-new-title">
@@ -726,110 +826,6 @@
             </div>
         </section>
 
-        <!-- Fidget playground -->
-        <section class="section playground dots-ink" id="playground" aria-labelledby="playground-title">
-            <div class="container">
-                <div class="section-head" data-reveal>
-                    <span class="eyebrow"><img src="/assets/v6/stickers/fidget.webp" width="20" height="20" alt="">Playground</span>
-                    <h2 class="h2" id="playground-title">Go ahead, <span class="hl hl-sky">fidget.</span></h2>
-                    <p class="lede">25+ haptic fidgets and 14+ arcade games for whenever your hands need something to do. Try three fidgets right here.</p>
-                    <div class="pg-toggles" role="group" aria-label="Fidget settings">
-                        <button class="pg-toggle" type="button" id="soundToggle" aria-pressed="false">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9a4 4 0 0 1 0 6"/></svg>
-                            Sound <b>Off</b>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="pg-grid">
-                    <article class="pg-card" data-reveal>
-                        <header class="pg-head">
-                            <h3>Ball Pit</h3>
-                            <button class="pg-mini" type="button" id="ballClear">Clear</button>
-                        </header>
-                        <div class="pg-screen pg-balls">
-                            <canvas id="ballCanvas" aria-label="Ball pit: tap or drag to drop balls"></canvas>
-                            <p class="pg-hint" id="ballHint">Tap or drag to drop balls</p>
-                        </div>
-                    </article>
-
-                    <article class="pg-card" data-reveal style="--reveal-delay:.08s">
-                        <header class="pg-head">
-                            <h3>Fidget Spinner</h3>
-                            <span class="pg-stat"><b id="spinRpm">0</b> RPM</span>
-                        </header>
-                        <div class="pg-screen pg-spin" id="spinStage" aria-label="Fidget spinner: drag in a circle to spin" role="img">
-                            <img class="spinner-img" id="spinner" src="/assets/v6/fidgets/spinner.webp" width="420" height="420" alt="" draggable="false" loading="lazy">
-                            <img class="spinner-face" src="/assets/v6/stickers/tappy-face.webp" width="320" height="320" alt="" draggable="false" loading="lazy">
-                            <p class="pg-hint">Flick it to spin</p>
-                        </div>
-                    </article>
-
-                    <article class="pg-card" data-reveal style="--reveal-delay:.16s">
-                        <header class="pg-head">
-                            <h3>Bubble Wrap</h3>
-                            <button class="pg-mini" type="button" id="bubbleRefill">Refill</button>
-                        </header>
-                        <div class="pg-screen pg-bubbles">
-                            <div class="bubble-grid" id="bubbleGrid" role="group" aria-label="Bubble wrap"></div>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="bento pg-more">
-                    <article class="bento-card bento-fidget dots-white" data-reveal>
-                        <img class="card-sticker sticker" src="/assets/v6/stickers/fidget.webp" width="320" height="290" alt="" loading="lazy">
-                        <h3>Sensory fidgets you can feel.</h3>
-                        <p>Stimming at your desk, waiting in line, or riding out a stressful moment? Tappy gives your hands something to do and your mind a place to settle. Each of the 25+ fidgets has its own haptic feel.</p>
-                        <ul class="chip-list">
-                            <li class="chip">Bubble Wrap</li>
-                            <li class="chip">Light switch</li>
-                            <li class="chip">Zipper</li>
-                            <li class="chip">Velcro</li>
-                            <li class="chip">Fidget Spinner</li>
-                            <li class="chip">Slinky</li>
-                            <li class="chip">Vinyl record</li>
-                            <li class="chip">Neon strings</li>
-                            <li class="chip">Cosmic Vortex</li>
-                            <li class="chip">Haptic calming strip</li>
-                        </ul>
-                        <div class="phone phone-rise" style="margin-top:auto"><img src="/assets/v6/screens/fidget-grid.webp" width="600" height="1304" alt="Tappy fidget grid with Fluid, Ball Pit, a lamp, buttons, toggles, and joysticks" loading="lazy"></div>
-                    </article>
-
-                    <article class="bento-card bento-arcade dots-white" data-reveal style="--reveal-delay:.08s">
-                        <img class="card-sticker sticker" src="/assets/v6/stickers/arcade.webp" width="303" height="320" alt="" loading="lazy">
-                        <h3>14+ arcade games.</h3>
-                        <p>Cloud Hop, Mini Golf, Zen Pond, Hot Spot, Color Swipe, Tappy Stack, and Pop It! Challenge a friend on one phone, then climb Game Center leaderboards.</p>
-                        <div class="phone phone-rise"><img src="/assets/v6/screens/arcade.webp" width="600" height="1304" alt="Tappy Arcade with Cloud Hop, Mini Golf, Hot Spot, and Color Swipe" loading="lazy"></div>
-                    </article>
-
-                    <article class="bento-card bento-showcase dots-white" data-reveal style="--reveal-delay:.1s">
-                        <div class="showcase-copy">
-                            <h3>Pop, clack, and click.</h3>
-                            <p>Pop a never-ending sheet of rainbow Bubble Wrap, build a glowing mechanical keypad with real switch sounds, or browse the whole collection by feel: clicky, calming, satisfying, or spin.</p>
-                        </div>
-                        <div class="showcase-shots">
-                            <figure><div class="phone phone-rise"><img src="/assets/v6/screens/bubble-wrap.webp" width="600" height="1304" alt="Rainbow Bubble Wrap fidget with a few bubbles popped" loading="lazy"></div><figcaption>Bubble Wrap</figcaption></figure>
-                            <figure><div class="phone phone-rise"><img src="/assets/v6/screens/mech-keys.webp" width="600" height="1304" alt="Mechanical Keys fidget: a glowing RGB keypad" loading="lazy"></div><figcaption>Mechanical Keys</figcaption></figure>
-                            <figure><div class="phone phone-rise"><img src="/assets/v6/screens/fidget-list.webp" width="600" height="1304" alt="Fidget list with Aurora Orb, Ball Pit, Blob, Breathing Flower, and Bubble Wrap" loading="lazy"></div><figcaption>25+ fidgets</figcaption></figure>
-                        </div>
-                    </article>
-
-                    <article class="bento-card bento-cozy dots-white" data-reveal style="--reveal-delay:.12s">
-                        <div class="cozy-copy">
-                            <h3>Cozy games for every mood.</h3>
-                            <p>Bounce Tappy up through the clouds in Cloud Hop, sink a hole-in-one in Mini Golf, or unwind at your own peaceful koi pond with nature sounds in Zen Pond.</p>
-                        </div>
-                        <div class="cozy-shots">
-                            <figure class="cozy-pond"><img src="/assets/v6/screens/zen-pond.webp" width="1000" height="699" alt="Zen Pond: koi fish, turtles, and lily pads in a peaceful pond" loading="lazy"><figcaption>Zen Pond</figcaption></figure>
-                            <div class="phone phone-rise"><img src="/assets/v6/screens/mini-golf.webp" width="600" height="1304" alt="Mini Golf: a putting green with a flag and a ball" loading="lazy"></div>
-                            <div class="phone phone-rise"><img src="/assets/v6/screens/cloud-hop.webp" width="600" height="1305" alt="Cloud Hop: Tappy bouncing up through the clouds" loading="lazy"></div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <!-- Self-care & focus -->
         <section class="section toolkit" id="toolkit" aria-labelledby="toolkit-title">
             <div class="container">
@@ -1145,10 +1141,10 @@
                 <div>
                     <h2>Explore</h2>
                     <ul>
+                        <li><a href="#playground">Fidgets &amp; games</a></li>
                         <li><a href="#whats-new">What's new in 6.0</a></li>
                         <li><a href="#adventure">Daily Adventure</a></li>
                         <li><a href="#care">Take care of Tappy</a></li>
-                        <li><a href="#playground">Fidgets &amp; games</a></li>
                         <li><a href="#toolkit">Self-care &amp; focus</a></li>
                         <li><a href="#faq">FAQ</a></li>
                     </ul>
