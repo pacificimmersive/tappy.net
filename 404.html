@@ -22,6 +22,12 @@
         img { width: 180px; margin-bottom: 24px; animation: float 3s ease-in-out infinite; }
         h1 { font-size: 2rem; font-weight: 900; color: #1a1a2e; margin-bottom: 12px; }
         p { color: #666; font-size: 1.1rem; margin-bottom: 28px; line-height: 1.5; }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
         a {
             display: inline-block;
             padding: 14px 32px;
@@ -33,6 +39,7 @@
             transition: transform 0.2s;
         }
         a:hover { transform: translateY(-2px); }
+        a.alt { background: #fff; color: #1a1a2e; box-shadow: inset 0 0 0 2px #1a1a2e; }
         @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
     </style>
 </head>
@@ -40,8 +47,11 @@
     <div class="container">
         <img src="/assets/images/tappy-wave.png" alt="Tappy looking confused">
         <h1>Oops! Page not found.</h1>
-        <p>Tappy looked everywhere but couldn't find this page. Let's get you back home!</p>
-        <a href="/">Back to Home</a>
+        <p>Tappy looked everywhere but couldn't find this page. Let's get you back home, or pop some bubble wrap while you're here.</p>
+        <div class="links">
+            <a href="/">Back to Home</a>
+            <a class="alt" href="/fidgets/bubble-wrap/">Pop bubble wrap</a>
+        </div>
     </div>
 </body>
 </html>

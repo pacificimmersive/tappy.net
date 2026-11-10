@@ -3000,9 +3000,44 @@ ul {
     padding: 4px 6px 14px;
 }
 
+.pg-head h2,
 .pg-head h3 {
     font-size: 1.3rem;
     font-weight: 900;
+    line-height: 1.2;
+}
+
+.pg-head h2 a,
+.pg-head h3 a {
+    text-decoration: none;
+}
+
+.pg-head h2 a::after,
+.pg-head h3 a::after {
+    content: '\2192';
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 0.9em;
+    color: var(--muted);
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.pg-head h2 a:hover::after,
+.pg-head h3 a:hover::after {
+    color: var(--ink);
+    transform: translateX(3px);
+}
+
+.pg-all {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.pg-all .btn {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
 }
 
 .pg-mini {
@@ -3111,7 +3146,7 @@ ul {
 
 .bubble-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(var(--cols, 5), 1fr);
     gap: 8px;
     width: 88%;
 }
@@ -3789,8 +3824,8 @@ ul {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1.6fr repeat(4, 1fr);
+    gap: 36px;
     padding-bottom: 50px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
