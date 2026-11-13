@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Click Counter | Tappy</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="color-scheme" content="light">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+    <link rel="preload" href="/assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/fonts/nunito.css">
+    <link rel="stylesheet" href="/assets/css/home.css?v=20261109">
+    <link rel="stylesheet" href="/assets/css/fidgets.css?v=20261113">
+</head>
+<body class="embed">
+    <main class="embed-main">
+        <article class="pg-card" data-fidget="clicker" data-typing="on">
+            <header class="pg-head">
+                <span class="pg-stat"><b data-cps>0</b> per second</span>
+                <button class="pg-mini" type="button" data-fidget-reset>Reset</button>
+            </header>
+            <div class="pg-screen pg-clicker">
+                <button class="clicker" type="button" aria-label="Add one">
+                    <span class="clicker-device" aria-hidden="true">
+                        <span class="clicker-plunger"></span>
+                        <span class="clicker-ring"></span>
+                        <span class="clicker-knob"></span>
+                        <span class="clicker-body"><span class="clicker-window"><span class="clicker-digit"></span><span class="clicker-digit"></span><span class="clicker-digit"></span><span class="clicker-digit"></span></span></span>
+                    </span>
+                </button>
+                <p class="pg-hint">Tap or press Space</p>
+                <p class="visually-hidden">Count: <span data-count>0</span></p>
+            </div>
+        </article>
+        <div class="embed-bar">
+            <a href="https://www.tappy.net/fidgets/" target="_blank" rel="noopener"><img src="/assets/v6/logo-dark.webp" width="322" height="120" alt="Tappy">More free fidgets</a>
+            <button class="pg-toggle" type="button" data-sound-toggle aria-pressed="true">Sound <b>On</b></button>
+        </div>
+    </main>
+    <script src="/assets/js/fidgets.js?v=20261113" defer></script>
+</body>
+</html>

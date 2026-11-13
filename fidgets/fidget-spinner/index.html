@@ -37,7 +37,7 @@
     <link rel="preload" href="/assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/fonts/nunito.css">
     <link rel="stylesheet" href="/assets/css/home.css?v=20261109">
-    <link rel="stylesheet" href="/assets/css/fidgets.css?v=20261109">
+    <link rel="stylesheet" href="/assets/css/fidgets.css?v=20261113">
     <script>document.documentElement.classList.add('js');</script>
 
     <script type="application/ld+json">
@@ -56,6 +56,25 @@
                 },
                 "breadcrumb": {
                     "@id": "https://www.tappy.net/fidgets/fidget-spinner/#breadcrumb"
+                },
+                "mainEntity": {
+                    "@id": "https://www.tappy.net/fidgets/fidget-spinner/#game"
+                }
+            },
+            {
+                "@type": "Game",
+                "@id": "https://www.tappy.net/fidgets/fidget-spinner/#game",
+                "name": "Fidget Spinner",
+                "alternateName": ["Virtual Fidget Spinner", "Online Fidget Spinner"],
+                "description": "A free virtual fidget spinner. Flick it to spin, watch the RPM climb, and try to beat your top speed.",
+                "url": "https://www.tappy.net/fidgets/fidget-spinner/",
+                "genre": ["Fidget toy", "Casual"],
+                "isAccessibleForFree": true,
+                "inLanguage": "en-US",
+                "publisher": {
+                    "@type": "Organization",
+                    "@id": "https://www.tappy.net/#organization",
+                    "name": "Tappy LLC"
                 }
             },
             {
@@ -156,6 +175,11 @@
             <a href="/fidgets/fidget-spinner/" aria-current="page">Fidget Spinner</a>
             <a href="/fidgets/light-switch/">Light Switch</a>
             <a href="/fidgets/ball-pit/">Ball Pit</a>
+            <a href="/fidgets/clicker/">Click Counter</a>
+            <a href="/fidgets/mechanical-keyboard/">Mechanical Keyboard</a>
+            <a href="/fidgets/newtons-cradle/">Newton&rsquo;s Cradle</a>
+            <a href="/fidgets/stress-ball/">Stress Ball</a>
+            <a href="/fidgets/types-of-fidget-toys/">Types of fidget toys</a>
             <a class="store-badge" href="https://apps.apple.com/us/app/tappy-fidget-self-care-pet/id1492017640" target="_blank" rel="noopener">
                 <img src="/assets/v6/app-store-badge.svg" width="150" height="50" alt="Download Tappy on the App Store" style="height:50px">
             </a>
@@ -241,11 +265,48 @@
                         <strong>Ball Pit</strong>
                         <span>Pour in colorful balls and watch them tumble.</span>
                     </a>
+                    <a class="fx-link" href="/fidgets/clicker/">
+                        <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="26" y="4" width="12" height="10" rx="3" fill="#ffd84d" stroke="#15334a" stroke-width="3"/><circle cx="32" cy="54" r="6.5" fill="none" stroke="#15334a" stroke-width="3.5"/><circle cx="32" cy="32" r="21" fill="#e2eaf0" stroke="#15334a" stroke-width="3.5"/><rect x="18" y="26" width="28" height="12" rx="3" fill="#15334a"/><g fill="#fffdf7"><rect x="20" y="28" width="5" height="8" rx="1"/><rect x="26.5" y="28" width="5" height="8" rx="1"/><rect x="33" y="28" width="5" height="8" rx="1"/><rect x="39.5" y="28" width="5" height="8" rx="1"/></g></svg>
+                        <strong>Click Counter</strong>
+                        <span>A chunky clicker that counts every press.</span>
+                    </a>
+                    <a class="fx-link" href="/fidgets/mechanical-keyboard/">
+                        <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="4" y="8" width="56" height="48" rx="12" fill="#e9eef3" stroke="#15334a" stroke-width="3.5"/><g stroke="#15334a" stroke-width="2.5"><rect x="12" y="15" width="17" height="15" rx="4" fill="#ffa3b5"/><rect x="35" y="15" width="17" height="15" rx="4" fill="#ffd84d"/><rect x="12" y="36" width="40" height="12" rx="4" fill="#2fe08a"/></g></svg>
+                        <strong>Mechanical Keyboard</strong>
+                        <span>Clicky and thocky keys you can type on.</span>
+                    </a>
+                    <a class="fx-link" href="/fidgets/newtons-cradle/">
+                        <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="4" y="4" width="56" height="56" rx="16" fill="#e3f5fc" stroke="#15334a" stroke-width="3.5"/><path d="M14 14h36" stroke="#15334a" stroke-width="4" stroke-linecap="round"/><path d="M20 14 13 41M28 14v29M36 14v29M44 14v29" stroke="#15334a" stroke-width="2"/><g fill="#e2eaf0" stroke="#15334a" stroke-width="2.5"><circle cx="13" cy="41" r="4"/><circle cx="28" cy="44" r="4"/><circle cx="36" cy="44" r="4"/><circle cx="44" cy="44" r="4"/></g></svg>
+                        <strong>Newton&rsquo;s Cradle</strong>
+                        <span>Pull a ball back and let it clack.</span>
+                    </a>
+                    <a class="fx-link" href="/fidgets/stress-ball/">
+                        <svg viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="57" rx="18" ry="3.5" fill="#15334a" fill-opacity=".15"/><path d="M32 8c14 0 24 9 24 23 0 13-10 21-24 21S8 44 8 31C8 17 18 8 32 8z" fill="#ff8fa6" stroke="#15334a" stroke-width="3.5"/><ellipse cx="22" cy="19" rx="5" ry="3" transform="rotate(-35 22 19)" fill="#fff" fill-opacity=".6"/><g fill="#15334a"><ellipse cx="25" cy="30" rx="2.2" ry="3.2"/><ellipse cx="39" cy="30" rx="2.2" ry="3.2"/></g><path d="M27 37q5 4 10 0" fill="none" stroke="#15334a" stroke-width="2.5" stroke-linecap="round"/></svg>
+                        <strong>Stress Ball</strong>
+                        <span>A squishy ball that bounces back.</span>
+                    </a>
                     <a class="fx-link" href="/fidgets/">
                         <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="4" y="4" width="56" height="56" rx="16" fill="#ffd84d" stroke="#15334a" stroke-width="3.5"/><g fill="#fff" stroke="#15334a" stroke-width="2.5"><rect x="15" y="15" width="14" height="14" rx="4"/><rect x="35" y="15" width="14" height="14" rx="4"/><rect x="15" y="35" width="14" height="14" rx="4"/><rect x="35" y="35" width="14" height="14" rx="4"/></g></svg>
                         <strong>All online fidgets</strong>
                         <span>Play every fidget on one page.</span>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="fx-embed" aria-labelledby="embed-title">
+            <div class="container">
+                <div class="fx-embed-card" data-reveal>
+                    <div>
+                        <h2 id="embed-title">Add this fidget spinner to your site</h2>
+                        <p>Copy the code to put a free, working fidget spinner on your blog, class page, or website. It loads from tappy.net, so there&rsquo;s nothing to host or update.</p>
+                    </div>
+                    <div class="fx-embed-code">
+                        <label class="visually-hidden" for="embed-code">Embed code</label>
+                        <textarea id="embed-code" rows="5" readonly spellcheck="false">&lt;iframe src="https://www.tappy.net/embed/fidget-spinner/" title="Fidget Spinner by Tappy" width="400" height="540" style="border:0;max-width:100%" loading="lazy"&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href="https://www.tappy.net/fidgets/fidget-spinner/"&gt;Virtual fidget spinner&lt;/a&gt; from &lt;a href="https://www.tappy.net/"&gt;Tappy&lt;/a&gt;&lt;/p&gt;</textarea>
+                        <button class="btn btn-yellow btn-sm" type="button" data-copy="#embed-code">Copy code</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -328,6 +389,11 @@
                         <li><a href="/fidgets/fidget-spinner/">Fidget Spinner</a></li>
                         <li><a href="/fidgets/light-switch/">Light Switch</a></li>
                         <li><a href="/fidgets/ball-pit/">Ball Pit</a></li>
+                        <li><a href="/fidgets/clicker/">Click Counter</a></li>
+                        <li><a href="/fidgets/mechanical-keyboard/">Mechanical Keyboard</a></li>
+                        <li><a href="/fidgets/newtons-cradle/">Newton&rsquo;s Cradle</a></li>
+                        <li><a href="/fidgets/stress-ball/">Stress Ball</a></li>
+                        <li><a href="/fidgets/types-of-fidget-toys/">Types of fidget toys</a></li>
                     </ul>
                 </div>
                 <div>
@@ -357,6 +423,6 @@
     </footer>
 
     <script src="/assets/js/home.js?v=20261109" defer></script>
-    <script src="/assets/js/fidgets.js?v=20261109" defer></script>
+    <script src="/assets/js/fidgets.js?v=20261113" defer></script>
 </body>
 </html>

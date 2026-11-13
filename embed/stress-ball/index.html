@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Stress Ball | Tappy</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="color-scheme" content="light">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+    <link rel="preload" href="/assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/fonts/nunito.css">
+    <link rel="stylesheet" href="/assets/css/home.css?v=20261109">
+    <link rel="stylesheet" href="/assets/css/fidgets.css?v=20261113">
+</head>
+<body class="embed">
+    <main class="embed-main">
+        <article class="pg-card" data-fidget="stress-ball">
+            <header class="pg-head">
+                <span class="pg-stat"><b data-squeezes>0</b> squeezes</span>
+                <button class="pg-mini" type="button" data-color>Color</button>
+            </header>
+            <div class="pg-screen pg-squish">
+                <canvas aria-label="Stress ball: press and hold to squeeze"></canvas>
+                <p class="pg-hint">Press and hold to squeeze</p>
+            </div>
+        </article>
+        <div class="embed-bar">
+            <a href="https://www.tappy.net/fidgets/" target="_blank" rel="noopener"><img src="/assets/v6/logo-dark.webp" width="322" height="120" alt="Tappy">More free fidgets</a>
+            <button class="pg-toggle" type="button" data-sound-toggle aria-pressed="true">Sound <b>On</b></button>
+        </div>
+    </main>
+    <script src="/assets/js/fidgets.js?v=20261113" defer></script>
+</body>
+</html>

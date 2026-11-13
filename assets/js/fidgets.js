@@ -3,6 +3,21 @@
     const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
     const rand = (min, max) => min + Math.random() * (max - min);
 
+    $$('[data-copy]').forEach((button) => {
+        const label = button.textContent;
+        button.addEventListener('click', async () => {
+            const field = $(button.dataset.copy);
+            try {
+                await navigator.clipboard.writeText(field.value);
+            } catch (err) {
+                field.select();
+                document.execCommand('copy');
+            }
+            button.textContent = 'Copied!';
+            setTimeout(() => { button.textContent = label; }, 1800);
+        });
+    });
+
     const fidgets = $$('[data-fidget]');
     if (!fidgets.length) return;
 
@@ -95,7 +110,35 @@
             noise({ dur: 0.025, type: 'highpass', freq: 2500, q: 0.7, vol: 0.45, decay: 6 });
             blip(on ? 2100 : 1700, 0.018, 0.08, 'square');
         },
-        spinTick: () => blip(1500, 0.012, 0.035, 'triangle')
+        spinTick: () => blip(1500, 0.012, 0.035, 'triangle'),
+        clickerDown: () => {
+            noise({ dur: 0.02, type: 'highpass', freq: 3200, q: 0.8, vol: 0.5, decay: 7 });
+            blip(2600, 0.015, 0.07, 'square');
+        },
+        clickerUp: () => noise({ dur: 0.015, type: 'highpass', freq: 2400, q: 0.8, vol: 0.25, decay: 7 }),
+        keyDown: (clicky, big) => {
+            if (clicky) {
+                noise({ dur: 0.022, type: 'highpass', freq: big ? 2200 : 3000, q: 0.8, vol: 0.55, decay: 6 });
+                blip(big ? 1800 : rand(2900, 3300), 0.012, 0.06, 'square');
+                noise({ dur: 0.04, type: 'lowpass', freq: 900, q: 1, vol: 0.25, decay: 5 });
+            } else {
+                noise({ dur: big ? 0.07 : 0.05, type: 'lowpass', freq: big ? rand(380, 460) : rand(520, 680), q: 1.4, vol: 0.9, decay: 5 });
+                blip(big ? 110 : rand(150, 190), 0.05, 0.16, 'sine');
+            }
+        },
+        keyUp: (clicky, big) => {
+            if (clicky) noise({ dur: 0.016, type: 'highpass', freq: 2600, q: 0.8, vol: 0.22, decay: 7 });
+            else noise({ dur: 0.03, type: 'lowpass', freq: big ? 700 : 950, q: 1.2, vol: 0.35, decay: 6 });
+        },
+        clack: (strength) => {
+            noise({ dur: 0.03, type: 'highpass', freq: 3400, q: 0.7, vol: 0.2 + strength * 0.5, decay: 6 });
+            blip(rand(2400, 2700), 0.05, 0.03 + strength * 0.08, 'sine');
+        },
+        squish: () => noise({ dur: 0.16, type: 'lowpass', freq: rand(420, 560), q: 0.7, vol: 0.55, decay: 2 }),
+        unsquish: () => {
+            blip(rand(240, 300), 0.09, 0.08, 'sine');
+            noise({ dur: 0.08, type: 'lowpass', freq: 700, q: 0.7, vol: 0.25, decay: 3 });
+        }
     };
 
     const renderSound = () => soundToggles.forEach((t) => {
@@ -682,12 +725,736 @@
         });
     };
 
+    /* Click Counter */
+    const initClicker = (card) => {
+        const button = $('.clicker', card);
+        const countLabel = $('[data-count]', card);
+        const cpsLabel = $('[data-cps]', card);
+        const hint = $('.pg-hint', card);
+        const COUNT_KEY = 'tappy-clicker-count';
+        const MAX = 10000;
+        let count = storedNumber(COUNT_KEY) % MAX;
+        let recent = [];
+        let cpsTimer = 0;
+
+        // Each digit is a strip of 0-9 plus a trailing 0, so 9 can roll forward to 0.
+        const strips = $$('.clicker-digit', card).map((digit) => {
+            const strip = document.createElement('span');
+            strip.className = 'clicker-strip';
+            for (let n = 0; n <= 10; n += 1) {
+                const span = document.createElement('span');
+                span.textContent = n % 10;
+                strip.appendChild(span);
+            }
+            strip.dataset.pos = '0';
+            digit.appendChild(strip);
+            return strip;
+        });
+
+        const place = (strip, pos, animate) => {
+            strip.classList.toggle('snap', !animate);
+            strip.style.setProperty('--n', pos);
+            strip.dataset.pos = String(pos);
+            if (!animate) void strip.offsetWidth;
+        };
+
+        const show = (value, animate) => {
+            const text = String(value).padStart(strips.length, '0');
+            strips.forEach((strip, i) => {
+                const n = Number(text[i]);
+                if (Number(strip.dataset.pos) === 10) place(strip, 0, false);
+                const pos = Number(strip.dataset.pos);
+                if (pos === n) return;
+                place(strip, animate && n === 0 && pos === 9 ? 10 : n, animate);
+            });
+            if (countLabel) countLabel.textContent = value;
+        };
+
+        strips.forEach((strip) => strip.addEventListener('transitionend', () => {
+            if (strip.dataset.pos === '10') place(strip, 0, false);
+        }));
+
+        const tickCps = () => {
+            const now = performance.now();
+            recent = recent.filter((t) => now - t < 1000);
+            if (cpsLabel) cpsLabel.textContent = recent.length;
+            clearTimeout(cpsTimer);
+            if (recent.length) cpsTimer = setTimeout(tickCps, 1005 - (now - recent[0]));
+        };
+
+        const press = () => {
+            count = (count + 1) % MAX;
+            show(count, true);
+            storeNumber(COUNT_KEY, count);
+            button.classList.add('down');
+            haptic(14, 0);
+            sounds.clickerDown();
+            hint.classList.add('gone');
+            recent.push(performance.now());
+            tickCps();
+        };
+
+        const release = () => {
+            if (!button.classList.contains('down')) return;
+            button.classList.remove('down');
+            sounds.clickerUp();
+        };
+
+        button.addEventListener('pointerdown', (e) => {
+            if (e.button > 0) return;
+            capture(button, e);
+            press();
+        });
+        button.addEventListener('pointerup', release);
+        button.addEventListener('pointercancel', release);
+        button.addEventListener('keydown', (e) => {
+            if (e.key !== ' ' && e.key !== 'Enter') return;
+            e.preventDefault();
+            if (!e.repeat) press();
+        });
+        button.addEventListener('keyup', (e) => {
+            if (e.key === ' ' || e.key === 'Enter') release();
+        });
+
+        if (card.dataset.typing === 'on') {
+            const view = watch(card, () => {});
+            document.addEventListener('keydown', (e) => {
+                if (e.key !== ' ' || !view.inView) return;
+                const target = e.target instanceof Element ? e.target : null;
+                if (target && target.closest('a, button, input, textarea, select, summary, [contenteditable]')) return;
+                e.preventDefault();
+                if (!e.repeat) press();
+            });
+            document.addEventListener('keyup', (e) => {
+                if (e.key === ' ') release();
+            });
+        }
+
+        $('[data-fidget-reset]', card).addEventListener('click', () => {
+            count = 0;
+            show(0, true);
+            storeNumber(COUNT_KEY, 0);
+            haptic(20, 0);
+        });
+
+        show(count, false);
+    };
+
+    /* Mechanical Keyboard */
+    const initKeyboard = (card) => {
+        const board = $('.keyboard', card);
+        const keysLabel = $('[data-keys]', card);
+        const switchButton = $('[data-switch]', card);
+        const hint = $('.pg-hint', card);
+        const ROWS = [['Q', 'W', 'E', 'R'], ['A', 'S', 'D', 'F'], ['Z', 'X', 'C', 'V']];
+        const ROW_COLORS = ['#ffa3b5', '#ffd84d', '#3dd5ff'];
+        const keys = new Map();
+        const held = new Map();
+        let clicky = true;
+        let pressed = 0;
+        // On pages with several fidgets, typing only plays the keyboard after it has been tapped once.
+        let listening = card.dataset.typing === 'on';
+        const view = watch(card, () => {});
+
+        const makeKey = (label, color, className = 'keycap') => {
+            const key = document.createElement('button');
+            key.type = 'button';
+            key.className = className;
+            key.style.setProperty('--c', color);
+            key.textContent = label;
+            board.appendChild(key);
+            return key;
+        };
+        ROWS.forEach((row, r) => row.forEach((label) => keys.set(label, makeKey(label, ROW_COLORS[r]))));
+        const letters = [...keys.values()];
+        const space = makeKey('', '#2fe08a', 'keycap keycap-space');
+        space.setAttribute('aria-label', 'Space');
+
+        const down = (key) => {
+            if (key.classList.contains('down')) return;
+            key.classList.add('down');
+            pressed += 1;
+            if (keysLabel) keysLabel.textContent = pressed;
+            haptic(12, 0);
+            sounds.keyDown(clicky, key === space);
+            hint.classList.add('gone');
+        };
+
+        const up = (key) => {
+            if (!key.classList.contains('down')) return;
+            key.classList.remove('down');
+            sounds.keyUp(clicky, key === space);
+        };
+
+        const releaseHeld = (id) => {
+            const key = held.get(id);
+            if (!key) return;
+            held.delete(id);
+            if (![...held.values()].includes(key)) up(key);
+        };
+
+        board.addEventListener('pointerdown', (e) => {
+            const key = e.target.closest('.keycap');
+            if (!key || e.button > 0) return;
+            capture(board, e);
+            listening = true;
+            held.set(e.pointerId, key);
+            down(key);
+        });
+        board.addEventListener('pointerup', (e) => releaseHeld(e.pointerId));
+        board.addEventListener('pointercancel', (e) => releaseHeld(e.pointerId));
+
+        // Real keys map to the matching keycap; any other key always lands on the same one.
+        const keyFor = (e) => {
+            if (e.key === ' ') return space;
+            const match = keys.get(e.key.toUpperCase());
+            if (match) return match;
+            let hash = 0;
+            for (const ch of e.code || e.key) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
+            return letters[hash % letters.length];
+        };
+
+        document.addEventListener('keydown', (e) => {
+            if (!listening || !view.inView || e.key.length !== 1 || e.metaKey || e.ctrlKey || e.altKey) return;
+            const target = e.target instanceof Element ? e.target : null;
+            if (target && target.closest('input, textarea, select, [contenteditable]')) return;
+            if (e.key === ' ' && target && target.closest('a, summary, button:not(.keycap)')) return;
+            e.preventDefault();
+            if (e.repeat) return;
+            const id = e.code || e.key;
+            if (held.has(id)) return;
+            const key = keyFor(e);
+            held.set(id, key);
+            down(key);
+        });
+        document.addEventListener('keyup', (e) => releaseHeld(e.code || e.key));
+        window.addEventListener('blur', () => [...held.keys()].forEach(releaseHeld));
+
+        switchButton.addEventListener('click', () => {
+            clicky = !clicky;
+            switchButton.textContent = clicky ? 'Clicky' : 'Thocky';
+            switchButton.setAttribute('aria-label', `Switch sound: ${clicky ? 'clicky' : 'thocky'}`);
+            board.classList.toggle('thocky', !clicky);
+            sounds.keyDown(clicky, false);
+            setTimeout(() => sounds.keyUp(clicky, false), 90);
+        });
+    };
+
+    /* Newton's Cradle */
+    const initCradle = (card) => {
+        const canvas = $('canvas', card);
+        const ctx2d = canvas.getContext('2d');
+        const hint = $('.pg-hint', card);
+        const clacksLabel = $('[data-clacks]', card);
+        const INK = '#15334a';
+        const N = 5;
+        const GRAVITY = 40;
+        const RESTITUTION = 0.99;
+        const balls = Array.from({ length: N }, () => ({ a: 0, w: 0, held: false }));
+        let W = 0;
+        let H = 0;
+        let dpr = 1;
+        let R = 10;
+        let L = 100;
+        let cx = 0;
+        let barY = 0;
+        let baseY = 0;
+        let maxAngle = 0.5;
+        let grab = null;
+        let running = false;
+        let last = 0;
+        let clacks = 0;
+        let lastClack = 0;
+        const view = watch(card, () => wake());
+
+        const anchorX = (i) => cx + (i - (N - 1) / 2) * 2 * R;
+        const ballAt = (i) => ({
+            x: anchorX(i) + L * Math.sin(balls[i].a),
+            y: barY + L * Math.cos(balls[i].a)
+        });
+
+        const roundRect = (x, y, w, h, r) => {
+            ctx2d.beginPath();
+            if (ctx2d.roundRect) ctx2d.roundRect(x, y, w, h, r);
+            else ctx2d.rect(x, y, w, h);
+            ctx2d.fill();
+            ctx2d.stroke();
+        };
+
+        const draw = () => {
+            ctx2d.setTransform(dpr, 0, 0, dpr, 0, 0);
+            ctx2d.clearRect(0, 0, W, H);
+            ctx2d.lineCap = 'round';
+            ctx2d.lineJoin = 'round';
+            ctx2d.strokeStyle = INK;
+            const lw = Math.max(2.5, W * 0.008);
+            const postW = W * 0.035;
+            const left = W * 0.06;
+            const right = W * 0.94 - postW;
+
+            ctx2d.fillStyle = '#ffd84d';
+            ctx2d.lineWidth = lw;
+            roundRect(left, barY, postW, baseY - barY, postW / 2);
+            roundRect(right, barY, postW, baseY - barY, postW / 2);
+
+            ctx2d.fillStyle = 'rgba(21, 51, 74, 0.12)';
+            for (let i = 0; i < N; i += 1) {
+                const p = ballAt(i);
+                const lift = Math.min(1, (barY + L - p.y) / (R * 3));
+                ctx2d.beginPath();
+                ctx2d.ellipse(p.x, baseY - H * 0.012, R * (1 - lift * 0.4), R * 0.22, 0, 0, Math.PI * 2);
+                ctx2d.fill();
+            }
+
+            ctx2d.fillStyle = '#ffd84d';
+            roundRect(W * 0.03, baseY, W * 0.94, H * 0.07, H * 0.025);
+            ctx2d.fillStyle = '#ffb400';
+            roundRect(left - W * 0.015, barY - H * 0.035, right + postW - left + W * 0.03, H * 0.045, H * 0.02);
+
+            ctx2d.lineWidth = Math.max(1.5, W * 0.005);
+            ctx2d.strokeStyle = 'rgba(21, 51, 74, 0.7)';
+            for (let i = 0; i < N; i += 1) {
+                const p = ballAt(i);
+                ctx2d.beginPath();
+                ctx2d.moveTo(anchorX(i), barY + H * 0.01);
+                ctx2d.lineTo(p.x, p.y);
+                ctx2d.stroke();
+            }
+
+            ctx2d.strokeStyle = INK;
+            ctx2d.lineWidth = lw;
+            for (let i = 0; i < N; i += 1) {
+                const p = ballAt(i);
+                const shine = ctx2d.createRadialGradient(p.x - R * 0.35, p.y - R * 0.4, R * 0.08, p.x, p.y, R);
+                shine.addColorStop(0, '#ffffff');
+                shine.addColorStop(0.35, '#e2eaf0');
+                shine.addColorStop(1, '#8fa3b3');
+                ctx2d.fillStyle = shine;
+                ctx2d.beginPath();
+                ctx2d.arc(p.x, p.y, R, 0, Math.PI * 2);
+                ctx2d.fill();
+                ctx2d.stroke();
+            }
+        };
+
+        const size = () => {
+            dpr = Math.min(window.devicePixelRatio || 1, 2);
+            W = canvas.clientWidth;
+            H = canvas.clientHeight;
+            canvas.width = Math.round(W * dpr);
+            canvas.height = Math.round(H * dpr);
+            R = W * 0.055;
+            cx = W / 2;
+            barY = H * 0.13;
+            L = H * 0.44;
+            baseY = H * 0.73;
+            maxAngle = Math.asin(Math.min(0.9, (anchorX(0) - R - W * 0.03) / L));
+            draw();
+        };
+
+        // Balls touch at rest, so ball i overlaps ball i + 1 whenever its angle is larger.
+        const collide = () => {
+            let hit = 0;
+            for (let pass = 0; pass < N * 2; pass += 1) {
+                let any = false;
+                for (let i = 0; i < N - 1; i += 1) {
+                    const a = balls[i];
+                    const b = balls[i + 1];
+                    const rel = a.w - b.w;
+                    if (a.a < b.a - 1e-4 || rel <= 1e-3 || (a.held && b.held)) continue;
+                    if (a.held) {
+                        b.w = a.w + RESTITUTION * rel;
+                    } else if (b.held) {
+                        a.w = b.w - RESTITUTION * rel;
+                    } else {
+                        const mean = (a.w + b.w) / 2;
+                        a.w = mean - (RESTITUTION * rel) / 2;
+                        b.w = mean + (RESTITUTION * rel) / 2;
+                    }
+                    hit = Math.max(hit, rel);
+                    any = true;
+                }
+                if (!any) break;
+            }
+            for (let i = 0; i < N - 1; i += 1) {
+                const a = balls[i];
+                const b = balls[i + 1];
+                if (a.a <= b.a) continue;
+                if (a.held) b.a = a.a;
+                else if (b.held) a.a = b.a;
+                else a.a = b.a = (a.a + b.a) / 2;
+            }
+            return hit;
+        };
+
+        const clack = (speed) => {
+            const now = performance.now();
+            if (now - lastClack < 70) return;
+            lastClack = now;
+            clacks += 1;
+            if (clacksLabel) clacksLabel.textContent = clacks;
+            haptic(Math.min(8 + speed * 3, 22), 0);
+            sounds.clack(Math.min(1, speed / 3.5));
+        };
+
+        const step = (dt) => {
+            const sub = 8;
+            const h = dt / sub;
+            let hit = 0;
+            for (let s = 0; s < sub; s += 1) {
+                balls.forEach((b) => {
+                    if (b.held) return;
+                    b.w -= GRAVITY * Math.sin(b.a) * h;
+                    b.w *= 1 - 0.12 * h;
+                    b.a += b.w * h;
+                });
+                hit = Math.max(hit, collide());
+            }
+            if (hit > 0.3) clack(hit);
+        };
+
+        const frame = (now) => {
+            const dt = Math.min((now - last) / 1000, 1 / 30);
+            last = now;
+            step(dt);
+            const moving = grab || balls.some((b) => Math.abs(b.w) > 0.004 || Math.abs(b.a) > 0.002);
+            if (!moving) balls.forEach((b) => { b.a = 0; b.w = 0; });
+            draw();
+            if (view.inView && moving) {
+                requestAnimationFrame(frame);
+            } else {
+                running = false;
+            }
+        };
+
+        const wake = () => {
+            if (running || !view.inView) return;
+            running = true;
+            last = performance.now();
+            requestAnimationFrame(frame);
+        };
+
+        const localPoint = (e) => {
+            const r = canvas.getBoundingClientRect();
+            return { x: e.clientX - r.left, y: e.clientY - r.top };
+        };
+
+        // Pulling one ball sideways drags along every ball beyond it on that side.
+        const moveGrab = (p) => {
+            const now = performance.now();
+            const k = grab.i;
+            const target = Math.atan2(p.x - anchorX(k), Math.max(p.y - barY, L * 0.2));
+            const angle = Math.max(-maxAngle, Math.min(maxAngle, target));
+            const dt = Math.max((now - grab.t) / 1000, 0.001);
+            grab.w = grab.w * 0.5 + Math.max(-8, Math.min(8, (angle - grab.a) / dt)) * 0.5;
+            grab.a = angle;
+            grab.t = now;
+            balls.forEach((b, j) => {
+                const pushed = j === k
+                    || (j < k && angle < 0 && b.a >= angle)
+                    || (j > k && angle > 0 && b.a <= angle);
+                b.held = pushed;
+                if (pushed) {
+                    b.a = angle;
+                    b.w = grab.w;
+                }
+            });
+        };
+
+        canvas.addEventListener('pointerdown', (e) => {
+            const p = localPoint(e);
+            let nearest = -1;
+            let best = R * 2.2;
+            balls.forEach((b, i) => {
+                const q = ballAt(i);
+                const d = Math.hypot(q.x - p.x, q.y - p.y);
+                if (d < best) {
+                    best = d;
+                    nearest = i;
+                }
+            });
+            if (nearest < 0) return;
+            capture(canvas, e);
+            grab = { i: nearest, a: balls[nearest].a, w: 0, t: performance.now(), id: e.pointerId };
+            hint.classList.add('gone');
+            haptic(10, 0);
+            moveGrab(p);
+            wake();
+        });
+        canvas.addEventListener('pointermove', (e) => {
+            if (grab && e.pointerId === grab.id) moveGrab(localPoint(e));
+        });
+        const release = (e) => {
+            if (!grab || e.pointerId !== grab.id) return;
+            if (performance.now() - grab.t > 80) grab.w = 0;
+            balls.forEach((b) => {
+                if (b.held) b.w = grab.w;
+                b.held = false;
+            });
+            grab = null;
+            wake();
+        };
+        canvas.addEventListener('pointerup', release);
+        canvas.addEventListener('pointercancel', release);
+
+        $('[data-fidget-reset]', card).addEventListener('click', () => {
+            balls.forEach((b) => {
+                b.a = 0;
+                b.w = 0;
+                b.held = false;
+            });
+            grab = null;
+            draw();
+        });
+
+        size();
+        if ('ResizeObserver' in window) new ResizeObserver(size).observe(canvas);
+    };
+
+    /* Stress Ball */
+    const initStressBall = (card) => {
+        const canvas = $('canvas', card);
+        const ctx2d = canvas.getContext('2d');
+        const hint = $('.pg-hint', card);
+        const squeezesLabel = $('[data-squeezes]', card);
+        const colorButton = $('[data-color]', card);
+        const INK = '#15334a';
+        const COLORS = [
+            ['#ffc2ce', '#ff8fa6', '#e8607e'],
+            ['#ffe789', '#ffd84d', '#f0a800'],
+            ['#9be9ff', '#3dd5ff', '#1a9fd0'],
+            ['#9ff2c4', '#2fe08a', '#17a865'],
+            ['#d6ccff', '#b19cff', '#7c5cf0']
+        ];
+        const N = 72;
+        const points = Array.from({ length: N }, (_, i) => ({ t: (i / N) * Math.PI * 2, r: 1, v: 0 }));
+        const touches = new Map();
+        let color = 0;
+        let squeezes = 0;
+        let W = 0;
+        let H = 0;
+        let dpr = 1;
+        let R0 = 100;
+        let cx = 0;
+        let cy = 0;
+        let running = false;
+        let last = 0;
+        const view = watch(card, () => wake());
+
+        // Pressing spreads the ball out, and a finger near the edge also dents it.
+        const targetFor = (pt) => {
+            let r = 1;
+            const bx = Math.cos(pt.t);
+            const by = Math.sin(pt.t);
+            touches.forEach((p) => {
+                const px = (p.x - cx) / R0;
+                const py = (p.y - cy) / R0;
+                const d = Math.min(1, Math.hypot(px, py));
+                const dist = Math.hypot(bx - px, by - py);
+                let gap = Math.abs(pt.t - Math.atan2(py, px)) % (Math.PI * 2);
+                if (gap > Math.PI) gap = Math.PI * 2 - gap;
+                const near = Math.max(0, 1 - gap / 0.8);
+                const edge = Math.min(1, Math.max(0, (d - 0.3) / 0.6));
+                r += p.depth * (0.08 + 0.07 * dist - 0.36 * edge * near * near);
+            });
+            return r;
+        };
+
+        const step = (dt) => {
+            const sub = 3;
+            const h = dt / sub;
+            touches.forEach((p) => { p.depth = Math.min(1, p.depth + dt * 7); });
+            for (let s = 0; s < sub; s += 1) {
+                const rs = points.map((p) => p.r);
+                points.forEach((p, i) => {
+                    const smooth = rs[(i + N - 1) % N] + rs[(i + 1) % N] - 2 * p.r;
+                    p.v += (220 * (targetFor(p) - p.r) + 900 * smooth - 7 * p.v) * h;
+                });
+                points.forEach((p) => { p.r += p.v * h; });
+            }
+        };
+
+        const outline = () => {
+            const xy = points.map((p) => [cx + Math.cos(p.t) * p.r * R0, cy + Math.sin(p.t) * p.r * R0]);
+            const mid = (a, b) => [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+            ctx2d.beginPath();
+            const start = mid(xy[N - 1], xy[0]);
+            ctx2d.moveTo(start[0], start[1]);
+            xy.forEach((p, i) => {
+                const m = mid(p, xy[(i + 1) % N]);
+                ctx2d.quadraticCurveTo(p[0], p[1], m[0], m[1]);
+            });
+            ctx2d.closePath();
+        };
+
+        const draw = () => {
+            const [light, base, deep] = COLORS[color];
+            const spread = points.reduce((sum, p) => sum + p.r, 0) / N;
+            const squeeze = Math.min(1, [...touches.values()].reduce((m, p) => Math.max(m, p.depth), 0));
+            ctx2d.setTransform(dpr, 0, 0, dpr, 0, 0);
+            ctx2d.clearRect(0, 0, W, H);
+
+            ctx2d.fillStyle = 'rgba(21, 51, 74, 0.12)';
+            ctx2d.beginPath();
+            ctx2d.ellipse(cx, cy + R0 * 1.12, R0 * 0.8 * spread, R0 * 0.13, 0, 0, Math.PI * 2);
+            ctx2d.fill();
+
+            outline();
+            const fill = ctx2d.createRadialGradient(cx - R0 * 0.35, cy - R0 * 0.4, R0 * 0.1, cx, cy, R0 * 1.15);
+            fill.addColorStop(0, light);
+            fill.addColorStop(0.55, base);
+            fill.addColorStop(1, deep);
+            ctx2d.fillStyle = fill;
+            ctx2d.fill();
+
+            ctx2d.save();
+            ctx2d.clip();
+            touches.forEach((p) => {
+                const dent = ctx2d.createRadialGradient(p.x, p.y, 0, p.x, p.y, R0 * 0.45);
+                dent.addColorStop(0, `rgba(21, 51, 74, ${0.22 * p.depth})`);
+                dent.addColorStop(1, 'rgba(21, 51, 74, 0)');
+                ctx2d.fillStyle = dent;
+                ctx2d.fillRect(0, 0, W, H);
+            });
+            ctx2d.fillStyle = 'rgba(255, 255, 255, 0.55)';
+            ctx2d.beginPath();
+            ctx2d.ellipse(cx - R0 * 0.42, cy - R0 * 0.5, R0 * 0.2, R0 * 0.11, -0.7, 0, Math.PI * 2);
+            ctx2d.fill();
+            ctx2d.restore();
+
+            outline();
+            ctx2d.strokeStyle = INK;
+            ctx2d.lineWidth = Math.max(3, R0 * 0.035);
+            ctx2d.lineJoin = 'round';
+            ctx2d.lineCap = 'round';
+            ctx2d.stroke();
+
+            const eyeX = R0 * 0.3 * spread;
+            const eyeY = cy - R0 * 0.08;
+            ctx2d.fillStyle = INK;
+            if (squeeze > 0.35) {
+                const s = R0 * 0.09;
+                [-1, 1].forEach((side) => {
+                    const x = cx + side * eyeX;
+                    ctx2d.beginPath();
+                    ctx2d.moveTo(x - side * s, eyeY - s);
+                    ctx2d.lineTo(x + side * s * 0.4, eyeY);
+                    ctx2d.lineTo(x - side * s, eyeY + s);
+                    ctx2d.stroke();
+                });
+            } else {
+                [-1, 1].forEach((side) => {
+                    ctx2d.beginPath();
+                    ctx2d.ellipse(cx + side * eyeX, eyeY, R0 * 0.065, R0 * 0.1, 0, 0, Math.PI * 2);
+                    ctx2d.fill();
+                });
+            }
+            ctx2d.beginPath();
+            const mouthY = cy + R0 * 0.16;
+            const mouthW = R0 * (0.16 + squeeze * 0.06) * spread;
+            ctx2d.moveTo(cx - mouthW, mouthY);
+            ctx2d.quadraticCurveTo(cx, mouthY + R0 * (0.16 - squeeze * 0.1), cx + mouthW, mouthY);
+            ctx2d.stroke();
+        };
+
+        const size = () => {
+            dpr = Math.min(window.devicePixelRatio || 1, 2);
+            W = canvas.clientWidth;
+            H = canvas.clientHeight;
+            canvas.width = Math.round(W * dpr);
+            canvas.height = Math.round(H * dpr);
+            R0 = Math.min(W, H) * 0.3;
+            cx = W / 2;
+            cy = H * 0.46;
+            draw();
+        };
+
+        const frame = (now) => {
+            const dt = Math.min((now - last) / 1000, 1 / 30);
+            last = now;
+            step(dt);
+            draw();
+            const moving = touches.size > 0 || points.some((p) => Math.abs(p.v) > 0.01 || Math.abs(p.r - 1) > 0.002);
+            if (view.inView && moving) {
+                requestAnimationFrame(frame);
+            } else {
+                running = false;
+            }
+        };
+
+        const wake = () => {
+            if (running || !view.inView) return;
+            running = true;
+            last = performance.now();
+            requestAnimationFrame(frame);
+        };
+
+        const localPoint = (e) => {
+            const r = canvas.getBoundingClientRect();
+            return { x: e.clientX - r.left, y: e.clientY - r.top };
+        };
+
+        const onBall = (p) => Math.hypot(p.x - cx, p.y - cy) <= R0 * 1.1;
+
+        canvas.addEventListener('pointerdown', (e) => {
+            const p = localPoint(e);
+            if (!onBall(p) || touches.size >= 2) return;
+            capture(canvas, e);
+            touches.set(e.pointerId, { ...p, depth: 0, moved: 0 });
+            squeezes += 1;
+            if (squeezesLabel) squeezesLabel.textContent = squeezes;
+            haptic(22, 0);
+            sounds.squish();
+            hint.classList.add('gone');
+            wake();
+        });
+        canvas.addEventListener('pointermove', (e) => {
+            const p = localPoint(e);
+            const touch = touches.get(e.pointerId);
+            if (!touch) {
+                canvas.style.cursor = onBall(p) ? 'grab' : '';
+                return;
+            }
+            touch.moved += Math.hypot(p.x - touch.x, p.y - touch.y);
+            touch.x = p.x;
+            touch.y = p.y;
+            if (touch.moved > R0 * 0.2) {
+                touch.moved = 0;
+                haptic(6, 60);
+            }
+            wake();
+        });
+        const release = (e) => {
+            if (!touches.delete(e.pointerId)) return;
+            sounds.unsquish();
+            haptic(10, 0);
+            wake();
+        };
+        canvas.addEventListener('pointerup', release);
+        canvas.addEventListener('pointercancel', release);
+
+        colorButton.addEventListener('click', () => {
+            color = (color + 1) % COLORS.length;
+            points.forEach((p) => { p.v += 1.2 * Math.cos(2 * p.t); });
+            haptic(12, 0);
+            wake();
+            draw();
+        });
+
+        size();
+        if ('ResizeObserver' in window) new ResizeObserver(size).observe(canvas);
+    };
+
     const init = {
         'ball-pit': initBallPit,
         spinner: initSpinner,
         'bubble-wrap': initBubbleWrap,
         'pop-it': initPopIt,
-        'light-switch': initLightSwitch
+        'light-switch': initLightSwitch,
+        clicker: initClicker,
+        keyboard: initKeyboard,
+        'newtons-cradle': initCradle,
+        'stress-ball': initStressBall
     };
     fidgets.forEach((card) => init[card.dataset.fidget]?.(card));
 })();
