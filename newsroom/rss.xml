@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tappy Newsroom</title>
+    <link>https://www.tappy.net/newsroom/</link>
+    <atom:link href="https://www.tappy.net/newsroom/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>App updates, new fidgets and announcements from Tappy.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Nov 2026 16:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Tappy 6.7 adds 11 new fidgets, from slime to fireworks</title>
+      <link>https://www.tappy.net/newsroom/2026/11/tappy-6-7-adds-11-new-fidgets/</link>
+      <guid isPermaLink="true">https://www.tappy.net/newsroom/2026/11/tappy-6-7-adds-11-new-fidgets/</guid>
+      <pubDate>Fri, 13 Nov 2026 16:00:00 GMT</pubDate>
+      <category>Press release</category>
+      <description>Squish slime, crack wax, cut soap, set off fireworks and more, plus a brand-new puzzle game, Shelf Sort.</description>
+      <enclosure url="https://www.tappy.net/assets/newsroom/2026/11/tappy-6-7/hero-og.jpg" length="110087" type="image/jpeg"/>
+    </item>
+  </channel>
+</rss>

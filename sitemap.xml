@@ -91,6 +91,36 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.tappy.net/newsroom/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tappy.net/newsroom/2026/11/tappy-6-7-adds-11-new-fidgets/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.tappy.net/assets/newsroom/2026/11/tappy-6-7/download/tappy-6-7-hero.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tappy.net/assets/newsroom/2026/11/tappy-6-7/fireworks.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tappy.net/assets/newsroom/2026/11/tappy-6-7/camera.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tappy.net/assets/newsroom/2026/11/tappy-6-7/squishy-shapes-ice-cube.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tappy.net/assets/newsroom/2026/11/tappy-6-7/slime.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tappy.net/assets/newsroom/2026/11/tappy-6-7/wax-cracking.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
     <loc>https://www.tappy.net/press/</loc>
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
