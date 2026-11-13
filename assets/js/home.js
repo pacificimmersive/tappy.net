@@ -5,37 +5,6 @@
     const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
     const rand = (min, max) => min + Math.random() * (max - min);
 
-    /* Nav shadow */
-    const nav = $('#nav');
-    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    /* Mobile menu */
-    const navToggle = $('#navToggle');
-    const mobileMenu = $('#mobileMenu');
-    const setMenu = (open) => {
-        mobileMenu.hidden = !open;
-        navToggle.setAttribute('aria-expanded', String(open));
-        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    };
-    navToggle.addEventListener('click', () => setMenu(mobileMenu.hidden));
-    mobileMenu.addEventListener('click', (e) => {
-        if (e.target.closest('a')) setMenu(false);
-    });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !mobileMenu.hidden) {
-            setMenu(false);
-            navToggle.focus();
-        }
-    });
-    document.addEventListener('click', (e) => {
-        if (!mobileMenu.hidden && !nav.contains(e.target)) setMenu(false);
-    });
-    window.matchMedia('(min-width: 1081px)').addEventListener('change', (e) => {
-        if (e.matches) setMenu(false);
-    });
-
     /* Reveal on scroll */
     const revealEls = $$('[data-reveal]');
     if ('IntersectionObserver' in window) {

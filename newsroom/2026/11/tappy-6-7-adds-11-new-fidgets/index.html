@@ -39,7 +39,8 @@
 
     <link rel="preload" href="/assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/fonts/nunito.css">
-    <link rel="stylesheet" href="/assets/css/home.css?v=20261109">
+    <link rel="stylesheet" href="/assets/css/nav.css?v=20261113c">
+    <link rel="stylesheet" href="/assets/css/home.css?v=20261113">
     <link rel="stylesheet" href="/assets/css/newsroom.css?v=20261113c">
 
     <script type="application/ld+json">
@@ -127,12 +128,122 @@
             <a href="/" class="nav-logo" aria-label="Tappy home">
                 <img src="/assets/v6/logo-dark.webp" width="322" height="120" alt="Tappy">
             </a>
-            <nav class="nav-links" aria-label="Newsroom">
-                <a href="/newsroom/">Newsroom</a>
-                <a href="/#playground">Fidgets &amp; games</a>
-                <a href="/fidgets/">Play online</a>
-                <a href="/press/">Press kit</a>
+            <nav class="nav-links" aria-label="Main">
+                <div class="nav-item" data-dropdown>
+                    <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="navMenuFeatures">
+                        Features
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="nav-dropdown" id="navMenuFeatures" hidden>
+                        <a href="/" class="nav-drop-link">
+                            <strong>Overview</strong>
+                            <span>Meet your fidget &amp; self-care pet</span>
+                        </a>
+                        <a href="/#whats-new" class="nav-drop-link">
+                            <strong>What&rsquo;s new in 6.0</strong>
+                            <span>Daily Adventure, Sparks &amp; scenes</span>
+                        </a>
+                        <a href="/#playground" class="nav-drop-link">
+                            <strong>Fidgets &amp; games</strong>
+                            <span>55+ haptic fidgets &amp; 17 arcade games</span>
+                        </a>
+                        <a href="/#adventure" class="nav-drop-link">
+                            <strong>Daily Adventure</strong>
+                            <span>Build a routine that&rsquo;s all yours</span>
+                        </a>
+                        <a href="/#care" class="nav-drop-link">
+                            <strong>Take care of Tappy</strong>
+                            <span>Feed, hug, play, and dress up</span>
+                        </a>
+                        <a href="/#toolkit" class="nav-drop-link">
+                            <strong>Self-care &amp; focus</strong>
+                            <span>Breathing, Feelscapes, journal &amp; habits</span>
+                        </a>
+                        <div class="nav-drop-row">
+                            <a href="/#reviews">Reviews</a>
+                            <a href="/#faq">FAQ</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-item" data-dropdown>
+                    <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="navMenuFidgets">
+                        Play online
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="nav-dropdown nav-dropdown-wide" id="navMenuFidgets" hidden>
+                        <a href="/fidgets/" class="nav-drop-feature">
+                            <div>
+                                <strong>All online fidgets</strong>
+                                <span>9 free browser fidgets, no download</span>
+                            </div>
+                            <span class="nav-drop-arrow" aria-hidden="true">&rarr;</span>
+                        </a>
+                        <div class="nav-drop-grid">
+                            <a href="/fidgets/bubble-wrap/">Bubble Wrap</a>
+                            <a href="/fidgets/pop-it/">Pop It</a>
+                            <a href="/fidgets/fidget-spinner/">Fidget Spinner</a>
+                            <a href="/fidgets/light-switch/">Light Switch</a>
+                            <a href="/fidgets/ball-pit/">Ball Pit</a>
+                            <a href="/fidgets/clicker/">Click Counter</a>
+                            <a href="/fidgets/mechanical-keyboard/">Mechanical Keyboard</a>
+                            <a href="/fidgets/newtons-cradle/">Newton&rsquo;s Cradle</a>
+                            <a href="/fidgets/stress-ball/">Stress Ball</a>
+                        </div>
+                        <div class="nav-drop-foot">
+                            <a href="/fidgets/types-of-fidget-toys/">
+                                <span>Guide: Types of fidget toys</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-item" data-dropdown>
+                    <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="navMenuCompany">
+                        Company
+                        <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                    <div class="nav-dropdown nav-dropdown-right nav-dropdown-company" id="navMenuCompany" hidden>
+                        <div class="nav-drop-cols">
+                            <div class="nav-drop-col">
+                                <p class="nav-drop-heading">Company</p>
+                                <a href="/press/#about" class="nav-drop-link">
+                                    <strong>About Tappy</strong>
+                                    <span>Fact sheet &amp; our story</span>
+                                </a>
+                                <a href="/newsroom/" class="nav-drop-link">
+                                    <strong>Newsroom</strong>
+                                    <span>Updates &amp; announcements</span>
+                                </a>
+                                <a href="/press/" class="nav-drop-link">
+                                    <strong>Press kit</strong>
+                                    <span>Logos, screenshots &amp; brand assets</span>
+                                </a>
+                                <a href="mailto:press@tappy.net" class="nav-drop-link">
+                                    <strong>Press contact</strong>
+                                    <span>press@tappy.net</span>
+                                </a>
+                            </div>
+                            <div class="nav-drop-col">
+                                <p class="nav-drop-heading">Help &amp; legal</p>
+                                <a href="mailto:support@tappy.net">Contact support</a>
+                                <a href="/#faq">FAQ</a>
+                                <a href="/privacy/">Privacy Policy</a>
+                                <a href="/privacy/#consumer-health-data">Consumer Health Data</a>
+                                <a href="/terms/">Terms of Use</a>
+                            </div>
+                        </div>
+                        <div class="nav-drop-foot">
+                            <a href="/newsroom/2026/11/tappy-6-7-adds-11-new-fidgets/">
+                                <span><span class="nav-drop-badge">New</span>Tappy 6.7 adds 11 new fidgets</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </nav>
+
             <a class="btn btn-yellow btn-sm" href="https://apps.apple.com/us/app/tappy-fidget-self-care-pet/id1492017640" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
                 Get Tappy
@@ -141,12 +252,63 @@
                 <span></span><span></span><span></span>
             </button>
         </div>
-        <nav class="mobile-menu" id="mobileMenu" aria-label="Newsroom" hidden>
-            <a href="/">Tappy home</a>
-            <a href="/newsroom/">Newsroom</a>
-            <a href="/#playground">Fidgets &amp; games</a>
-            <a href="/fidgets/">Play fidgets online</a>
-            <a href="/press/">Press kit</a>
+
+        <nav class="mobile-menu" id="mobileMenu" aria-label="Main" hidden>
+            <div class="mobile-group" data-mobile-group>
+                <button class="mobile-group-btn" type="button" aria-expanded="false" aria-controls="mobileGroupFeatures">
+                    Features
+                    <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="mobile-group-panel" id="mobileGroupFeatures" hidden>
+                    <a href="/">Overview</a>
+                    <a href="/#whats-new">What&rsquo;s new in 6.0</a>
+                    <a href="/#playground">Fidgets &amp; games</a>
+                    <a href="/#adventure">Daily Adventure</a>
+                    <a href="/#care">Take care of Tappy</a>
+                    <a href="/#toolkit">Self-care &amp; focus</a>
+                    <a href="/#reviews">Reviews</a>
+                    <a href="/#faq">FAQ</a>
+                </div>
+            </div>
+
+            <div class="mobile-group" data-mobile-group>
+                <button class="mobile-group-btn" type="button" aria-expanded="false" aria-controls="mobileGroupFidgets">
+                    Play online
+                    <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="mobile-group-panel" id="mobileGroupFidgets" hidden>
+                    <a href="/fidgets/">All online fidgets</a>
+                    <a href="/fidgets/bubble-wrap/">Bubble Wrap</a>
+                    <a href="/fidgets/pop-it/">Pop It</a>
+                    <a href="/fidgets/fidget-spinner/">Fidget Spinner</a>
+                    <a href="/fidgets/light-switch/">Light Switch</a>
+                    <a href="/fidgets/ball-pit/">Ball Pit</a>
+                    <a href="/fidgets/clicker/">Click Counter</a>
+                    <a href="/fidgets/mechanical-keyboard/">Mechanical Keyboard</a>
+                    <a href="/fidgets/newtons-cradle/">Newton&rsquo;s Cradle</a>
+                    <a href="/fidgets/stress-ball/">Stress Ball</a>
+                    <a href="/fidgets/types-of-fidget-toys/">Types of fidget toys</a>
+                </div>
+            </div>
+
+            <div class="mobile-group" data-mobile-group>
+                <button class="mobile-group-btn" type="button" aria-expanded="false" aria-controls="mobileGroupCompany">
+                    Company
+                    <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="mobile-group-panel" id="mobileGroupCompany" hidden>
+                    <a href="/press/#about">About Tappy</a>
+                    <a href="/newsroom/">Newsroom</a>
+                    <a href="/press/">Press kit</a>
+                    <a href="mailto:press@tappy.net">Press contact</a>
+                    <p class="mobile-group-label">Help &amp; legal</p>
+                    <a href="mailto:support@tappy.net">Contact support</a>
+                    <a href="/privacy/">Privacy Policy</a>
+                    <a href="/privacy/#consumer-health-data">Consumer Health Data</a>
+                    <a href="/terms/">Terms of Use</a>
+                </div>
+            </div>
+
             <a class="store-badge" href="https://apps.apple.com/us/app/tappy-fidget-self-care-pet/id1492017640" target="_blank" rel="noopener">
                 <img src="/assets/v6/app-store-badge.svg" width="150" height="50" alt="Download Tappy on the App Store" style="height:50px">
             </a>
@@ -405,7 +567,7 @@
                     </a>
                 </li>
                 <li class="nr-media-item">
-                    <img src="/assets/newsroom/2026/11/tappy-6-7/slime-poster.webp" width="604" height="1314" alt="" loading="lazy">
+                    <img src="/assets/newsroom/2026/11/tappy-6-7/slime-poster.webp" width="604" height="1314" alt="Slime in Tappy: a finger pressing into clear green Neon slime full of holo glitter" loading="lazy">
                     <span class="nr-media-badge">Video</span>
                     <a href="/assets/newsroom/2026/11/tappy-6-7/download/tappy-6-7-slime.mp4" download>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14"/></svg>
@@ -413,14 +575,14 @@
                     </a>
                 </li>
                 <li class="nr-media-item">
-                    <img src="/assets/newsroom/2026/11/tappy-6-7/slime.webp" width="603" height="1311" alt="" loading="lazy">
+                    <img src="/assets/newsroom/2026/11/tappy-6-7/slime.webp" width="603" height="1311" alt="Slime in Tappy: a sheet of glittery Neon green slime with color choices like Glacier, Bubblegum and Unicorn" loading="lazy">
                     <a href="/assets/newsroom/2026/11/tappy-6-7/download/tappy-6-7-slime.jpg" download>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14"/></svg>
                         Slime
                     </a>
                 </li>
                 <li class="nr-media-item">
-                    <img src="/assets/newsroom/2026/11/tappy-6-7/wax-cracking-poster.webp" width="604" height="1314" alt="" loading="lazy">
+                    <img src="/assets/newsroom/2026/11/tappy-6-7/wax-cracking-poster.webp" width="604" height="1314" alt="Wax Cracking in Tappy: a tray of pink and lavender Cotton Candy wax being pressed into shards" loading="lazy">
                     <span class="nr-media-badge">Video</span>
                     <a href="/assets/newsroom/2026/11/tappy-6-7/download/tappy-6-7-wax-cracking.mp4" download>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14"/></svg>
@@ -597,7 +759,8 @@
         </div>
     </footer>
 
-    <script src="/assets/js/home.js?v=20261109" defer></script>
+    <script src="/assets/js/nav.js?v=20261113b" defer></script>
+    <script src="/assets/js/home.js?v=20261113" defer></script>
     <script src="/assets/js/newsroom.js?v=20261113c" defer></script>
 </body>
 </html>

@@ -1287,6 +1287,10 @@
             ctx2d.closePath();
         };
 
+        const faceImg = new Image();
+        faceImg.onload = () => { if (W) draw(); };
+        faceImg.src = '/assets/images/tappy-face-mark.png';
+
         const draw = () => {
             const [light, base, deep] = COLORS[color];
             const spread = points.reduce((sum, p) => sum + p.r, 0) / N;
@@ -1329,32 +1333,12 @@
             ctx2d.lineCap = 'round';
             ctx2d.stroke();
 
-            const eyeX = R0 * 0.3 * spread;
-            const eyeY = cy - R0 * 0.08;
-            ctx2d.fillStyle = INK;
-            if (squeeze > 0.35) {
-                const s = R0 * 0.09;
-                [-1, 1].forEach((side) => {
-                    const x = cx + side * eyeX;
-                    ctx2d.beginPath();
-                    ctx2d.moveTo(x - side * s, eyeY - s);
-                    ctx2d.lineTo(x + side * s * 0.4, eyeY);
-                    ctx2d.lineTo(x - side * s, eyeY + s);
-                    ctx2d.stroke();
-                });
-            } else {
-                [-1, 1].forEach((side) => {
-                    ctx2d.beginPath();
-                    ctx2d.ellipse(cx + side * eyeX, eyeY, R0 * 0.065, R0 * 0.1, 0, 0, Math.PI * 2);
-                    ctx2d.fill();
-                });
+            if (faceImg.complete && faceImg.naturalWidth) {
+                // The logo circle spans 325px of the 400px image.
+                const fw = R0 * (400 / 162.5) * spread * (1 + squeeze * 0.06);
+                const fh = R0 * (400 / 162.5) * spread * (1 - squeeze * 0.08);
+                ctx2d.drawImage(faceImg, cx - fw / 2, cy - fh / 2, fw, fh);
             }
-            ctx2d.beginPath();
-            const mouthY = cy + R0 * 0.16;
-            const mouthW = R0 * (0.16 + squeeze * 0.06) * spread;
-            ctx2d.moveTo(cx - mouthW, mouthY);
-            ctx2d.quadraticCurveTo(cx, mouthY + R0 * (0.16 - squeeze * 0.1), cx + mouthW, mouthY);
-            ctx2d.stroke();
         };
 
         const size = () => {
