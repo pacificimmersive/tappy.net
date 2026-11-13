@@ -423,11 +423,6 @@
 
 .pg-cradle {
     background: linear-gradient(180deg, #e3f5fc 0%, #fff6e4 100%);
-    cursor: grab;
-}
-
-.pg-cradle:active {
-    cursor: grabbing;
 }
 
 .pg-squish {
@@ -503,6 +498,10 @@ body.embed {
 
 .embed .pg-card {
     box-shadow: 0 5px 0 var(--ink);
+}
+
+.embed .pg-screen {
+    touch-action: none;
 }
 
 .embed-bar {

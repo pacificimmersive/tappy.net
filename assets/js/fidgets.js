@@ -21,6 +21,7 @@
     const fidgets = $$('[data-fidget]');
     if (!fidgets.length) return;
 
+    const isEmbed = document.body.classList.contains('embed');
     const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent)
         || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
     const soundToggles = $$('[data-sound-toggle]');
@@ -191,17 +192,40 @@
     /* Drag across a grid of buttons to press each one the pointer passes over. */
     const dragToPress = (grid, selector, press) => {
         let pressing = false;
+        let pending = null;
+        let dragged = false;
         grid.addEventListener('pointerdown', (e) => {
+            if (e.button > 0) return;
+            const target = e.target.closest(selector);
+            if (!isEmbed && e.pointerType === 'touch') {
+                pressing = true;
+                dragged = false;
+                pending = { id: e.pointerId, target, x: e.clientX, y: e.clientY };
+                return;
+            }
             pressing = true;
             capture(grid, e);
-            press(e.target.closest(selector));
+            press(target);
         });
         grid.addEventListener('pointermove', (e) => {
             if (!pressing) return;
+            if (pending && e.pointerId === pending.id) {
+                if (Math.hypot(e.clientX - pending.x, e.clientY - pending.y) < 6) return;
+                dragged = true;
+                press(pending.target);
+                pending = null;
+            }
             const el = document.elementFromPoint(e.clientX, e.clientY);
             press(el && el.closest(selector));
         });
-        const end = () => { pressing = false; };
+        const end = (e) => {
+            if (e.type === 'pointerup' && pressing && pending && e.pointerId === pending.id && !dragged) {
+                press(pending.target);
+            }
+            pressing = false;
+            pending = null;
+            dragged = false;
+        };
         grid.addEventListener('pointerup', end);
         grid.addEventListener('pointercancel', end);
         grid.addEventListener('keydown', (e) => {
@@ -232,6 +256,7 @@
         let running = false;
         let last = 0;
         let pointerDown = false;
+        let pendingTouch = null;
         let stillFrames = 0;
         let lastSpawn = { x: 0, y: 0, t: 0 };
         const view = watch(card, () => wake());
@@ -415,13 +440,25 @@
         };
 
         canvas.addEventListener('pointerdown', (e) => {
+            if (e.button > 0) return;
+            const p = localPoint(e);
+            if (!isEmbed && e.pointerType === 'touch') {
+                pendingTouch = { id: e.pointerId, p, x: e.clientX, y: e.clientY };
+                return;
+            }
             pointerDown = true;
             capture(canvas, e);
-            const p = localPoint(e);
             spawn(p.x, p.y, true);
             lastSpawn = { ...p, t: performance.now() };
         });
         canvas.addEventListener('pointermove', (e) => {
+            if (pendingTouch && e.pointerId === pendingTouch.id) {
+                if (Math.hypot(e.clientX - pendingTouch.x, e.clientY - pendingTouch.y) < 6) return;
+                pointerDown = true;
+                spawn(pendingTouch.p.x, pendingTouch.p.y, true);
+                lastSpawn = { ...pendingTouch.p, t: performance.now() };
+                pendingTouch = null;
+            }
             if (!pointerDown) return;
             const p = localPoint(e);
             const now = performance.now();
@@ -430,7 +467,13 @@
                 lastSpawn = { ...p, t: now };
             }
         });
-        const release = () => { pointerDown = false; };
+        const release = (e) => {
+            if (e.type === 'pointerup' && pendingTouch && e.pointerId === pendingTouch.id) {
+                spawn(pendingTouch.p.x, pendingTouch.p.y, true);
+            }
+            pendingTouch = null;
+            pointerDown = false;
+        };
         canvas.addEventListener('pointerup', release);
         canvas.addEventListener('pointercancel', release);
 
@@ -495,6 +538,23 @@
             return Math.atan2(e.clientY - (r.top + r.height / 2), e.clientX - (r.left + r.width / 2));
         };
 
+        const onSpinner = (e) => {
+            const r = stage.getBoundingClientRect();
+            const size = spinner.offsetWidth || r.width * 0.82;
+            const dx = e.clientX - (r.left + r.width / 2);
+            const dy = e.clientY - (r.top + r.height / 2);
+            const dist = Math.hypot(dx, dy);
+            if (dist <= size * 0.21) return true;
+            if (Math.abs(omega) > 4 && dist <= size * 0.42) return true;
+            for (let i = 0; i < 3; i += 1) {
+                const a = theta - Math.PI / 2 + i * ARM;
+                const lx = Math.cos(a) * size * 0.24;
+                const ly = Math.sin(a) * size * 0.24;
+                if (Math.hypot(dx - lx, dy - ly) <= size * 0.175) return true;
+            }
+            return false;
+        };
+
         const render = () => {
             spinner.style.transform = `rotate(${theta}rad)`;
             const rpm = Math.round((Math.abs(omega) * 60) / (Math.PI * 2));
@@ -540,8 +600,21 @@
             requestAnimationFrame(frame);
         };
 
+        if (!isEmbed) {
+            stage.addEventListener('touchstart', (e) => {
+                for (const t of e.changedTouches) {
+                    if (onSpinner(t)) {
+                        e.preventDefault();
+                        return;
+                    }
+                }
+            }, { passive: false });
+        }
+
         stage.addEventListener('pointerdown', (e) => {
+            if (e.button > 0 || !onSpinner(e)) return;
             dragging = true;
+            stage.style.cursor = 'grabbing';
             capture(stage, e);
             dragAngle = angleAt(e);
             dragTime = performance.now();
@@ -551,7 +624,10 @@
             wake();
         });
         stage.addEventListener('pointermove', (e) => {
-            if (!dragging) return;
+            if (!dragging) {
+                stage.style.cursor = onSpinner(e) ? 'grab' : '';
+                return;
+            }
             const a = angleAt(e);
             const now = performance.now();
             let d = a - dragAngle;
@@ -563,9 +639,10 @@
             dragAngle = a;
             dragTime = now;
         });
-        const end = () => {
+        const end = (e) => {
             if (!dragging) return;
             dragging = false;
+            stage.style.cursor = onSpinner(e) ? 'grab' : '';
             if (performance.now() - dragTime > 90) omega *= 0.2;
             wake();
         };
@@ -701,6 +778,7 @@
 
         // A tap flips it; a swipe sets it in the direction of the swipe.
         toggle.addEventListener('pointerdown', (e) => {
+            if (e.button > 0) return;
             startY = e.clientY;
             swiped = false;
             capture(toggle, e);
@@ -800,13 +878,39 @@
             sounds.clickerUp();
         };
 
+        const touchStarts = new Map();
+        let tapReleaseTimer = 0;
+
         button.addEventListener('pointerdown', (e) => {
             if (e.button > 0) return;
+            if (!isEmbed && e.pointerType === 'touch') {
+                touchStarts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+                return;
+            }
             capture(button, e);
             press();
         });
-        button.addEventListener('pointerup', release);
-        button.addEventListener('pointercancel', release);
+        button.addEventListener('pointermove', (e) => {
+            const start = touchStarts.get(e.pointerId);
+            if (!start) return;
+            if (Math.hypot(e.clientX - start.x, e.clientY - start.y) > 10) {
+                touchStarts.delete(e.pointerId);
+            }
+        });
+        button.addEventListener('pointerup', (e) => {
+            if (touchStarts.has(e.pointerId)) {
+                touchStarts.delete(e.pointerId);
+                press();
+                clearTimeout(tapReleaseTimer);
+                tapReleaseTimer = setTimeout(release, 60);
+                return;
+            }
+            release();
+        });
+        button.addEventListener('pointercancel', (e) => {
+            touchStarts.delete(e.pointerId);
+            release();
+        });
         button.addEventListener('keydown', (e) => {
             if (e.key !== ' ' && e.key !== 'Enter') return;
             e.preventDefault();
@@ -896,12 +1000,14 @@
         board.addEventListener('pointerdown', (e) => {
             const key = e.target.closest('.keycap');
             if (!key || e.button > 0) return;
-            capture(board, e);
-            listening = true;
+            if (e.pointerType !== 'touch') capture(board, e);
             held.set(e.pointerId, key);
             down(key);
         });
-        board.addEventListener('pointerup', (e) => releaseHeld(e.pointerId));
+        board.addEventListener('pointerup', (e) => {
+            if (held.has(e.pointerId)) listening = true;
+            releaseHeld(e.pointerId);
+        });
         board.addEventListener('pointercancel', (e) => releaseHeld(e.pointerId));
 
         // Real keys map to the matching keycap; any other key always lands on the same one.
@@ -1161,8 +1267,7 @@
             });
         };
 
-        canvas.addEventListener('pointerdown', (e) => {
-            const p = localPoint(e);
+        const hitBall = (p) => {
             let nearest = -1;
             let best = R * 2.2;
             balls.forEach((b, i) => {
@@ -1173,8 +1278,27 @@
                     nearest = i;
                 }
             });
+            return nearest;
+        };
+
+        if (!isEmbed) {
+            canvas.addEventListener('touchstart', (e) => {
+                for (const t of e.changedTouches) {
+                    if (hitBall(localPoint(t)) >= 0) {
+                        e.preventDefault();
+                        return;
+                    }
+                }
+            }, { passive: false });
+        }
+
+        canvas.addEventListener('pointerdown', (e) => {
+            if (e.button > 0) return;
+            const p = localPoint(e);
+            const nearest = hitBall(p);
             if (nearest < 0) return;
             capture(canvas, e);
+            canvas.style.cursor = 'grabbing';
             grab = { i: nearest, a: balls[nearest].a, w: 0, t: performance.now(), id: e.pointerId };
             hint.classList.add('gone');
             haptic(10, 0);
@@ -1182,7 +1306,12 @@
             wake();
         });
         canvas.addEventListener('pointermove', (e) => {
-            if (grab && e.pointerId === grab.id) moveGrab(localPoint(e));
+            const p = localPoint(e);
+            if (grab && e.pointerId === grab.id) {
+                moveGrab(p);
+            } else if (!grab) {
+                canvas.style.cursor = hitBall(p) >= 0 ? 'grab' : '';
+            }
         });
         const release = (e) => {
             if (!grab || e.pointerId !== grab.id) return;
@@ -1192,6 +1321,7 @@
                 b.held = false;
             });
             grab = null;
+            canvas.style.cursor = hitBall(localPoint(e)) >= 0 ? 'grab' : '';
             wake();
         };
         canvas.addEventListener('pointerup', release);
@@ -1380,10 +1510,23 @@
 
         const onBall = (p) => Math.hypot(p.x - cx, p.y - cy) <= R0 * 1.1;
 
+        if (!isEmbed) {
+            canvas.addEventListener('touchstart', (e) => {
+                for (const t of e.changedTouches) {
+                    if (onBall(localPoint(t))) {
+                        e.preventDefault();
+                        return;
+                    }
+                }
+            }, { passive: false });
+        }
+
         canvas.addEventListener('pointerdown', (e) => {
+            if (e.button > 0) return;
             const p = localPoint(e);
             if (!onBall(p) || touches.size >= 2) return;
             capture(canvas, e);
+            canvas.style.cursor = 'grabbing';
             touches.set(e.pointerId, { ...p, depth: 0, moved: 0 });
             squeezes += 1;
             if (squeezesLabel) squeezesLabel.textContent = squeezes;
@@ -1396,7 +1539,7 @@
             const p = localPoint(e);
             const touch = touches.get(e.pointerId);
             if (!touch) {
-                canvas.style.cursor = onBall(p) ? 'grab' : '';
+                if (!touches.size) canvas.style.cursor = onBall(p) ? 'grab' : '';
                 return;
             }
             touch.moved += Math.hypot(p.x - touch.x, p.y - touch.y);
@@ -1410,6 +1553,7 @@
         });
         const release = (e) => {
             if (!touches.delete(e.pointerId)) return;
+            if (!touches.size) canvas.style.cursor = onBall(localPoint(e)) ? 'grab' : '';
             sounds.unsquish();
             haptic(10, 0);
             wake();

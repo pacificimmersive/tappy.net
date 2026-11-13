@@ -2959,7 +2959,7 @@ ul {
     border-radius: 24px;
     overflow: hidden;
     background: #111214;
-    touch-action: none;
+    touch-action: pan-y;
     user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
@@ -3005,11 +3005,6 @@ ul {
     display: grid;
     place-items: center;
     background: radial-gradient(circle at 50% 45%, #23262c 0%, #111214 70%);
-    cursor: grab;
-}
-
-.pg-spin:active {
-    cursor: grabbing;
 }
 
 .spinner-img {
