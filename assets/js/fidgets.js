@@ -1220,9 +1220,9 @@
         const colorButton = $('[data-color]', card);
         const INK = '#15334a';
         const COLORS = [
-            ['#ffc2ce', '#ff8fa6', '#e8607e'],
+            ['#abe0f0', '#6ccaee', '#23a8e0'],
             ['#ffe789', '#ffd84d', '#f0a800'],
-            ['#9be9ff', '#3dd5ff', '#1a9fd0'],
+            ['#ffc2ce', '#ff8fa6', '#e8607e'],
             ['#9ff2c4', '#2fe08a', '#17a865'],
             ['#d6ccff', '#b19cff', '#7c5cf0']
         ];
